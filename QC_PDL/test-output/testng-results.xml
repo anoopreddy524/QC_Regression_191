@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="76" total="77" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="664377" started-at="2020-01-07T06:20:26Z" finished-at="2020-01-07T06:31:31Z">
+    <groups>
+      <group name="Brahmith1">
+        <method signature="QCStore.QC_RefinanceStepDown_Txn()[pri:2, instance:tests.QCStore@520a3426]" name="QC_RefinanceStepDown_Txn" class="tests.QCStore"/>
+      </group> <!-- Brahmith1 -->
+    </groups>
+    <test name="Test" duration-ms="664377" started-at="2020-01-07T06:20:26Z" finished-at="2020-01-07T06:31:31Z">
+      <class name="tests.QCStore">
+        <test-method status="PASS" signature="setup()[pri:0, instance:tests.QCStore@520a3426]" name="setup" is-config="true" duration-ms="77" started-at="2020-01-07T06:20:26Z" finished-at="2020-01-07T06:20:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="killProcess()[pri:0, instance:tests.QCStore@520a3426]" name="killProcess" is-config="true" duration-ms="1011" started-at="2020-01-07T06:20:27Z" finished-at="2020-01-07T06:20:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- killProcess -->
+        <test-method status="PASS" signature="QC_RefinanceStepDown_Txn()[pri:2, instance:tests.QCStore@520a3426]" name="QC_RefinanceStepDown_Txn" duration-ms="662971" started-at="2020-01-07T06:20:28Z" finished-at="2020-01-07T06:31:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- QC_RefinanceStepDown_Txn -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:tests.QCStore@520a3426]" name="getResult" is-config="true" duration-ms="303" started-at="2020-01-07T06:31:30Z" finished-at="2020-01-07T06:31:31Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=QC_RefinanceStepDown_Txn status=SUCCESS method=QCStore.QC_RefinanceStepDown_Txn()[pri:2, instance:tests.QCStore@520a3426] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+      </class> <!-- tests.QCStore -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
