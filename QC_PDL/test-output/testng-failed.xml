@@ -10,9 +10,10 @@
     <classes>
       <class name="tests.QCStore">
         <methods>
+          <include name="QC_OpenLoan_NewLoan_Txn"/>
           <include name="getResult"/>
           <include name="setup"/>
-          <include name="QC_RefinanceStepDown_Txn"/>
+          <include name="QC_NewLoan_Void_Txn"/>
           <include name="killProcess"/>
         </methods>
       </class> <!-- tests.QCStore -->

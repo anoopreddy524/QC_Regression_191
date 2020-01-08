@@ -198,7 +198,7 @@ public class QCStore {
 
 	}
 
-	@Test(priority=4, groups = "Brahmith" )
+	@Test(priority=4, groups = "Brahmith1" )
 	public static void QC_OpenLoan_NewLoan_Txn() throws Exception {
 
 		test = reports.startTest("QC_OpenLoan_NewLoan_Txn", "Login->Borrower Registratino->Open Loan->New Loan");
@@ -237,7 +237,7 @@ public class QCStore {
 		}
 	}
 
-	@Test(priority=5, groups = "Brahmith" )
+	@Test(priority=5, groups = "Brahmith1" )
 	public static void QC_NewLoan_Void_Txn() throws Exception {
 
 
