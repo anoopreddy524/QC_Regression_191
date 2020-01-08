@@ -2,22 +2,26 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="QC_PartialPayment_RefundVoid" key="selection"/>
+		<item value="CSRBorrowerRegistration.borrowerReg(SSN, AppURL);" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="ACSRBorrowerRegistration.borrowerReg(SSN, AppURL);"/>
+			<item value="ACSRLoginLogout.logout();"/>
+			<item value="QCCSRLoginLogout.adminLogin(SSN, AppURL);"/>
+			<item value="ACSRLoginLogout.login(SSN, AppURL);"/>
 			<item value="QC_PartialPayment_RefundVoid"/>
 			<item value="QC_Void_FullReturnPayment"/>
 			<item value="QC_Epp_Return_ReDeposit"/>
 			<item value="QC_Epp_Return_NSFPayment_Txn"/>
-			<item value="QC_Epp_PrePayment_Return_Txn_scenario"/>
-			<item value="QC_Epp_PrePayment_Return_Txn"/>
-			<item value="QC_EppDepositClear_Refund_Txn"/>
-			<item value="QC_Epp_Check_Deposit_Clear_Txn"/>
 		</list>
 		<list key="replacehistory">
+			<item value="CSRBorrowerRegistration.borrowerReg(SSN, AppURL);"/>
+			<item value="CSRLoginLogout.logout();"/>
+			<item value="CSRLoginLogout.adminLogin(SSN, AppURL);"/>
+			<item value="CSRLoginLogout.login(SSN, AppURL);"/>
 			<item value=""/>
 			<item value="ACSRBorrowerRegistration.borrowerReg(SSN, AppURL);"/>
 			<item value="ACSRLoginLogout.logout();"/>

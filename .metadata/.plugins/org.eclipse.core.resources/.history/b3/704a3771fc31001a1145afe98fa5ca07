@@ -2853,6 +2853,16 @@ public class QCStore {
 		}
 	}
 
+
+
+
+
+
+
+
+
+
+
 	@Test(priority = 415, enabled = true)
 	public static void JQC_NewLoan_Veritec_Txn() throws Exception {
 
@@ -4019,7 +4029,7 @@ public class QCStore {
 		BufferedReader reader;
 
 		//Areader = new BufferedReader(new FileReader("C:/QC_Batch/QC_PDL/src/test/java/tests/AObjects.properties"));
-		reader = new BufferedReader(new FileReader(System.getProperty("user.dir")+"/src/test/java/tests/Objects.properties"));
+		reader = new BufferedReader(new FileReader(System.getProperty("user.dir")+"/src/test/java/tests/AObjects.properties"));
 		prop = new Properties();
 		prop.load(reader);
 		reader.close();
