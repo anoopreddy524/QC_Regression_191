@@ -54,7 +54,7 @@ public class QCStore {
 	public static String NextDueDate;
 
 
-
+//Testingsample
 	@Test(priority=1, groups = "Brahmith")
 	public static void QC_NewLoan_Promotion_Txn() throws Exception {
 
