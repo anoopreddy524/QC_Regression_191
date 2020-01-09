@@ -2158,6 +2158,7 @@ java.io.FileNotFoundException: C:\QC_Regression\.metadata\.plugins\org.eclipse.m
 2020-01-09 19:00:30,745 [Worker-316] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\QC_Regression\QC_PDL\src\main\resources
 2020-01-09 19:00:30,747 [Worker-316] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2020-01-09 19:00:30,748 [Worker-316] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\QC_Regression\QC_PDL\src\test\resources
+<<<<<<< HEAD
 2020-01-09 19:08:20,785 [Worker-4] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Error changing index details workspace://
 java.io.FileNotFoundException: C:\QC_Regression\.metadata\.plugins\org.eclipse.m2e.core\nexus\830bc118332e77292949ed1e6d2fabe0\_6.cfs (The system cannot find the file specified)
 	at java.io.RandomAccessFile.open0(Native Method) ~[na:1.8.0_171]
@@ -2464,3 +2465,4 @@ Caused by: java.io.FileNotFoundException: C:\QC_Regression\.metadata\.plugins\or
 2020-01-09 19:43:58,996 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\QC_Regression\QC_PDL\src\main\resources
 2020-01-09 19:43:58,996 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2020-01-09 19:43:58,996 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\QC_Regression\QC_PDL\src\test\resources
+
