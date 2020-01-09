@@ -53,7 +53,7 @@ public class QCStore {
 	public static String ESign_CollateralType;
 	public static String NextDueDate;
 
-//TestSmatha1.0
+
 
 	@Test(priority=1, groups = "Brahmith")
 	public static void QC_NewLoan_Promotion_Txn() throws Exception {
