@@ -2166,3 +2166,7 @@ java.io.FileNotFoundException: C:\QC_Regression\.metadata\.plugins\org.eclipse.m
 2020-01-09 19:33:48,360 [Worker-329] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\QC_Regression\QC_PDL\src\main\resources
 2020-01-09 19:33:48,362 [Worker-329] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2020-01-09 19:33:48,363 [Worker-329] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\QC_Regression\QC_PDL\src\test\resources
+2020-01-09 19:55:59,681 [Worker-328] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-09 19:55:59,682 [Worker-328] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\QC_Regression\QC_PDL\src\main\resources
+2020-01-09 19:55:59,683 [Worker-328] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-09 19:55:59,684 [Worker-328] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\QC_Regression\QC_PDL\src\test\resources
