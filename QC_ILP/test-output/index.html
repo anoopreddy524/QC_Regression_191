@@ -128,15 +128,13 @@
                   <a name="QC_NewLoan_Promotion_Txn">
                   </a> <!-- QC_NewLoan_Promotion_Txn -->
                   <span class="method-name">QC_NewLoan_Promotion_Txn</span>
-                  <div class="stack-trace">org.openqa.selenium.InvalidSelectorException: The xpath expression &apos;/html/body/form/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[2]/td[2]/table/tbody/tr[2]/td/table/tbody/tr[1]/td/table/tbody/tr[2]/td[1]/input&apos; cannot be evaluated or does notresult in a WebElement (WARNING: The server did not provide any stacktrace information)
+                  <div class="stack-trace">org.openqa.selenium.NoSuchWindowException: Unable to get browser (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html
 Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
-System info: host: &apos;QTLSYS0-224&apos;, ip: &apos;192.168.0.224&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_181&apos;
+System info: host: &apos;QTLSYS0-223&apos;, ip: &apos;192.168.0.223&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_171&apos;
 Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {browserAttachTimeout: 0, browserName: internet explorer, cssSelectorsEnabled: true, elementScrollBehavior: 0, enableElementCacheCleanup: true, enablePersistentHover: true, handlesAlerts: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.forceCreateProcessApi: false, ie.usePerProcessProxy: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:45756/, javascriptEnabled: true, nativeEvents: true, platform: WINDOWS, platformName: WINDOWS, requireWindowFocus: false, takesScreenshot: true, unexpectedAlertBehaviour: dismiss, unhandledPromptBehavior: dismiss, version: 11}
-Session ID: 0bac5f32-38e2-4d20-a1a6-c43c8304d765
-*** Element info: {Using=xpath, value=/html/body/form/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[2]/td[2]/table/tbody/tr[2]/td/table/tbody/tr[1]/td/table/tbody/tr[2]/td[1]/input}
+Capabilities {browserAttachTimeout: 0, browserName: internet explorer, cssSelectorsEnabled: true, elementScrollBehavior: 0, enableElementCacheCleanup: true, enablePersistentHover: true, handlesAlerts: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.forceCreateProcessApi: false, ie.usePerProcessProxy: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:36105/, javascriptEnabled: true, nativeEvents: true, platform: WINDOWS, platformName: WINDOWS, requireWindowFocus: false, takesScreenshot: true, unexpectedAlertBehaviour: dismiss, unhandledPromptBehavior: dismiss, version: 11}
+Session ID: a2f9b922-3900-4bba-9c52-37af8235d1de
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
 	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
@@ -145,13 +143,9 @@ Session ID: 0bac5f32-38e2-4d20-a1a6-c43c8304d765
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
-	at tests.QCCSRNewLoan.ILP(QCCSRNewLoan.java:370)
-	at tests.QCCSRNewLoan.newLoan(QCCSRNewLoan.java:233)
-	at tests.QCStore.QC_NewLoan_Promotion_Txn(QCStore.java:863)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.defaultContent(RemoteWebDriver.java:918)
+	at tests.QCBorrowerRegistration.borrowerRegistration(QCBorrowerRegistration.java:152)
+	at tests.QCStore.QC_NewLoan_Promotion_Txn(QCStore.java:860)
 ... Removed 29 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
@@ -227,12 +221,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'QC_NewLoan_Promotion_Txn')
 data.setCell(0, 2, 'tests.QCStore')
-data.setCell(0, 3, 190334);
+data.setCell(0, 3, 17620);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 minutes</span>
+              <span class="suite-total-time">Total running time: 17 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -257,9 +251,9 @@ return data;
                 <br/>
                 <span class="ignored-method-name">ILP_Redeposit</span>
                 <br/>
-                <span class="ignored-method-name">QC_AgeStore_Void_Txn</span>
-                <br/>
                 <span class="ignored-method-name">ILP_RefinanceStepDown</span>
+                <br/>
+                <span class="ignored-method-name">QC_AgeStore_Void_Txn</span>
                 <br/>
                 <span class="ignored-method-name">ILP_ProcessClear</span>
                 <br/>
@@ -330,23 +324,23 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">killProcess</span>
-                <span class="method-start">80 ms</span>
+                <span class="method-start">91 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">QC_NewLoan_Promotion_Txn</span>
-                <span class="method-start">2106 ms</span>
+                <span class="method-start">2105 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">endReport</span>
-                <span class="method-start">192444 ms</span>
+                <span class="method-start">19727 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method after">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">getResult([TestResult name=QC_NewLoan_Promotion_Txn status=FAILURE method=QCStore.QC_NewLoan_Promotion_Txn()[p...)</span>
-                <span class="method-start">192444 ms</span>
+                <span class="method-start">19727 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
