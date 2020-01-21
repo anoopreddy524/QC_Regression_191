@@ -163,3 +163,7 @@
 *.xml
 .metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
 *.*.meta
+*.log
+.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources
+.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources
+.metadata/.plugins/org.eclipse.m2e.logback.configuration/0.log

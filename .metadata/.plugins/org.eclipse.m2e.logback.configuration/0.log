@@ -2629,3 +2629,7 @@ Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Could not find
 2020-01-21 10:35:05,826 [Worker-340] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\QC_Regression\QC_ILP\src\main\resources
 2020-01-21 10:35:05,826 [Worker-340] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2020-01-21 10:35:05,826 [Worker-340] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\QC_Regression\QC_ILP\src\test\resources
+2020-01-21 11:11:53,857 [Worker-363] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-21 11:11:53,858 [Worker-363] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\QC_Regression\QC_ILP\src\main\resources
+2020-01-21 11:11:53,859 [Worker-363] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-21 11:11:53,859 [Worker-363] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\QC_Regression\QC_ILP\src\test\resources
