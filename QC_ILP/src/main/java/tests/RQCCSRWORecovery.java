@@ -11,6 +11,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoAlertPresentException;
 
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -21,7 +22,7 @@ import com.relevantcodes.extentreports.LogStatus;
 public class RQCCSRWORecovery extends QCStore {
 	
 	
-	public static void simplewriteoff_recovery(String SSN, String AppURL) {
+	public static void simplewriteoff_recovery(String SSN, String AppURL) throws Exception{
 		
 			try {
 				
@@ -78,6 +79,7 @@ public class RQCCSRWORecovery extends QCStore {
 						test.log(LogStatus.PASS, "SSN3 is entered: " + SSN3);
 						driver.findElement(By.name("submit1")).click();
 						test.log(LogStatus.PASS, "Click on submit Button");
+						Thread.sleep(4000);
 						for (String winHandle : driver.getWindowHandles()) {
 							driver.switchTo().window(winHandle);
 						}
@@ -93,10 +95,10 @@ public class RQCCSRWORecovery extends QCStore {
 						    driver.switchTo().window(winHandle);
 						    
 							
-						    //loan_number= driver.findElement(locator(Rprop.getProperty("csr_loan_nbr"))).getText();
+						    //loan_number= driver.findElement(locator(prop.getProperty("csr_loan_nbr"))).getText();
 						    loan_number=driver.findElement(By.xpath("//*[@id='all']/div[1]/table[1]/tbody/tr[3]/td[2]")).getText();
 							test.log(LogStatus.PASS, "Loan Number is" + loan_number);
-						    //NextDueDate= driver.findElement(locator(Rprop.getProperty("csr_due_date"))).getText();
+						    //NextDueDate= driver.findElement(locator(prop.getProperty("csr_due_date"))).getText();
 							NextDueDate=driver.findElement(By.xpath("//*[@id='all']/div[1]/table[1]/tbody/tr[3]/td[5]")).getText();
 					        test.log(LogStatus.PASS, "Next due date is "+NextDueDate);
 					        driver.close();
@@ -117,7 +119,7 @@ public class RQCCSRWORecovery extends QCStore {
 		
 						wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li[id='900000']")));
 						Thread.sleep(5000);
-						driver.findElement(locator(Rprop.getProperty("borrower_tab"))).click();
+						driver.findElement(locator(prop.getProperty("borrower_tab"))).click();
 						Thread.sleep(2000);
 
 						test.log(LogStatus.PASS, "Clicked on Borrower");
@@ -126,7 +128,7 @@ public class RQCCSRWORecovery extends QCStore {
 						driver.switchTo().frame("mainFrame");
 						
 						//wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("li[id='940010']")));
-						//driver.findElement(locator(Rprop.getProperty("collections_link"))).click();
+						//driver.findElement(locator(prop.getProperty("collections_link"))).click();
                          wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='940010']/a")));
                          driver.findElement(By.xpath("//*[@id='940010']/a")).click();
                          test.log(LogStatus.PASS, "Clicked on Courtesy Call Link");
@@ -196,7 +198,7 @@ public class RQCCSRWORecovery extends QCStore {
 							// driver.switchTo().frame("topFrame");
 							wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li[id='900000']")));
 
-							driver.findElement(locator(Rprop.getProperty("borrower_tab"))).click();
+							driver.findElement(locator(prop.getProperty("borrower_tab"))).click();
 							Thread.sleep(2000);
 
 							test.log(LogStatus.PASS, "Clicked on Borrower");
@@ -204,7 +206,7 @@ public class RQCCSRWORecovery extends QCStore {
 							driver.switchTo().defaultContent();
 							driver.switchTo().frame("mainFrame");
 							wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("li[id='903000']")));
-							driver.findElement(locator(Rprop.getProperty("collections_link"))).click();
+							driver.findElement(locator(prop.getProperty("collections_link"))).click();
 
 							test.log(LogStatus.PASS, "Clicked on Collection");
 							//Thread.sleep(5000);
@@ -216,13 +218,13 @@ public class RQCCSRWORecovery extends QCStore {
 						Thread.sleep(500);
 						driver.findElement(By.name("requestBean.installmentType")).sendKeys(ProductType);
 						test.log(LogStatus.PASS, "Product Type Selected as :" + ProductType);
-						Thread.sleep(1000);
+						Thread.sleep(8000);
 						driver.findElement(By.xpath("//*[@id='queueTable']/tbody/tr[22]/td[1]/input")).click();
 						test.log(LogStatus.PASS, "Clicked on Customer search radiobutton");
-						Thread.sleep(1000);
+						Thread.sleep(8000);
 						driver.findElement(By.xpath("//*[@id='ach12']/option[6]")).click();
 						test.log(LogStatus.PASS, "Loan Nbr selected from List");
-						Thread.sleep(2000);
+						Thread.sleep(5000);
 						driver.findElement(By.name("requestBean.loanNo")).sendKeys(loan_number);
 						test.log(LogStatus.PASS, "Loan Nbr entered is :" + loan_number);
 						Thread.sleep(1000);
@@ -275,7 +277,13 @@ public class RQCCSRWORecovery extends QCStore {
 									catch (Exception e) {
 										// TODO Auto-generated catch block
 										e.printStackTrace();
+										test.log(LogStatus.INFO,"Exception occured "+e.toString().substring(0, 250));
+										String screenshotPath = getScreenhot(driver, "RQC_WriteOffRecovery_Txn");
+										test.log(LogStatus.INFO, test.addScreenCapture(screenshotPath));
 										test.log(LogStatus.FAIL,"Writeoff failed");
+										Thread.sleep(1000);
+										driver.close();
+										Thread.sleep(3000);
 
 									}
 

@@ -178,30 +178,30 @@ public class RQCCSRNewLoan extends QCStore {
 						test.log(LogStatus.INFO, "New Loan initiation has started");
 
 						driver.switchTo().frame("topFrame");
-						driver.findElement(locator(Rprop.getProperty("transactions_tab"))).click();
+						driver.findElement(locator(prop.getProperty("transactions_tab"))).click();
 						test.log(LogStatus.PASS, "Clicked on Loan Transactions");
 
 						driver.switchTo().defaultContent();
 						driver.switchTo().frame("mainFrame");
 
-						driver.findElement(locator(Rprop.getProperty("csr_new_loan_link"))).click();
+						driver.findElement(locator(prop.getProperty("csr_new_loan_link"))).click();
 						test.log(LogStatus.PASS, "Clicked on New Loan");
 						driver.switchTo().frame("main");
 						Thread.sleep(4000);
 						driver.findElement(By.name("ssn1")).sendKeys(SSN1);
 						test.log(LogStatus.PASS, "SSN1 is entered: " + SSN1);
-						driver.findElement(locator(Rprop.getProperty("CSR_SSN_second_field"))).sendKeys(SSN2);
+						driver.findElement(locator(prop.getProperty("CSR_SSN_second_field"))).sendKeys(SSN2);
 						test.log(LogStatus.PASS, "SSN2 is entered: " + SSN2);
-						driver.findElement(locator(Rprop.getProperty("CSR_SSN_third_field"))).sendKeys(SSN3);
+						driver.findElement(locator(prop.getProperty("CSR_SSN_third_field"))).sendKeys(SSN3);
 						test.log(LogStatus.PASS, "SSN3 is entered: " + SSN3);
-						driver.findElement(locator(Rprop.getProperty("csr_new_loan_submit_button"))).click();
+						driver.findElement(locator(prop.getProperty("csr_new_loan_submit_button"))).click();
 						test.log(LogStatus.PASS, "Clicked on submit Button");
 						for (String winHandle : driver.getWindowHandles()) {
 							driver.switchTo().window(winHandle);
 							driver.switchTo().defaultContent();
 							driver.switchTo().frame("mainFrame");
 							driver.switchTo().frame("main");
-							driver.findElement(locator(Rprop.getProperty("csr_new_loan_go_button"))).click();
+							driver.findElement(locator(prop.getProperty("csr_new_loan_go_button"))).click();
 							test.log(LogStatus.PASS, "Clicked on GO Button");
 
 							for (String winHandle1 : driver.getWindowHandles()) {
@@ -279,7 +279,7 @@ public class RQCCSRNewLoan extends QCStore {
 			{
 				if(NewLoan_Term.equals("Term1"))
 				{
-					driver.findElement(By.xpath("//*[@id='riskViewBdy']/table[3]/tbody/tr[1]/td/table/tbody/tr[3]/td/table/tbody/tr["+i+"]/td[5]/table/tbody/tr/td[2]/table[1]/tbody/tr[1]/td/b/input")).click();
+					driver.findElement(By.xpath("//*[@id='riskViewBdy']/table[3]/tbody/tr[1]/td/table/tbody/tr[3]/td/table/tbody/tr["+i+"]/td[5]/table/tbody/tr/td[2]/table[1]/tbody/tr[1]/td/b/input")).click();										
 					test.log(LogStatus.PASS, "Selected check box as "+NewLoan_Term);
 				}
 				else if(NewLoan_Term.equals("Term2"))
@@ -318,7 +318,9 @@ public class RQCCSRNewLoan extends QCStore {
 
 					driver.findElement(By.name("requestBean.siilBean.courtesyCallFlag")).sendKeys(ESign_CourtesyCallConsent);
 					test.log(LogStatus.PASS, "Courtesy Call Consent is selected as "+ESign_CourtesyCallConsent);
+					Thread.sleep(8000);
 					if(ESign_CourtesyCallConsent.equals("Yes"))
+						Thread.sleep(500);
 					{
 						if(ESign_Preference.equals("Call"))
 						{
@@ -352,7 +354,7 @@ public class RQCCSRNewLoan extends QCStore {
 
 						String main_window = driver.getWindowHandle();
 
-						driver.findElement(locator(Rprop.getProperty("csr_new_loan_promotions_btn"))).sendKeys(Keys.ENTER);
+						driver.findElement(locator(prop.getProperty("csr_new_loan_promotions_btn"))).sendKeys(Keys.ENTER);
 
 						test.log(LogStatus.PASS, "Promotion button is clicked ");
 
@@ -369,11 +371,11 @@ public class RQCCSRNewLoan extends QCStore {
 
 								Thread.sleep(5000);
 
-								driver.findElement(locator(Rprop.getProperty("csr_new_loan_promotion_radio_btn"))).click();
+								driver.findElement(locator(prop.getProperty("csr_new_loan_promotion_radio_btn"))).click();
 
 								test.log(LogStatus.PASS, "Promotion radio button is selected ");
 
-								driver.findElement(locator(Rprop.getProperty("csr_new_loan_promo_ok_btn"))).click();
+								driver.findElement(locator(prop.getProperty("csr_new_loan_promo_ok_btn"))).click();
 
 								test.log(LogStatus.PASS, "OK button is clicked ");
 
@@ -450,7 +452,7 @@ public class RQCCSRNewLoan extends QCStore {
 
 						String main_window = driver.getWindowHandle();
 
-						driver.findElement(locator(Rprop.getProperty("csr_new_loan_promotions_btn"))).sendKeys(Keys.ENTER);
+						driver.findElement(locator(prop.getProperty("csr_new_loan_promotions_btn"))).sendKeys(Keys.ENTER);
 
 						test.log(LogStatus.PASS, "Promotion button is clicked ");
 
@@ -467,11 +469,11 @@ public class RQCCSRNewLoan extends QCStore {
 
 								Thread.sleep(5000);
 
-								driver.findElement(locator(Rprop.getProperty("csr_new_loan_promotion_radio_btn"))).click();
+								driver.findElement(locator(prop.getProperty("csr_new_loan_promotion_radio_btn"))).click();
 
 								test.log(LogStatus.PASS, "Promotion radio button is selected ");
 
-								driver.findElement(locator(Rprop.getProperty("csr_new_loan_promo_ok_btn"))).click();
+								driver.findElement(locator(prop.getProperty("csr_new_loan_promo_ok_btn"))).click();
 
 								test.log(LogStatus.PASS, "OK button is clicked ");
 
@@ -621,7 +623,7 @@ public class RQCCSRNewLoan extends QCStore {
 
 						String main_window = driver.getWindowHandle();
 
-						driver.findElement(locator(Rprop.getProperty("csr_new_loan_promotions_btn"))).sendKeys(Keys.ENTER);
+						driver.findElement(locator(prop.getProperty("csr_new_loan_promotions_btn"))).sendKeys(Keys.ENTER);
 
 						test.log(LogStatus.PASS, "Promotion button is clicked ");
 
@@ -638,11 +640,11 @@ public class RQCCSRNewLoan extends QCStore {
 
 								Thread.sleep(5000);
 
-								driver.findElement(locator(Rprop.getProperty("csr_new_loan_promotion_radio_btn"))).click();
+								driver.findElement(locator(prop.getProperty("csr_new_loan_promotion_radio_btn"))).click();
 
 								test.log(LogStatus.PASS, "Promotion radio button is selected ");
 
-								driver.findElement(locator(Rprop.getProperty("csr_new_loan_promo_ok_btn"))).click();
+								driver.findElement(locator(prop.getProperty("csr_new_loan_promo_ok_btn"))).click();
 
 								test.log(LogStatus.PASS, "OK button is clicked ");
 
@@ -745,7 +747,7 @@ public class RQCCSRNewLoan extends QCStore {
 
 						String main_window = driver.getWindowHandle();
 
-						driver.findElement(locator(Rprop.getProperty("csr_new_loan_promotions_btn"))).sendKeys(Keys.ENTER);
+						driver.findElement(locator(prop.getProperty("csr_new_loan_promotions_btn"))).sendKeys(Keys.ENTER);
 
 						test.log(LogStatus.PASS, "Promotion button is clicked ");
 
@@ -761,11 +763,11 @@ public class RQCCSRNewLoan extends QCStore {
 
 								Thread.sleep(5000);
 
-								driver.findElement(locator(Rprop.getProperty("csr_new_loan_promotion_radio_btn"))).click();
+								driver.findElement(locator(prop.getProperty("csr_new_loan_promotion_radio_btn"))).click();
 
 								test.log(LogStatus.PASS, "Promotion radio button is selected ");
 
-								driver.findElement(locator(Rprop.getProperty("csr_new_loan_promo_ok_btn"))).click();
+								driver.findElement(locator(prop.getProperty("csr_new_loan_promo_ok_btn"))).click();
 
 								test.log(LogStatus.PASS, "OK button is clicked ");
 
@@ -875,7 +877,7 @@ public class RQCCSRNewLoan extends QCStore {
 
 						String main_window = driver.getWindowHandle();
 
-						driver.findElement(locator(Rprop.getProperty("csr_new_loan_promotions_btn"))).sendKeys(Keys.ENTER);
+						driver.findElement(locator(prop.getProperty("csr_new_loan_promotions_btn"))).sendKeys(Keys.ENTER);
 
 						test.log(LogStatus.PASS, "Promotion button is clicked ");
 
@@ -891,11 +893,11 @@ public class RQCCSRNewLoan extends QCStore {
 
 								Thread.sleep(5000);
 
-								driver.findElement(locator(Rprop.getProperty("csr_new_loan_promotion_radio_btn"))).click();
+								driver.findElement(locator(prop.getProperty("csr_new_loan_promotion_radio_btn"))).click();
 
 								test.log(LogStatus.PASS, "Promotion radio button is selected ");
 
-								driver.findElement(locator(Rprop.getProperty("csr_new_loan_promo_ok_btn"))).click();
+								driver.findElement(locator(prop.getProperty("csr_new_loan_promo_ok_btn"))).click();
 
 								test.log(LogStatus.PASS, "OK button is clicked ");
 
@@ -1012,6 +1014,7 @@ public class RQCCSRNewLoan extends QCStore {
 				Thread.sleep(5000);
 				driver.findElement(By.name("ok")).click();
 				test.log(LogStatus.PASS, "New Loan is Completed Successfully ");
+				test.log(LogStatus.PASS, "<FONT color=green style=Arial> New Loan Completed Successfully ");
 				test.log(LogStatus.INFO, "**********************************************************************************");
 				//driver.findElement(By.name("ok")).click();
 			}
@@ -1106,7 +1109,7 @@ public class RQCCSRNewLoan extends QCStore {
 			{
 
 				String main_window = driver.getWindowHandle();
-				driver.findElement(locator(Rprop.getProperty("csr_new_loan_promotions_btn"))).sendKeys(Keys.ENTER);
+				driver.findElement(locator(prop.getProperty("csr_new_loan_promotions_btn"))).sendKeys(Keys.ENTER);
 				test.log(LogStatus.PASS, "Promotion button is clicked ");
 				Thread.sleep(10000);
 
@@ -1115,9 +1118,9 @@ public class RQCCSRNewLoan extends QCStore {
 						Thread.sleep(5000);
 						driver.switchTo().window(winHandle1);
 						Thread.sleep(5000);
-						driver.findElement(locator(Rprop.getProperty("csr_new_loan_promotion_radio_btn"))).click();
+						driver.findElement(locator(prop.getProperty("csr_new_loan_promotion_radio_btn"))).click();
 						test.log(LogStatus.PASS, "Promotion radio button is selected ");
-						driver.findElement(locator(Rprop.getProperty("csr_new_loan_promo_ok_btn"))).click();
+						driver.findElement(locator(prop.getProperty("csr_new_loan_promo_ok_btn"))).click();
 						test.log(LogStatus.PASS, "OK button is clicked ");
 
 						driver.switchTo().window(main_window);
@@ -1206,7 +1209,7 @@ public class RQCCSRNewLoan extends QCStore {
 				{
 
 					String main_window = driver.getWindowHandle();
-					driver.findElement(locator(Rprop.getProperty("csr_new_loan_promotions_btn"))).sendKeys(Keys.ENTER);
+					driver.findElement(locator(prop.getProperty("csr_new_loan_promotions_btn"))).sendKeys(Keys.ENTER);
 					test.log(LogStatus.PASS, "Promotion button is clicked ");
 					Thread.sleep(10000);
 
@@ -1215,9 +1218,9 @@ public class RQCCSRNewLoan extends QCStore {
 							Thread.sleep(5000);
 							driver.switchTo().window(winHandle1);
 							Thread.sleep(5000);
-							driver.findElement(locator(Rprop.getProperty("csr_new_loan_promotion_radio_btn"))).click();
+							driver.findElement(locator(prop.getProperty("csr_new_loan_promotion_radio_btn"))).click();
 							test.log(LogStatus.PASS, "Promotion radio button is selected ");
-							driver.findElement(locator(Rprop.getProperty("csr_new_loan_promo_ok_btn"))).click();
+							driver.findElement(locator(prop.getProperty("csr_new_loan_promo_ok_btn"))).click();
 							test.log(LogStatus.PASS, "OK button is clicked ");
 
 							driver.switchTo().window(main_window);
@@ -1402,7 +1405,7 @@ public class RQCCSRNewLoan extends QCStore {
 
 			{
 				String main_window = driver.getWindowHandle();
-				driver.findElement(locator(Rprop.getProperty("csr_new_loan_promotions_btn"))).sendKeys(Keys.ENTER);
+				driver.findElement(locator(prop.getProperty("csr_new_loan_promotions_btn"))).sendKeys(Keys.ENTER);
 				test.log(LogStatus.PASS, "Promotion button is clicked ");
 				Thread.sleep(10000);
 
@@ -1411,9 +1414,9 @@ public class RQCCSRNewLoan extends QCStore {
 						Thread.sleep(5000);
 						driver.switchTo().window(winHandle1);
 						Thread.sleep(5000);
-						driver.findElement(locator(Rprop.getProperty("csr_new_loan_promotion_radio_btn"))).click();
+						driver.findElement(locator(prop.getProperty("csr_new_loan_promotion_radio_btn"))).click();
 						test.log(LogStatus.PASS, "Promotion radio button is selected ");
-						driver.findElement(locator(Rprop.getProperty("csr_new_loan_promo_ok_btn"))).click();
+						driver.findElement(locator(prop.getProperty("csr_new_loan_promo_ok_btn"))).click();
 						test.log(LogStatus.PASS, "OK button is clicked ");
 
 						driver.switchTo().window(main_window);
@@ -1541,7 +1544,7 @@ public class RQCCSRNewLoan extends QCStore {
 			{
 
 				String main_window = driver.getWindowHandle();
-				driver.findElement(locator(Rprop.getProperty("csr_new_loan_promotions_btn"))).sendKeys(Keys.ENTER);
+				driver.findElement(locator(prop.getProperty("csr_new_loan_promotions_btn"))).sendKeys(Keys.ENTER);
 				test.log(LogStatus.PASS, "Promotion button is clicked ");
 				Thread.sleep(10000);
 
@@ -1550,9 +1553,9 @@ public class RQCCSRNewLoan extends QCStore {
 						Thread.sleep(5000);
 						driver.switchTo().window(winHandle1);
 						Thread.sleep(5000);
-						driver.findElement(locator(Rprop.getProperty("csr_new_loan_promotion_radio_btn"))).click();
+						driver.findElement(locator(prop.getProperty("csr_new_loan_promotion_radio_btn"))).click();
 						test.log(LogStatus.PASS, "Promotion radio button is selected ");
-						driver.findElement(locator(Rprop.getProperty("csr_new_loan_promo_ok_btn"))).click();
+						driver.findElement(locator(prop.getProperty("csr_new_loan_promo_ok_btn"))).click();
 						test.log(LogStatus.PASS, "OK button is clicked ");
 
 						driver.switchTo().window(main_window);
@@ -1693,7 +1696,7 @@ public class RQCCSRNewLoan extends QCStore {
 			{
 
 				String main_window = driver.getWindowHandle();
-				driver.findElement(locator(Rprop.getProperty("csr_new_loan_promotions_btn"))).sendKeys(Keys.ENTER);
+				driver.findElement(locator(prop.getProperty("csr_new_loan_promotions_btn"))).sendKeys(Keys.ENTER);
 				test.log(LogStatus.PASS, "Promotion button is clicked ");
 				Thread.sleep(10000);
 
@@ -1702,9 +1705,9 @@ public class RQCCSRNewLoan extends QCStore {
 						Thread.sleep(5000);
 						driver.switchTo().window(winHandle1);
 						Thread.sleep(5000);
-						driver.findElement(locator(Rprop.getProperty("csr_new_loan_promotion_radio_btn"))).click();
+						driver.findElement(locator(prop.getProperty("csr_new_loan_promotion_radio_btn"))).click();
 						test.log(LogStatus.PASS, "Promotion radio button is selected ");
-						driver.findElement(locator(Rprop.getProperty("csr_new_loan_promo_ok_btn"))).click();
+						driver.findElement(locator(prop.getProperty("csr_new_loan_promo_ok_btn"))).click();
 						test.log(LogStatus.PASS, "OK button is clicked ");
 
 						driver.switchTo().window(main_window);

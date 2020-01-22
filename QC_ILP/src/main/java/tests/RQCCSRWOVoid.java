@@ -77,6 +77,7 @@ public class RQCCSRWOVoid extends QCStore {
 					test.log(LogStatus.PASS, "SSN3 is entered: " + SSN3);
 					driver.findElement(By.name("submit1")).click();
 					test.log(LogStatus.PASS, "Click on submit Button");
+					Thread.sleep(4000);
 					for (String winHandle : driver.getWindowHandles()) {
 						driver.switchTo().window(winHandle);
 					}
@@ -87,7 +88,7 @@ public class RQCCSRWOVoid extends QCStore {
 					Thread.sleep(4000);
 					driver.findElement(By.xpath("//input[@value='Go' and @type='button']")).click();
 					test.log(LogStatus.PASS, "Clicked on Go button under search results");
-				
+					Thread.sleep(4000);
 
 					for (String winHandle : driver.getWindowHandles()) {
 						driver.switchTo().window(winHandle);
@@ -107,7 +108,8 @@ public class RQCCSRWOVoid extends QCStore {
 						
 						driver.findElement(By.xpath("//input[@value='Go' and @type='button']")).click();
 						test.log(LogStatus.PASS, "Clicked on Go button under Loans section");
-					}
+						Thread.sleep(4000);
+                    }
                     
 					if (ProductID.equals("TLP")) {
 						driver.findElement(By
@@ -131,7 +133,7 @@ public class RQCCSRWOVoid extends QCStore {
 					Thread.sleep(500);
 					driver.findElement(By.xpath("//*[@id='go_Button']")).click();
 					test.log(LogStatus.PASS, "Clicked on Go button");
-					Thread.sleep(500);
+					Thread.sleep(10000);
 					driver.findElement(By.name("transactionDataBean.disbursementType")).sendKeys(DisbType);
 					test.log(LogStatus.PASS, "Tender Type is :" + DisbType);
 					Thread.sleep(500);

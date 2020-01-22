@@ -99,7 +99,7 @@ public class JQCDepositMenu extends QCStore{
 								 test.log(LogStatus.PASS, "Clicked on ACH Menu");
 								 driver.findElement(locator(prop.getProperty("deposit_ach_ilp"))).click();
 								 test.log(LogStatus.PASS, "Clicked on Installment Loan");
-							 Thread.sleep(2000);
+							 Thread.sleep(5000);
 							 driver.findElement(locator(prop.getProperty("deposit_ilp_ach_deposit"))).click();
 							 test.log(LogStatus.PASS, "Clicked on ACH deposit");
 							 Thread.sleep(2000);
@@ -136,7 +136,7 @@ public class JQCDepositMenu extends QCStore{
 								 Thread.sleep(3000);
 								 driver.findElement(locator(prop.getProperty("deposit_ilp_deposit"))).click();
 								 test.log(LogStatus.PASS, " click on deposite menu");
-								 Thread.sleep(2000);
+								 Thread.sleep(5000);
 								 driver.switchTo().defaultContent();
 								 driver.switchTo().frame("mainFrame");
 								 driver.switchTo().frame("main");
@@ -173,7 +173,7 @@ public class JQCDepositMenu extends QCStore{
 								 WebElement pdl=driver.findElement(locator(prop.getProperty("DC_ilp")));
 								 action.moveToElement(pdl).build().perform();
 								 test.log(LogStatus.PASS, " Mouse hover on Installment loan menu");
-								 Thread.sleep(3000);
+								 Thread.sleep(5000);
 								 driver.findElement(locator(prop.getProperty("DC_ilp_deposite"))).click();
 								 test.log(LogStatus.PASS, " click on deposit menu");
 								 Thread.sleep(2000);

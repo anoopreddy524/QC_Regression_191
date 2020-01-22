@@ -102,7 +102,7 @@
                     <div class="method-list-content failed suite-Suite">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="tests.QCStore" hash-for-method="QC_NewLoan_Promotion_Txn">QC_NewLoan_Promotion_Txn</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="tests.QCStore" hash-for-method="RQC_Bankruptcy_WORecovery_Txn_Testdata">RQC_Bankruptcy_WORecovery_Txn_Testdata</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Suite -->
@@ -125,27 +125,28 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="QC_NewLoan_Promotion_Txn">
-                  </a> <!-- QC_NewLoan_Promotion_Txn -->
-                  <span class="method-name">QC_NewLoan_Promotion_Txn</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchWindowException: Unable to get browser (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
+                  <a name="RQC_Bankruptcy_WORecovery_Txn_Testdata">
+                  </a> <!-- RQC_Bankruptcy_WORecovery_Txn_Testdata -->
+                  <span class="method-name">RQC_Bankruptcy_WORecovery_Txn_Testdata</span>
+                  <div class="stack-trace">org.openqa.selenium.UnhandledAlertException: Modal dialog present: SSN already exist.
 Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
-System info: host: &apos;QTLSYS0-223&apos;, ip: &apos;192.168.0.223&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_171&apos;
+System info: host: &apos;QTLSYS0-224&apos;, ip: &apos;192.168.0.224&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_181&apos;
 Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {browserAttachTimeout: 0, browserName: internet explorer, cssSelectorsEnabled: true, elementScrollBehavior: 0, enableElementCacheCleanup: true, enablePersistentHover: true, handlesAlerts: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.forceCreateProcessApi: false, ie.usePerProcessProxy: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:36105/, javascriptEnabled: true, nativeEvents: true, platform: WINDOWS, platformName: WINDOWS, requireWindowFocus: false, takesScreenshot: true, unexpectedAlertBehaviour: dismiss, unhandledPromptBehavior: dismiss, version: 11}
-Session ID: a2f9b922-3900-4bba-9c52-37af8235d1de
+Capabilities {browserAttachTimeout: 0, browserName: internet explorer, cssSelectorsEnabled: true, elementScrollBehavior: 0, enableElementCacheCleanup: true, enablePersistentHover: true, handlesAlerts: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.forceCreateProcessApi: false, ie.usePerProcessProxy: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:16993/, javascriptEnabled: true, nativeEvents: true, platform: WINDOWS, platformName: WINDOWS, requireWindowFocus: false, takesScreenshot: true, unexpectedAlertBehaviour: dismiss, unhandledPromptBehavior: dismiss, version: 11}
+Session ID: edc957b9-a586-4a98-9d73-320ac420c2c6
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.ErrorHandler.createUnhandledAlertException(ErrorHandler.java:195)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
 	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
 	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
 	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.defaultContent(RemoteWebDriver.java:918)
-	at tests.QCBorrowerRegistration.borrowerRegistration(QCBorrowerRegistration.java:152)
-	at tests.QCStore.QC_NewLoan_Promotion_Txn(QCStore.java:860)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:276)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:100)
+	at tests.RQCBorrowerRegistration.borrowerRegistration(RQCBorrowerRegistration.java:171)
+	at tests.QCStore.RQC_Bankruptcy_WORecovery_Txn_Testdata(QCStore.java:2155)
 ... Removed 29 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
@@ -165,7 +166,7 @@ Session ID: a2f9b922-3900-4bba-9c52-37af8235d1de
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;groups&gt;
       &lt;run&gt;
-        &lt;include name=&quot;Brahmith1&quot;/&gt;
+        &lt;include name=&quot;Ratikanta_ILP1&quot;/&gt;
       &lt;/run&gt;
     &lt;/groups&gt;
     &lt;classes&gt;
@@ -194,10 +195,10 @@ Session ID: a2f9b922-3900-4bba-9c52-37af8235d1de
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="test-group">
-              <span class="test-group-name">Brahmith1</span>
+              <span class="test-group-name">Ratikanta_ILP1</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">QC_NewLoan_Promotion_Txn</span>
+                <span class="method-in-group-name">RQC_Bankruptcy_WORecovery_Txn_Testdata</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -219,14 +220,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'QC_NewLoan_Promotion_Txn')
+data.setCell(0, 1, 'RQC_Bankruptcy_WORecovery_Txn_Testdata')
 data.setCell(0, 2, 'tests.QCStore')
-data.setCell(0, 3, 17620);
+data.setCell(0, 3, 29920);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 17 seconds</span>
+              <span class="suite-total-time">Total running time: 29 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -241,13 +242,51 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">30 ignored methods</span>
+            <span class="header-content">50 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
               <span class="ignored-class-name">tests.QCStore</span>
               <div class="ignored-methods-div">
                 <span class="ignored-method-name">QC_PayAnyotherAmount_Void_Txn</span>
+                <br/>
+                <span class="ignored-method-name">RQC_Bankruptcy_Dismiss_Txn_Testdata</span>
+                <br/>
+                <span class="ignored-method-name">JQC_ILP_GraceDays_Deposit_dropdown_Txn</span>
+                <br/>
+                <span class="ignored-method-name">ILP_RefinanceStepSame</span>
+                <br/>
+                <span class="ignored-method-name">ILP_inactiveNewloan</span>
+                <br/>
+                <span class="ignored-method-name">RQC_WriteOffRecovery_Txn_Testdata</span>
+                <br/>
+                <span class="ignored-method-name">ILP_borrowregNewloan</span>
+                <br/>
+                <span class="ignored-method-name">JQC_ILP_Payment_Refinance_StepUp_Txn</span>
+                <br/>
+                <span class="ignored-method-name">QC_NewLoan_Promotion_Txn</span>
+                <br/>
+                <span class="ignored-method-name">QC_LessInterest_VoidFullPayment_Txn</span>
+                <br/>
+                <span class="ignored-method-name">JQC_ILP_GraceDays_Deposit_Menu_Txn</span>
+                <br/>
+                <span class="ignored-method-name">RQC_Default_TLPConversion_Txn_Testdata</span>
+                <br/>
+                <span class="ignored-method-name">RQC_Bankruptcy_Discharge_Txn_Testdata</span>
+                <br/>
+                <span class="ignored-method-name">QC_ILP_NewLoanInstallmentDeposit_Txn</span>
+                <br/>
+                <span class="ignored-method-name">QC_Installmentpayment_Void_Txn</span>
+                <br/>
+                <span class="ignored-method-name">RQC_DefaultPayment_Void_Txn_Testdata</span>
+                <br/>
+                <span class="ignored-method-name">QC_InstallPayment_Ref_Rescind_Txn</span>
+                <br/>
+                <span class="ignored-method-name">JQC_ILP_GraceDays_Deposit_MidDay_Txn</span>
+                <br/>
+                <span class="ignored-method-name">QC_NewLoan_TLPConversion_Txn</span>
+                <br/>
+                <span class="ignored-method-name">ILP_RefinanceStepSame_Void</span>
                 <br/>
                 <span class="ignored-method-name">ILP_Redeposit</span>
                 <br/>
@@ -265,19 +304,17 @@ return data;
                 <br/>
                 <span class="ignored-method-name">QC_NewLoan_Void_Txn</span>
                 <br/>
-                <span class="ignored-method-name">ILP_RefinanceStepSame</span>
-                <br/>
-                <span class="ignored-method-name">ILP_inactiveNewloan</span>
-                <br/>
-                <span class="ignored-method-name">ILP_borrowregNewloan</span>
+                <span class="ignored-method-name">RQC_WriteOffRecovery_Void_Txn_Testdata</span>
                 <br/>
                 <span class="ignored-method-name">ILP_RefinanceStepDown_void</span>
+                <br/>
+                <span class="ignored-method-name">JQC_ILP_SignaturLoan_Default_Txn</span>
+                <br/>
+                <span class="ignored-method-name">JQC_ILP_Deposit_MidDay_Txn</span>
                 <br/>
                 <span class="ignored-method-name">QC_Installmentpayment_Txn</span>
                 <br/>
                 <span class="ignored-method-name">ILP_RefinanceStepup</span>
-                <br/>
-                <span class="ignored-method-name">QC_LessInterest_VoidFullPayment_Txn</span>
                 <br/>
                 <span class="ignored-method-name">QC_ILP_Buyback_Void_Txn</span>
                 <br/>
@@ -287,25 +324,29 @@ return data;
                 <br/>
                 <span class="ignored-method-name">QC_ILP_clear_Menu_Txn</span>
                 <br/>
-                <span class="ignored-method-name">QC_ILP_NewLoanInstallmentDeposit_Txn</span>
-                <br/>
-                <span class="ignored-method-name">QC_Installmentpayment_Void_Txn</span>
+                <span class="ignored-method-name">RQC_DefaultPayment_Txn_Testdata</span>
                 <br/>
                 <span class="ignored-method-name">QC_ILP_Return_Menu_Txn</span>
                 <br/>
                 <span class="ignored-method-name">ILP_RefinanceStepUpVoid</span>
                 <br/>
-                <span class="ignored-method-name">QC_InstallPayment_Ref_Rescind_Txn</span>
+                <span class="ignored-method-name">JQC_ILP_Deposit_Menu_Txn</span>
+                <br/>
+                <span class="ignored-method-name">JQC_ILP_Deposit_dropdown_Txn</span>
+                <br/>
+                <span class="ignored-method-name">JQC_ILP_GraceDays_Deposit_EOD_Txn</span>
                 <br/>
                 <span class="ignored-method-name">ILP_agerescindtest</span>
                 <br/>
                 <span class="ignored-method-name">ILP_rescindloan</span>
                 <br/>
-                <span class="ignored-method-name">QC_NewLoan_TLPConversion_Txn</span>
-                <br/>
                 <span class="ignored-method-name">ILP_CheckAutoClear</span>
                 <br/>
-                <span class="ignored-method-name">ILP_RefinanceStepSame_Void</span>
+                <span class="ignored-method-name">JQC_ILP_Deceased_Txn</span>
+                <br/>
+                <span class="ignored-method-name">JQC_ILP_Deposit_EOD_Txn</span>
+                <br/>
+                <span class="ignored-method-name">RQC_Default_Refinance_Txn_Testdata</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -324,23 +365,21 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">killProcess</span>
-                <span class="method-start">91 ms</span>
+                <span class="method-start">82 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">QC_NewLoan_Promotion_Txn</span>
-                <span class="method-start">2105 ms</span>
+                <span class="method-name">RQC_Bankruptcy_WORecovery_Txn_Testdata</span>
+                <span class="method-start">2090 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">endReport</span>
-                <span class="method-start">19727 ms</span>
+                <span class="method-start">32010 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method after">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">getResult([TestResult name=QC_NewLoan_Promotion_Txn status=FAILURE method=QCStore.QC_NewLoan_Promotion_Txn()[p...)</span>
-                <span class="method-start">19727 ms</span>
+                <span class="method-name">getResult([TestResult name=RQC_Bankruptcy_WORecovery_Txn_Testdata status=FAILURE method=QCStore.RQC_Bankruptcy...)</span>
+                <span class="method-start">32010 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -89,7 +89,7 @@ public class RQCCSRDefault_Refinance extends QCStore{
 					test.log(LogStatus.PASS, "SSN3 is entered: "+SSN3);
 					driver.findElement(locator(prop.getProperty("csr_new_loan_submit_button"))).click();
 					test.log(LogStatus.PASS, "Clicked on submit Button");		
-							
+					Thread.sleep(4000);		
 					driver.switchTo().defaultContent();
 					driver.switchTo().frame("mainFrame");
 					driver.switchTo().frame("main");					    					   					     
@@ -106,9 +106,10 @@ public class RQCCSRDefault_Refinance extends QCStore{
 					Thread.sleep(5000);
 					driver.findElement(By.name("transactionList")).sendKeys("Refinance");
 					test.log(LogStatus.PASS, "Transaction Type is selected as Refinance");
+					Thread.sleep(500);
 					driver.findElement(By.name("button")).click();
 					test.log(LogStatus.PASS, "Clicked on Go button");
-					Thread.sleep(500);	
+					Thread.sleep(10000);	
 					String stepupmsg=driver.findElement(By.xpath("//*[@id='_StepUpDown']")).getText();
 					
 					//if(stepupmsg.contains("Step Same")){
@@ -174,10 +175,11 @@ public class RQCCSRDefault_Refinance extends QCStore{
 						}
 						
 						if(ESign_CollateralType.equalsIgnoreCase("Ach")){
-							
+							Thread.sleep(4000);
 							test.log(LogStatus.PASS, "Collateral Type is enterted as "+ESign_CollateralType);
 							try{driver.findElement(By.xpath("//*[@id='documentForm']/table/tbody/tr[4]/td/input[1]")).click();
 							test.log(LogStatus.PASS, "Clicked Yes on cashOut popup");
+							Thread.sleep(4000);
 							}
 							catch(Exception e)
 							{
@@ -185,6 +187,7 @@ public class RQCCSRDefault_Refinance extends QCStore{
 							}
 							driver.findElement(By.name("qualify")).click();
 							test.log(LogStatus.PASS, "Clicked on qualify button ");
+							Thread.sleep(20000);
 							String paymentamount=driver.findElement(By.name("requestBean.siilBean.paymentAmt")).getAttribute("value");
 							test.log(LogStatus.PASS, "Getting payment amount "+paymentamount);
 							driver.findElement(By.name("requestBean.siilBean.tenderTypeFirst")).sendKeys(TenderType);
@@ -267,14 +270,17 @@ public class RQCCSRDefault_Refinance extends QCStore{
 						driver.switchTo().defaultContent();
 						driver.switchTo().frame("mainFrame");
 						driver.switchTo().frame("main");
-
+						Thread.sleep(1000);
 						driver.findElement(By.name("requestBean.siilBean.courtesyCallFlag")).sendKeys(ESign_CourtesyCallConsent);
 						test.log(LogStatus.PASS, "Courtesy Call Consent is selected as "+ESign_CourtesyCallConsent);
+						Thread.sleep(4000);
 						if(ESign_CourtesyCallConsent.equalsIgnoreCase("Yes"))
 						{
 							
 							if(ESign_Preference.equalsIgnoreCase("Call"))
+								
 							{
+								Thread.sleep(500);
 								driver.findElement(By.id("preferenceCall")).click();
 								test.log(LogStatus.PASS, "Courtesy Call Consent is selected as "+ESign_Preference);
 							}
@@ -306,31 +312,32 @@ public class RQCCSRDefault_Refinance extends QCStore{
 						
 						driver.findElement(By.name("finishLoan")).click();
 						test.log(LogStatus.PASS, "click on Finish Loan button ");
+						Thread.sleep(8000);
 													
-								try {
+								/*try {
 									Alert alert = driver.switchTo().alert();
 									alert.accept();
 									//if alert present, accept and move on.
 								}
 								catch (NoAlertPresentException e) {
 									//do what you normally would if you didn't have the alert.
-								}
+								}*/
 								driver.switchTo().defaultContent();
 								driver.switchTo().frame("mainFrame");
 								driver.switchTo().frame("main");
 								
-								String confirm_text1=driver.findElement(By.xpath("/html/body/form/table/tbody/tr/td/table/tbody/tr[2]/td[1]/b[1]")).getText();
+								/*String confirm_text1=driver.findElement(By.xpath("/html/body/form/table/tbody/tr/td/table/tbody/tr[2]/td[1]/b[1]")).getText();
 								
 								String confirm_text2=driver.findElement(By.xpath("/html/body/form/table/tbody/tr/td/table/tbody/tr[2]/td[1]/b[2]")).getText();
 								String confirm_text3=driver.findElement(By.xpath("/html/body/form/table/tbody/tr/td/table/tbody/tr[2]/td[1]/b[3]")).getText();
 								String confirm_text4=driver.findElement(By.xpath("/html/body/form/table/tbody/tr/td/table/tbody/tr[3]/td/b")).getText();
 							
-								test.log(LogStatus.PASS, "confirm text is  "+confirm_text1+" Will receive an "+confirm_text2+" of "+confirm_text3+" First payment date is "+confirm_text4);
-								
+								test.log(LogStatus.PASS, "confirm text is  "+confirm_text1+" Will receive an "+confirm_text2+" of "+confirm_text3+" First payment date is "+confirm_text4);*/
+								Thread.sleep(4000);
 								driver.findElement(By.name("OKBut")).click();
 
 								test.log(LogStatus.PASS, "click on Yes button ");
-
+								Thread.sleep(4000);
 								driver.switchTo().defaultContent();
 								driver.switchTo().frame("mainFrame");
 								driver.switchTo().frame("main");

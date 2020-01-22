@@ -51,7 +51,7 @@ public class RQCPayment extends QCStore
 					Thread.sleep(3000);
 					test.log(LogStatus.INFO,"PartialPayment started");
 					driver.switchTo().frame("topFrame");
-					driver.findElement(locator(Rprop.getProperty("transactions_tab"))).click();			
+					driver.findElement(locator(prop.getProperty("transactions_tab"))).click();			
 					test.log(LogStatus.PASS, "Clicked on Loan Transactions");
 
 					driver.switchTo().defaultContent();
@@ -63,17 +63,17 @@ public class RQCPayment extends QCStore
 					Thread.sleep(500);
 					driver.findElement(By.name("ssn1")).sendKeys(SSN1);
 					test.log(LogStatus.PASS, "SSN1 is entered: "+SSN1);
-					driver.findElement(locator(Rprop.getProperty("CSR_SSN_second_field"))).sendKeys(SSN2);
+					driver.findElement(locator(prop.getProperty("CSR_SSN_second_field"))).sendKeys(SSN2);
 					test.log(LogStatus.PASS, "SSN2 is entered: "+SSN2);
-					driver.findElement(locator(Rprop.getProperty("CSR_SSN_third_field"))).sendKeys(SSN3);
+					driver.findElement(locator(prop.getProperty("CSR_SSN_third_field"))).sendKeys(SSN3);
 					test.log(LogStatus.PASS, "SSN3 is entered: "+SSN3);
-					driver.findElement(locator(Rprop.getProperty("csr_new_loan_submit_button"))).click();
+					driver.findElement(locator(prop.getProperty("csr_new_loan_submit_button"))).click();
 					test.log(LogStatus.PASS, "Clicked on submit Button");		
 								
 					driver.switchTo().defaultContent();
 					driver.switchTo().frame("mainFrame");
 					driver.switchTo().frame("main");					    					   					     
-					driver.findElement(locator(Rprop.getProperty("csr_new_loan_go_button"))).click();
+					driver.findElement(locator(prop.getProperty("csr_new_loan_go_button"))).click();
 					test.log(LogStatus.PASS, "Clicked on GO Button under search results");
 					Thread.sleep(5000);					  
 						
@@ -160,7 +160,7 @@ break;
 					//test.log(LogStatus.FAIL, MarkupHelper.createLabel("Getting Encryption from Admin is failed", ExtentColor.RED));
 					test.log(LogStatus.INFO,"Exception occured "+e.toString().substring(0, 250));
 					test.log(LogStatus.INFO, "Patial Payment process is initiated again due to Application sync issue");
-					driver.get(Rprop.getProperty("login_page")); 
+					driver.get(prop.getProperty("login_page")); 
 					continue;
 
 
@@ -203,7 +203,7 @@ break;
 					Thread.sleep(3000);
 					test.log(LogStatus.INFO,"PartialPayment started");
 					driver.switchTo().frame("topFrame");
-					driver.findElement(locator(Rprop.getProperty("transactions_tab"))).click();			
+					driver.findElement(locator(prop.getProperty("transactions_tab"))).click();			
 					test.log(LogStatus.PASS, "Clicked on Loan Transactions");
 
 					driver.switchTo().defaultContent();
@@ -215,17 +215,17 @@ break;
 					Thread.sleep(500);
 					driver.findElement(By.name("ssn1")).sendKeys(SSN1);
 					test.log(LogStatus.PASS, "SSN1 is entered: "+SSN1);
-					driver.findElement(locator(Rprop.getProperty("CSR_SSN_second_field"))).sendKeys(SSN2);
+					driver.findElement(locator(prop.getProperty("CSR_SSN_second_field"))).sendKeys(SSN2);
 					test.log(LogStatus.PASS, "SSN2 is entered: "+SSN2);
-					driver.findElement(locator(Rprop.getProperty("CSR_SSN_third_field"))).sendKeys(SSN3);
+					driver.findElement(locator(prop.getProperty("CSR_SSN_third_field"))).sendKeys(SSN3);
 					test.log(LogStatus.PASS, "SSN3 is entered: "+SSN3);
-					driver.findElement(locator(Rprop.getProperty("csr_new_loan_submit_button"))).click();
+					driver.findElement(locator(prop.getProperty("csr_new_loan_submit_button"))).click();
 					test.log(LogStatus.PASS, "Clicked on submit Button");		
 								
 					driver.switchTo().defaultContent();
 					driver.switchTo().frame("mainFrame");
 					driver.switchTo().frame("main");					    					   					     
-					driver.findElement(locator(Rprop.getProperty("csr_new_loan_go_button"))).click();
+					driver.findElement(locator(prop.getProperty("csr_new_loan_go_button"))).click();
 					test.log(LogStatus.PASS, "Clicked on GO Button under search results");
 					Thread.sleep(5000);					  
 						
@@ -312,7 +312,7 @@ break;
 					//test.log(LogStatus.FAIL, MarkupHelper.createLabel("Getting Encryption from Admin is failed", ExtentColor.RED));
 					test.log(LogStatus.INFO,"Exception occured "+e.toString().substring(0, 250));
 					test.log(LogStatus.INFO, "Patial Payment process is initiated again due to Application sync issue");
-					driver.get(Rprop.getProperty("login_page")); 
+					driver.get(prop.getProperty("login_page")); 
 					continue;
 
 
@@ -355,7 +355,7 @@ break;
 					Thread.sleep(3000);
 					test.log(LogStatus.INFO,"PartialPayment started");
 					driver.switchTo().frame("topFrame");
-					driver.findElement(locator(Rprop.getProperty("transactions_tab"))).click();			
+					driver.findElement(locator(prop.getProperty("transactions_tab"))).click();			
 					test.log(LogStatus.PASS, "Clicked on Loan Transactions");
 
 					driver.switchTo().defaultContent();
@@ -367,17 +367,17 @@ break;
 					Thread.sleep(500);
 					driver.findElement(By.name("ssn1")).sendKeys(SSN1);
 					test.log(LogStatus.PASS, "SSN1 is entered: "+SSN1);
-					driver.findElement(locator(Rprop.getProperty("CSR_SSN_second_field"))).sendKeys(SSN2);
+					driver.findElement(locator(prop.getProperty("CSR_SSN_second_field"))).sendKeys(SSN2);
 					test.log(LogStatus.PASS, "SSN2 is entered: "+SSN2);
-					driver.findElement(locator(Rprop.getProperty("CSR_SSN_third_field"))).sendKeys(SSN3);
+					driver.findElement(locator(prop.getProperty("CSR_SSN_third_field"))).sendKeys(SSN3);
 					test.log(LogStatus.PASS, "SSN3 is entered: "+SSN3);
-					driver.findElement(locator(Rprop.getProperty("csr_new_loan_submit_button"))).click();
+					driver.findElement(locator(prop.getProperty("csr_new_loan_submit_button"))).click();
 					test.log(LogStatus.PASS, "Clicked on submit Button");		
 								
 					driver.switchTo().defaultContent();
 					driver.switchTo().frame("mainFrame");
 					driver.switchTo().frame("main");					    					   					     
-					driver.findElement(locator(Rprop.getProperty("csr_new_loan_go_button"))).click();
+					driver.findElement(locator(prop.getProperty("csr_new_loan_go_button"))).click();
 					test.log(LogStatus.PASS, "Clicked on GO Button under search results");
 					Thread.sleep(5000);					  
 						
@@ -464,7 +464,7 @@ break;
 					//test.log(LogStatus.FAIL, MarkupHelper.createLabel("Getting Encryption from Admin is failed", ExtentColor.RED));
 					test.log(LogStatus.INFO,"Exception occured "+e.toString().substring(0, 250));
 					test.log(LogStatus.INFO, "Patial Payment process is initiated again due to Application sync issue");
-					driver.get(Rprop.getProperty("login_page")); 
+					driver.get(prop.getProperty("login_page")); 
 					continue;
 
 
@@ -507,7 +507,7 @@ break;
 					Thread.sleep(3000);
 					test.log(LogStatus.INFO,"PartialPayment started");
 					driver.switchTo().frame("topFrame");
-					driver.findElement(locator(Rprop.getProperty("transactions_tab"))).click();			
+					driver.findElement(locator(prop.getProperty("transactions_tab"))).click();			
 					test.log(LogStatus.PASS, "Clicked on Loan Transactions");
 
 					driver.switchTo().defaultContent();
@@ -519,17 +519,17 @@ break;
 					Thread.sleep(500);
 					driver.findElement(By.name("ssn1")).sendKeys(SSN1);
 					test.log(LogStatus.PASS, "SSN1 is entered: "+SSN1);
-					driver.findElement(locator(Rprop.getProperty("CSR_SSN_second_field"))).sendKeys(SSN2);
+					driver.findElement(locator(prop.getProperty("CSR_SSN_second_field"))).sendKeys(SSN2);
 					test.log(LogStatus.PASS, "SSN2 is entered: "+SSN2);
-					driver.findElement(locator(Rprop.getProperty("CSR_SSN_third_field"))).sendKeys(SSN3);
+					driver.findElement(locator(prop.getProperty("CSR_SSN_third_field"))).sendKeys(SSN3);
 					test.log(LogStatus.PASS, "SSN3 is entered: "+SSN3);
-					driver.findElement(locator(Rprop.getProperty("csr_new_loan_submit_button"))).click();
+					driver.findElement(locator(prop.getProperty("csr_new_loan_submit_button"))).click();
 					test.log(LogStatus.PASS, "Clicked on submit Button");		
 								
 					driver.switchTo().defaultContent();
 					driver.switchTo().frame("mainFrame");
 					driver.switchTo().frame("main");					    					   					     
-					driver.findElement(locator(Rprop.getProperty("csr_new_loan_go_button"))).click();
+					driver.findElement(locator(prop.getProperty("csr_new_loan_go_button"))).click();
 					test.log(LogStatus.PASS, "Clicked on GO Button under search results");
 					Thread.sleep(5000);					  
 						
@@ -616,7 +616,7 @@ break;
 					//test.log(LogStatus.FAIL, MarkupHelper.createLabel("Getting Encryption from Admin is failed", ExtentColor.RED));
 					test.log(LogStatus.INFO,"Exception occured "+e.toString().substring(0, 250));
 					test.log(LogStatus.INFO, "Patial Payment process is initiated again due to Application sync issue");
-					driver.get(Rprop.getProperty("login_page")); 
+					driver.get(prop.getProperty("login_page")); 
 					continue;
 
 				}
@@ -659,7 +659,7 @@ break;
 					Thread.sleep(3000);
 					test.log(LogStatus.INFO,"PartialPayment started");
 					driver.switchTo().frame("topFrame");
-					driver.findElement(locator(Rprop.getProperty("transactions_tab"))).click();			
+					driver.findElement(locator(prop.getProperty("transactions_tab"))).click();			
 					test.log(LogStatus.PASS, "Clicked on Loan Transactions");
 
 					driver.switchTo().defaultContent();
@@ -671,17 +671,17 @@ break;
 					Thread.sleep(500);
 					driver.findElement(By.name("ssn1")).sendKeys(SSN1);
 					test.log(LogStatus.PASS, "SSN1 is entered: "+SSN1);
-					driver.findElement(locator(Rprop.getProperty("CSR_SSN_second_field"))).sendKeys(SSN2);
+					driver.findElement(locator(prop.getProperty("CSR_SSN_second_field"))).sendKeys(SSN2);
 					test.log(LogStatus.PASS, "SSN2 is entered: "+SSN2);
-					driver.findElement(locator(Rprop.getProperty("CSR_SSN_third_field"))).sendKeys(SSN3);
+					driver.findElement(locator(prop.getProperty("CSR_SSN_third_field"))).sendKeys(SSN3);
 					test.log(LogStatus.PASS, "SSN3 is entered: "+SSN3);
-					driver.findElement(locator(Rprop.getProperty("csr_new_loan_submit_button"))).click();
+					driver.findElement(locator(prop.getProperty("csr_new_loan_submit_button"))).click();
 					test.log(LogStatus.PASS, "Clicked on submit Button");		
 								
 					driver.switchTo().defaultContent();
 					driver.switchTo().frame("mainFrame");
 					driver.switchTo().frame("main");					    					   					     
-					driver.findElement(locator(Rprop.getProperty("csr_new_loan_go_button"))).click();
+					driver.findElement(locator(prop.getProperty("csr_new_loan_go_button"))).click();
 					test.log(LogStatus.PASS, "Clicked on GO Button under search results");
 					Thread.sleep(5000);					  
 						
@@ -770,7 +770,7 @@ break;
 					String screenshotPath = getScreenhot(driver, "Exception");
 									test.log(LogStatus.INFO, test.addScreenCapture(screenshotPath));
 					test.log(LogStatus.INFO, "Patial Payment process is initiated again due to Application sync issue");
-					driver.get(Rprop.getProperty("login_page")); 
+					driver.get(prop.getProperty("login_page")); 
 					continue;
 
 

@@ -72,7 +72,7 @@ public class RQCAgeStoreDueDate extends QCStore{
 								}
 								catch(Exception e)
 								{
-									driver.get("http://192.168.2.203/cc/login/index.jsp");
+									driver.get(csrloginpage);
 									driver.switchTo().defaultContent();	
 									
 							        wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("topFrame")));
@@ -95,8 +95,9 @@ public class RQCAgeStoreDueDate extends QCStore{
 								driver.findElement(By.name("ssn3")).sendKeys(SSN3);
 								test.log(LogStatus.PASS, "SSN3 is entered: "+SSN3);
 								driver.findElement(By.name("submit1")).click();
-								test.log(LogStatus.PASS, "Click on submit Button");		
-								for(String winHandle : driver.getWindowHandles()){
+								test.log(LogStatus.PASS, "Click on submit Button");	
+								
+								/*for(String winHandle : driver.getWindowHandles()){
 							    driver.switchTo().window(winHandle);
 								}
 							    driver.switchTo().defaultContent();
@@ -114,7 +115,8 @@ public class RQCAgeStoreDueDate extends QCStore{
 											
 										    //loan_number= driver.findElement(locator(Rprop.getProperty("csr_loan_nbr"))).getText();
 										    loan_number=driver.findElement(By.xpath("//*[@id='all']/div[1]/table[1]/tbody/tr[3]/td[2]")).getText();
-											test.log(LogStatus.PASS, "Loan Number is" + loan_number);
+											
+										    test.log(LogStatus.PASS, "Loan Number is" + loan_number);
 										    //NextDueDate= driver.findElement(locator(Rprop.getProperty("csr_due_date"))).getText();
 											NextDueDate=driver.findElement(By.xpath("//*[@id='all']/div[1]/table[1]/tbody/tr[3]/td[5]")).getText();
 									        test.log(LogStatus.PASS, "Next due date is "+NextDueDate);
@@ -126,7 +128,53 @@ public class RQCAgeStoreDueDate extends QCStore{
 										
 									  
 									  
-									 test.log(LogStatus.PASS, "Age Store Date is :"+NextDueDate);
+									 test.log(LogStatus.PASS, "Age Store Date is :"+NextDueDate);*/
+				//============= Taking Due Date From History ====================
+								for(String winHandle : driver.getWindowHandles()){
+								    driver.switchTo().window(winHandle);
+									}
+								    driver.switchTo().defaultContent();
+								    driver.switchTo().frame("mainFrame");
+								    driver.switchTo().frame("main");
+								    
+								    
+								  // String loan_nbr= driver.findElement(locator(Rprop.getProperty("csr_loan_nbr"))).getText();
+								  // test.log(LogStatus.PASS, "Loan Number is" + loan_nbr);
+								    driver.findElement(By.name("button")).click();
+									test.log(LogStatus.PASS, "Clicked on GO Button under search results");
+									// driver.findElement(By.name("button")).click();
+									
+								for(String winHandle : driver.getWindowHandles()){
+									    driver.switchTo().window(winHandle);
+										}				    
+									 driver.switchTo().defaultContent();
+									    driver.switchTo().frame("mainFrame");
+									    driver.switchTo().frame("main");
+									   					    
+									    Thread.sleep(5000);
+									    
+									    	 driver.findElement(By.xpath("//input[@value='Go' and @type='button']")).click();
+											    test.log(LogStatus.PASS, "Clicked on Go button under Loans section");
+									
+									   //  String loan_nbr= driver.findElement(locator(Rprop.getProperty("csr_loan_nbr"))).getText();
+										//   test.log(LogStatus.PASS, "Loan Number is" + loan_nbr);
+										 driver.findElement(By.name("transactionList")).sendKeys("History");
+										 test.log(LogStatus.PASS, "Transaction Type is selected as History");
+										 driver.findElement(By.name("button")).click();
+										 test.log(LogStatus.PASS, "Clicked on Go button under Transaction selection section");
+										 
+										
+										 Thread.sleep(3000); 
+										 //NextDueDate=driver.findElement(locator(Rprop.getProperty("loan_status_inf_due_date"))).getText();
+										 NextDueDate=driver.findElement(By.xpath("//*[@id='transactionHistoryTable']/tbody/tr/td[3]/table/tbody/tr[4]/td/span[2]")).getText();
+										                             //*[@id="transactionHistoryTable"]/tbody/tr/td[3]/table/tbody/tr[4]/td/span[2]
+										 test.log(LogStatus.PASS, "Next due date is "+NextDueDate);
+									     Thread.sleep(1000);
+									     loan_number=driver.findElement(By.xpath("//*[@id='transactionHistoryTable']/tbody/tr/td[4]/table/tbody/tr[4]/td/span[2]")).getText();
+									                                           
+									     test.log(LogStatus.PASS, "Loan Number  is "+loan_number);	
+							//=========================================================		 
+								
 									 Thread.sleep(5000);
 									 
 										
@@ -145,7 +193,7 @@ public class RQCAgeStoreDueDate extends QCStore{
 												}
 												catch(Exception e)
 												{
-													driver.get("http://192.168.2.203/cc/login/index.jsp");
+													driver.get(csrloginpage);
 
 													driver.switchTo().defaultContent();
 													 driver.switchTo().frame("topFrame");
@@ -221,7 +269,7 @@ public class RQCAgeStoreDueDate extends QCStore{
 					//test.log(LogStatus.FAIL, MarkupHelper.createLabel("Borrower Registration is failed", ExtentColor.RED));
 					test.log(LogStatus.INFO,"Exception occured "+e.toString().substring(0, 250));
 					test.log(LogStatus.INFO, "Age store Due Date is process is initiated again due to Application sync issue");
-					driver.get("http://192.168.2.203/cc/login/index.jsp");
+					driver.get(csrloginpage);
 					continue;
 
 

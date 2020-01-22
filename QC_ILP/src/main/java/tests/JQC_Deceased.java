@@ -77,17 +77,77 @@ public class JQC_Deceased extends QCStore {
 					driver.findElement(By.name("submit1")).click();
 					test.log(LogStatus.PASS, "Click on submit Button");
 				
-					/*driver.findElement(By.xpath("/html/body/table/tbody/tr[1]/td[1]/table[2]/tbody/tr[2]/td/table/tbody/tr[2]/td[8]/input")).click();
-					test.log(LogStatus.PASS, "Clicked on Go button under search results");
-					*/
-					Thread.sleep(3000);
-					for (String winHandle : driver.getWindowHandles()) {
-						driver.switchTo().window(winHandle);
-					}
-					driver.switchTo().defaultContent();
-					driver.switchTo().frame("mainFrame");
-					driver.switchTo().frame("main");
-					String mainwindow=driver.getWindowHandle();
+					//============= Taking Due Date From History ====================
+					
+					for(String winHandle : driver.getWindowHandles()){
+					    driver.switchTo().window(winHandle);
+						}
+					    driver.switchTo().defaultContent();
+					    driver.switchTo().frame("mainFrame");
+					    driver.switchTo().frame("main");
+					    
+					    
+					  // String loan_nbr= driver.findElement(locator(Rprop.getProperty("csr_loan_nbr"))).getText();
+					  // test.log(LogStatus.PASS, "Loan Number is" + loan_nbr);
+					    driver.findElement(By.name("button")).click();
+						test.log(LogStatus.PASS, "Clicked on GO Button under search results");
+						// driver.findElement(By.name("button")).click();
+						
+					for(String winHandle : driver.getWindowHandles()){
+						    driver.switchTo().window(winHandle);
+							}				    
+						 driver.switchTo().defaultContent();
+						    driver.switchTo().frame("mainFrame");
+						    driver.switchTo().frame("main");
+						   					    
+						    Thread.sleep(5000);
+						    
+						    	 driver.findElement(By.xpath("//input[@value='Go' and @type='button']")).click();
+								    test.log(LogStatus.PASS, "Clicked on Go button under Loans section");
+						
+						   //  String loan_nbr= driver.findElement(locator(Rprop.getProperty("csr_loan_nbr"))).getText();
+							//   test.log(LogStatus.PASS, "Loan Number is" + loan_nbr);
+							 driver.findElement(By.name("transactionList")).sendKeys("History");
+							 test.log(LogStatus.PASS, "Transaction Type is selected as History");
+							 driver.findElement(By.name("button")).click();
+							 test.log(LogStatus.PASS, "Clicked on Go button under Transaction selection section");													 													
+							 Thread.sleep(3000); 
+							 
+							 NextDueDate=driver.findElement(locator(prop.getProperty("loan_status_inf_due_date"))).getText();
+						     test.log(LogStatus.PASS, "Next due date is "+NextDueDate);		
+						     Thread.sleep(1000); 
+						     loan_number=driver.findElement(By.xpath("//*[@id='transactionHistoryTable']/tbody/tr/td[4]/table/tbody/tr[4]/td/span[2]")).getText();
+						  
+						     test.log(LogStatus.PASS, "Loan Number  is "+loan_number);	
+						     //==============================================================================
+
+
+						 test.log(LogStatus.PASS, "Age Store Date is :"+NextDueDate);
+						 Thread.sleep(5000);
+						 test.log(LogStatus.PASS, "********************************************");
+					      
+						 Thread.sleep(4000);
+						 	//String mainwindow=driver.getWindowHandle();
+						 driver.switchTo().defaultContent();
+							driver.switchTo().frame("bottom");
+							 
+							 business_date=driver.findElement(By.xpath("/html/body/blink/table/tbody/tr/td[4]")).getText();  
+							
+							 test.log(LogStatus.PASS, "Businessdate is :"+business_date);
+							 String App_date1[] = business_date.split(":");
+							 String App_date[] = App_date1[1].split("/");
+								System.out.println("business_date");
+
+								Date1 = App_date[0];
+								System.out.println("Date 1" + Date1);
+								Date2 = App_date[1];
+								Date3 = App_date[2];
+								Thread.sleep(4000);
+								
+								driver.close();
+						    
+					
+					/*String mainwindow=driver.getWindowHandle();
 					//Thread.sleep(3000);
 				    driver.findElement(By.xpath("/html/body/table/tbody/tr[1]/td[1]/table[2]/tbody/tr[2]/td/table/tbody/tr[2]/td[2]/a")).click();
 				    test.log(LogStatus.PASS, "Clicked on Customer number link");
@@ -99,10 +159,10 @@ public class JQC_Deceased extends QCStore {
 					    driver.switchTo().window(winHandle);
 					    System.out.println("......");
 						
-					    //loan_number= driver.findElement(locator(Jprop.getProperty("csr_loan_nbr"))).getText();
+					    //loan_number= driver.findElement(locator(prop.getProperty("csr_loan_nbr"))).getText();
 					    loan_number=driver.findElement(By.xpath("//*[@id='all']/div[1]/table[1]/tbody/tr[3]/td[2]")).getText();
 						test.log(LogStatus.PASS, "Loan Number is" + loan_number);
-					    //NextDueDate= driver.findElement(locator(Jprop.getProperty("csr_due_date"))).getText();
+					    //NextDueDate= driver.findElement(locator(prop.getProperty("csr_due_date"))).getText();
 						NextDueDate=driver.findElement(By.xpath("//*[@id='all']/div[1]/table[1]/tbody/tr[3]/td[5]")).getText();
 				        test.log(LogStatus.PASS, "Next due date is "+NextDueDate);
 				        
@@ -114,8 +174,8 @@ public class JQC_Deceased extends QCStore {
 				    }
 						driver.switchTo().window(mainwindow);
 						//driver.switchTo().window(mainwindow);
-						
-						Thread.sleep(4000);
+*/						
+						/*Thread.sleep(4000);
 						
 						driver.switchTo().frame("bottom");
 						
@@ -132,7 +192,7 @@ public class JQC_Deceased extends QCStore {
 							Date3 = App_date[2];
 							Thread.sleep(4000);
 							
-							driver.close();
+							driver.close();*/
 						}
 				    }
 				}

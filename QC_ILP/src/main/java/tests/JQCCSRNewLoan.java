@@ -175,7 +175,7 @@ public class JQCCSRNewLoan extends QCStore {
 						driver.switchTo().frame("topFrame");
 						driver.findElement(locator(prop.getProperty("transactions_tab"))).click();
 						test.log(LogStatus.PASS, "Clicked on Loan Transactions");
-
+						Thread.sleep(7000);
 						driver.switchTo().defaultContent();
 						driver.switchTo().frame("mainFrame");
 
@@ -243,7 +243,7 @@ public class JQCCSRNewLoan extends QCStore {
 			
 				test.log(LogStatus.INFO, "Exception occured " + e.toString().substring(0, 250));
 				test.log(LogStatus.INFO, "New Loan process is initiated again due to Application sync issue");
-				driver.get("http://192.168.2.203/cc/login/index.jsp");
+				//driver.get("https://qclocalreg.qfund.net/cc/login/index.jsp");
 				continue;
 
 			}
@@ -331,6 +331,7 @@ public class JQCCSRNewLoan extends QCStore {
 					
 					if(ESign_CourtesyCallConsent.equals("Yes"))
 					{
+						Thread.sleep(8000);
 						if(ESign_Preference.equals("Call"))
 						{
 							driver.findElement(By.xpath("//*[@id='preferenceCall']")).click();
@@ -373,6 +374,7 @@ public class JQCCSRNewLoan extends QCStore {
 					
 					if(ESign_CourtesyCallConsent.equals("Yes"))
 					{
+						Thread.sleep(8000);
 						if(ESign_Preference.equals("Call"))
 						{
 							driver.findElement(By.xpath("//*[@id='preferenceCall']")).click();
@@ -440,6 +442,7 @@ public class JQCCSRNewLoan extends QCStore {
 					test.log(LogStatus.PASS, "Courtesy Call Consent is selected as "+ESign_CourtesyCallConsent);
 					if(ESign_CourtesyCallConsent.equals("Yes"))
 					{
+						Thread.sleep(8000);
 						if(ESign_Preference.equals("Call"))
 						{
 							driver.findElement(By.xpath("//*[@id='preferenceCall']")).click();
@@ -550,6 +553,7 @@ public class JQCCSRNewLoan extends QCStore {
 
 					if(ESign_CourtesyCallConsent.equals("Yes"))
 					{
+						Thread.sleep(8000);
 						if(ESign_Preference.equals("Call"))
 						{
 							driver.findElement(By.xpath("//*[@id='preferenceCall']")).click();
@@ -710,8 +714,10 @@ public class JQCCSRNewLoan extends QCStore {
 					test.log(LogStatus.PASS, "Courtesy Call Consent is selected as "+ESign_CourtesyCallConsent);
 					if(ESign_CourtesyCallConsent.equals("Yes"))
 					{
+						Thread.sleep(8000);
 						if(ESign_Preference.equals("Call"))
 						{
+							Thread.sleep(4000);
 							driver.findElement(By.xpath("//*[@id='preferenceCall']")).click();
 							test.log(LogStatus.PASS, "Courtesy Call Consent is selected as "+ESign_Preference);
 						}
@@ -846,6 +852,7 @@ public class JQCCSRNewLoan extends QCStore {
 
 					if(ESign_CourtesyCallConsent.equals("Yes"))
 					{
+						Thread.sleep(8000);
 						if(ESign_Preference.equals("Call"))
 						{
 							driver.findElement(By.xpath("//*[@id='preferenceCall']")).click();
@@ -962,6 +969,7 @@ public class JQCCSRNewLoan extends QCStore {
 					test.log(LogStatus.PASS, "Courtesy Call Consent is selected as "+ESign_CourtesyCallConsent);
 					if(ESign_CourtesyCallConsent.equals("Yes"))
 					{
+						Thread.sleep(8000);
 						if(ESign_Preference.equals("Call"))
 						{
 							driver.findElement(By.xpath("//*[@id='preferenceCall']")).click();
@@ -1170,7 +1178,7 @@ public class JQCCSRNewLoan extends QCStore {
 			if (ESign_CourtesyCallConsent.equals("Yes"))
 
 			{
-
+				Thread.sleep(8000);
 				if (ESign_Preference.equals("Call"))
 
 				{
@@ -1287,7 +1295,7 @@ public class JQCCSRNewLoan extends QCStore {
 				if (ESign_CourtesyCallConsent.equals("Yes"))
 
 				{
-
+					Thread.sleep(8000);
 					if (ESign_Preference.equals("Call"))
 
 					{
@@ -1467,7 +1475,7 @@ public class JQCCSRNewLoan extends QCStore {
 			if (ESign_CourtesyCallConsent.equals("Yes"))
 
 			{
-
+				Thread.sleep(8000);
 				if (ESign_Preference.equals("Call"))
 
 				{
@@ -1622,7 +1630,7 @@ public class JQCCSRNewLoan extends QCStore {
 			if (ESign_CourtesyCallConsent.equals("Yes"))
 
 			{
-
+				Thread.sleep(8000);
 				if (ESign_Preference.equals("Call"))
 
 				{
@@ -1756,7 +1764,7 @@ public class JQCCSRNewLoan extends QCStore {
 			if (ESign_CourtesyCallConsent.equals("Yes"))
 
 			{
-
+				Thread.sleep(8000);
 				if (ESign_Preference.equals("Call"))
 
 				{

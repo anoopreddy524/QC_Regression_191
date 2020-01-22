@@ -69,13 +69,13 @@ public class JCSRMidDayDeposit extends QCStore {
 			test.log(LogStatus.PASS, "Next DueDate is "+NextDueDate);
 			Thread.sleep(3000);	
 			
-			if(Duedate.contains(NextDueDate)){
+			/*if(Duedate.contains(NextDueDate)){*/
 
 				test.log(LogStatus.PASS, "name condition satisfied ");				
 				WebElement e4=driver.findElement(By.xpath("/html/body/form/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr["+i+"]/td[6]/input"));			
 				e4.click();
 				test.log(LogStatus.PASS, "Clicked on check box ");
-				
+		}
 				driver.findElement(By.name("safeDepositRequestBean.password")).sendKeys(Password);
 				test.log(LogStatus.PASS, "password enterd as :"+Password);
 
@@ -100,10 +100,10 @@ public class JCSRMidDayDeposit extends QCStore {
 				driver.findElement(By.name("finishdeposit")).click();
 				test.log(LogStatus.PASS, "Clicked on Finish button in deposit  verification page");
 				
-			}
+			/*}
 		
-		}
-		Thread.sleep(4000);
+		}*/
+		Thread.sleep(5000);
 		/*driver.switchTo().defaultContent();
 		driver.switchTo().frame("mainFrame");
 		driver.switchTo().frame("main");*/
@@ -140,7 +140,7 @@ public class JCSRMidDayDeposit extends QCStore {
 			}
 				test.log(LogStatus.PASS, "Next Duedate is "+NextDueDate);
 				Thread.sleep(3000);	
-				if(Duedate.contains(NextDueDate)){
+				/*if(Duedate.contains(NextDueDate)){*/
 
 					test.log(LogStatus.PASS, "name condition satisfied ");
 					WebElement e4=driver.findElement(By.xpath("/html/body/form/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr["+i+"]/td[6]/input"));			
@@ -152,6 +152,7 @@ public class JCSRMidDayDeposit extends QCStore {
 					Select dropdown = new Select(e1);
 					dropdown.selectByVisibleText("Manual");
 					test.log(LogStatus.PASS, "Select deposit type as Manual");
+			}
 
 					driver.findElement(By.name("safeDepositRequestBean.password")).sendKeys(Password);
 					test.log(LogStatus.PASS, "password enterd as :"+Password);
@@ -168,7 +169,7 @@ public class JCSRMidDayDeposit extends QCStore {
 					catch (Exception ele) {
 					    //do what you normally would if you didn't have the alert.
 					}
-					Thread.sleep(1000);
+					Thread.sleep(3000);
 					driver.switchTo().defaultContent();
 					driver.switchTo().frame("mainFrame");
 					driver.switchTo().frame("main");
@@ -176,9 +177,9 @@ public class JCSRMidDayDeposit extends QCStore {
 					driver.findElement(By.name("finishdeposit")).click();
 					test.log(LogStatus.PASS, "Clicked on Finish button in deposit  verification page");
 					
-				}	
-			}
-			Thread.sleep(4000);
+				/*}	*/
+			/*}*/
+			Thread.sleep(5000);
 			/*driver.switchTo().defaultContent();
 			driver.switchTo().frame("mainFrame");
 			driver.switchTo().frame("main");*/

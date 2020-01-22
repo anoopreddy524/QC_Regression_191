@@ -177,30 +177,30 @@ public static void newLoan() throws Exception
 					   test.log(LogStatus.PASS, "Values loaded from excel");
 						Thread.sleep(3000);
 					   driver.switchTo().frame("topFrame");
-						driver.findElement(locator(Aprop.getProperty("transactions_tab"))).click();			
+						driver.findElement(locator(prop.getProperty("transactions_tab"))).click();			
 						test.log(LogStatus.PASS, "Clicked on Loan Transactions");
 						
 						driver.switchTo().defaultContent();
 						driver.switchTo().frame("mainFrame");
 						
-						driver.findElement(locator(Aprop.getProperty("csr_new_loan_link"))).click();			
+						driver.findElement(locator(prop.getProperty("csr_new_loan_link"))).click();			
 						test.log(LogStatus.PASS, "Clicked on New Loan");		
 						driver.switchTo().frame("main");	
 						Thread.sleep(4000);
 						driver.findElement(By.name("ssn1")).sendKeys(SSN1);
 						test.log(LogStatus.PASS, "SSN1 is entered: "+SSN1);
-						driver.findElement(locator(Aprop.getProperty("CSR_SSN_second_field"))).sendKeys(SSN2);
+						driver.findElement(locator(prop.getProperty("CSR_SSN_second_field"))).sendKeys(SSN2);
 						test.log(LogStatus.PASS, "SSN2 is entered: "+SSN2);
-						driver.findElement(locator(Aprop.getProperty("CSR_SSN_third_field"))).sendKeys(SSN3);
+						driver.findElement(locator(prop.getProperty("CSR_SSN_third_field"))).sendKeys(SSN3);
 						test.log(LogStatus.PASS, "SSN3 is entered: "+SSN3);
-						driver.findElement(locator(Aprop.getProperty("csr_new_loan_submit_button"))).click();
+						driver.findElement(locator(prop.getProperty("csr_new_loan_submit_button"))).click();
 						test.log(LogStatus.PASS, "Click on submit Button");		
 						for(String winHandle : driver.getWindowHandles()){
 					    driver.switchTo().window(winHandle);				
 					    driver.switchTo().defaultContent();
 					    driver.switchTo().frame("mainFrame");
 					    driver.switchTo().frame("main");
-					    driver.findElement(locator(Aprop.getProperty("csr_new_loan_go_button"))).click();
+					    driver.findElement(locator(prop.getProperty("csr_new_loan_go_button"))).click();
 						test.log(LogStatus.PASS, "Click on GO Button");
 						
 						
@@ -322,7 +322,7 @@ public static void PDL() throws InterruptedException
 			driver.findElement(By.xpath("//*[@id='advanceRequestBean.disbursementType']")).sendKeys(ESign_DisbType);
 			test.log(LogStatus.PASS, "Disb Type is enterted as "+ESign_DisbType);
 			//Thread.sleep(5000);
-			//String Instamt=driver.findElement(locator(Aprop.getProperty("advanceRequestBean.advanceAmt")).getAttribute("value");
+			//String Instamt=driver.findElement(locator(prop.getProperty("advanceRequestBean.advanceAmt")).getAttribute("value");
 			//System.out.println(Instamt);
 			//driver.findElement(By.name("advanceRequestBean.disbAmtFirst")).sendKeys(Instamt);					
 			//test.log(LogStatus.PASS, "Disb Amt is enterted as "+Instamt);

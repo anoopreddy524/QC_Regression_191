@@ -167,3 +167,7 @@
 .metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources
 .metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources
 .metadata/.plugins/org.eclipse.m2e.logback.configuration/0.log
+.recommenders/caches/identified-project-coordinates.json
+.recommenders/caches/manual-mappings.json
+QC_ILP/ExecutionReports/QCStore/ILP/QC_ILP_Execution_report01.22.2020.10.48.42.html
+QC_ILP/ExecutionReports/QCStore/ILP/QC_ILP_Execution_report01.22.2020.10.49.32.html

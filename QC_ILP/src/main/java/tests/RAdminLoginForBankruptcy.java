@@ -24,12 +24,9 @@ import com.relevantcodes.extentreports.LogStatus;
 public class RAdminLoginForBankruptcy extends QCStore{
 
 
-	public static void bankruptcy(WebDriver driver,String SSN,String AppURL)
+	public static void bankruptcy(WebDriver driver,String SSN,String AppURL) throws InterruptedException
 	{
-	try{
-		//String FileName= Rprop.getProperty("QC_Store_NewLoan_file_name");
-		
-		//ExcelNew TestData = new ExcelNew(System.getProperty("user.dir")+Rprop.getProperty("QC_Store_NewLoan_Test_data_sheet_path")+FileName+".xls");  		 
+	
 			int lastrow=TestData.getLastRow("Login");
 			String sheetName="Login";
 
@@ -40,7 +37,7 @@ public class RAdminLoginForBankruptcy extends QCStore{
 				{
 				String AdminUserName = TestData.getCellData(sheetName,"AdminUserName",row);
 				String AdminPassword = TestData.getCellData(sheetName,"AdminPassword",row);
-				      //String AdminURL = TestData.getCellData(sheetName,"AdminURL",row);
+				String AdminURL =prop.getProperty("adminURL");;
 				String PIN = TestData.getCellData(sheetName,"PIN",row);
 				String Trancd = TestData.getCellData(sheetName,"Trancd",row);
 				String StoreID = TestData.getCellData(sheetName,"StoreID",row);
@@ -53,12 +50,6 @@ public class RAdminLoginForBankruptcy extends QCStore{
 		        String AttorneyP2 = AttorneyPhone.substring(3, 6);
 		        String AttorneyP3 = AttorneyPhone.substring(6, 10);
 				
-				
-				
-				
-				
-				
-				
 
 				test.log(LogStatus.INFO,"Admin Application is launched");
 
@@ -69,6 +60,16 @@ public class RAdminLoginForBankruptcy extends QCStore{
 				driver.manage().timeouts().implicitlyWait(05, TimeUnit.SECONDS);
 			
 				driver.get(AdminURL);
+				Thread.sleep(1000);
+				
+				try {
+					driver.findElement(By.id("overridelink")).click();
+					Thread.sleep(3000);
+					
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+				Thread.sleep(1000);
 				test.log(LogStatus.INFO,"Opened the Admin URL"+ AdminURL);
 				test.log(LogStatus.INFO,"Admin Login For Bankruptcy"+ AdminURL);
 
@@ -162,7 +163,7 @@ public class RAdminLoginForBankruptcy extends QCStore{
 	
 	test.log(LogStatus.PASS, "Clicked on GO Button");
 	 
-	Thread.sleep(5000);
+	Thread.sleep(8000);
 	
     driver.switchTo().defaultContent();
 	
@@ -176,7 +177,7 @@ public class RAdminLoginForBankruptcy extends QCStore{
 	
 	test.log(LogStatus.PASS, "bankruptcy Status is :" +BankruptcyStatus);
 	
-	Thread.sleep(500);
+	Thread.sleep(1000);
 	
 	driver.findElement(By.name("bankruptcyFilingDate1")).sendKeys(Date1.trim());
 	
@@ -258,14 +259,6 @@ break;
 			}	
 	
 	
-}
-
-				catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-					test.log(LogStatus.FAIL,"Bankruptcy in Admin is failed");
-
-				}
 
 	}
 }

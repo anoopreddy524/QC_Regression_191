@@ -229,7 +229,8 @@ public class RQCCSRHistory extends QCStore{
 					driver.findElement(By.name("ssn3")).sendKeys(SSN3);
 					test.log(LogStatus.PASS, "SSN3 is entered: "+SSN3);
 					driver.findElement(By.name("submit1")).click();
-					test.log(LogStatus.PASS, "Click on submit Button");		
+					test.log(LogStatus.PASS, "Click on submit Button");	
+					Thread.sleep(4000);
 					for(String winHandle : driver.getWindowHandles()){
 				    driver.switchTo().window(winHandle);
 					}
@@ -238,13 +239,13 @@ public class RQCCSRHistory extends QCStore{
 				    driver.switchTo().frame("main");
 				    
 				    
-				  // String loan_nbr= driver.findElement(locator(Rprop.getProperty("csr_loan_nbr"))).getText();
+				  // String loan_nbr= driver.findElement(locator(prop.getProperty("csr_loan_nbr"))).getText();
 				  // test.log(LogStatus.PASS, "Loan Number is" + loan_nbr);
 				    Thread.sleep(3000);
 				    driver.findElement(By.name("button")).click();
 					test.log(LogStatus.PASS, "Clicked on GO Button under search results");
 					// driver.findElement(By.name("button")).click();
-					
+					Thread.sleep(4000);
 				for(String winHandle : driver.getWindowHandles()){
 					    driver.switchTo().window(winHandle);
 						}				    
@@ -258,11 +259,12 @@ public class RQCCSRHistory extends QCStore{
 				
 						 driver.findElement(By.name("transactionList")).sendKeys("History");
 						 test.log(LogStatus.PASS, "Transaction Type is selected as History");
+						 Thread.sleep(500);
 						 driver.findElement(By.name("button")).click();
 						 test.log(LogStatus.PASS, "Clicked on Go button under Transaction selection section");
 						 
 						
-						 Thread.sleep(3000);
+						 Thread.sleep(10000);
 			 //Validations
 						 for( String winHandle1 : driver.getWindowHandles())
 							{
@@ -272,61 +274,61 @@ public class RQCCSRHistory extends QCStore{
 							 driver.switchTo().frame("mainFrame");
 							 driver.switchTo().frame("main");
 						 
-						String cust_inf_customer_name= driver.findElement(locator(Rprop.getProperty("cust_inf_customer_name"))).getText();
-						String cust_inf_customer_nbr = driver.findElement(locator(Rprop.getProperty("cust_inf_customer_nbr"))).getText();
-						String cust_inf_customer_SSN= driver.findElement(locator(Rprop.getProperty("cust_inf_customer_SSN"))).getText();
-						String cust_inf_customer_primary_phone= driver.findElement(locator(Rprop.getProperty("cust_inf_customer_primary_phone"))).getText();
-						String cust_inf_customer_phone_type= driver.findElement(locator(Rprop.getProperty("cust_inf_customer_phone_type"))).getText();
-						String cust_inf_customer_state= driver.findElement(locator(Rprop.getProperty("cust_inf_customer_state"))).getText();
-						String cust_inf_customer_email= driver.findElement(locator(Rprop.getProperty("cust_inf_customer_email"))).getText();
-						String cust_inf_customer_type= driver.findElement(locator(Rprop.getProperty("cust_inf_customer_type"))).getText();
-						String cust_bank_inf_accout_type= driver.findElement(locator(Rprop.getProperty("cust_bank_inf_accout_type"))).getText();
-						String cust_bank_inf_ABA_nbr= driver.findElement(locator(Rprop.getProperty("cust_bank_inf_ABA_nbr"))).getText();
-						String cust_bank_inf_account_nbr= driver.findElement(locator(Rprop.getProperty("cust_bank_inf_account_nbr"))).getText();
-						String cust_bank_inf_check_nbr= driver.findElement(locator(Rprop.getProperty("cust_bank_inf_check_nbr"))).getText();
-						String cust_bank_inf_account_status= driver.findElement(locator(Rprop.getProperty("cust_bank_inf_account_status"))).getText();
-						String cust_bank_inf_bank_name= driver.findElement(locator(Rprop.getProperty("cust_bank_inf_bank_name"))).getText();
-						String employer_inf_source_of_income= driver.findElement(locator(Rprop.getProperty("employer_inf_source_of_income"))).getText();
-						String employer_inf_current_employer= driver.findElement(locator(Rprop.getProperty("employer_inf_current_employer"))).getText();
-						String employer_inf_netpay= driver.findElement(locator(Rprop.getProperty("employer_inf_netpay"))).getText();
-						String employer_inf_grosspay= driver.findElement(locator(Rprop.getProperty("employer_inf_grosspay"))).getText();
-						String employer_inf_pay_frequency= driver.findElement(locator(Rprop.getProperty("employer_inf_pay_frequency"))).getText();
-						String employer_inf_employer_ph_nbr= driver.findElement(locator(Rprop.getProperty("employer_inf_employer_ph_nbr"))).getText();
-						String courtesy_inf_courtesy_consent= driver.findElement(locator(Rprop.getProperty("courtesy_inf_courtesy_consent"))).getText();
-						String courtesy_inf_courtesy_type= driver.findElement(locator(Rprop.getProperty("courtesy_inf_courtesy_type"))).getText();
-						String courtesy_inf_courtesy_status= driver.findElement(locator(Rprop.getProperty("courtesy_inf_courtesy_status"))).getText();
-						String loan_status_inf_loan_status= driver.findElement(locator(Rprop.getProperty("loan_status_inf_loan_status"))).getText();
-						String loan_status_inf_checkstatus= driver.findElement(locator(Rprop.getProperty("loan_status_inf_checkstatus"))).getText();
-						String loan_status_inf_due_date= driver.findElement(locator(Rprop.getProperty("loan_status_inf_due_date"))).getText();
-						//String loan_balance_inf_principal_bal= driver.findElement(locator(Rprop.getProperty("loan_balance_inf_principal_bal"))).getText();
+						String cust_inf_customer_name= driver.findElement(locator(prop.getProperty("cust_inf_customer_name"))).getText();
+						String cust_inf_customer_nbr = driver.findElement(locator(prop.getProperty("cust_inf_customer_nbr"))).getText();
+						String cust_inf_customer_SSN= driver.findElement(locator(prop.getProperty("cust_inf_customer_SSN"))).getText();
+						String cust_inf_customer_primary_phone= driver.findElement(locator(prop.getProperty("cust_inf_customer_primary_phone"))).getText();
+						String cust_inf_customer_phone_type= driver.findElement(locator(prop.getProperty("cust_inf_customer_phone_type"))).getText();
+						String cust_inf_customer_state= driver.findElement(locator(prop.getProperty("cust_inf_customer_state"))).getText();
+						String cust_inf_customer_email= driver.findElement(locator(prop.getProperty("cust_inf_customer_email"))).getText();
+						String cust_inf_customer_type= driver.findElement(locator(prop.getProperty("cust_inf_customer_type"))).getText();
+						String cust_bank_inf_accout_type= driver.findElement(locator(prop.getProperty("cust_bank_inf_accout_type"))).getText();
+						String cust_bank_inf_ABA_nbr= driver.findElement(locator(prop.getProperty("cust_bank_inf_ABA_nbr"))).getText();
+						String cust_bank_inf_account_nbr= driver.findElement(locator(prop.getProperty("cust_bank_inf_account_nbr"))).getText();
+						String cust_bank_inf_check_nbr= driver.findElement(locator(prop.getProperty("cust_bank_inf_check_nbr"))).getText();
+						String cust_bank_inf_account_status= driver.findElement(locator(prop.getProperty("cust_bank_inf_account_status"))).getText();
+						String cust_bank_inf_bank_name= driver.findElement(locator(prop.getProperty("cust_bank_inf_bank_name"))).getText();
+						String employer_inf_source_of_income= driver.findElement(locator(prop.getProperty("employer_inf_source_of_income"))).getText();
+						String employer_inf_current_employer= driver.findElement(locator(prop.getProperty("employer_inf_current_employer"))).getText();
+						String employer_inf_netpay= driver.findElement(locator(prop.getProperty("employer_inf_netpay"))).getText();
+						String employer_inf_grosspay= driver.findElement(locator(prop.getProperty("employer_inf_grosspay"))).getText();
+						String employer_inf_pay_frequency= driver.findElement(locator(prop.getProperty("employer_inf_pay_frequency"))).getText();
+						String employer_inf_employer_ph_nbr= driver.findElement(locator(prop.getProperty("employer_inf_employer_ph_nbr"))).getText();
+						String courtesy_inf_courtesy_consent= driver.findElement(locator(prop.getProperty("courtesy_inf_courtesy_consent"))).getText();
+						String courtesy_inf_courtesy_type= driver.findElement(locator(prop.getProperty("courtesy_inf_courtesy_type"))).getText();
+						String courtesy_inf_courtesy_status= driver.findElement(locator(prop.getProperty("courtesy_inf_courtesy_status"))).getText();
+						String loan_status_inf_loan_status= driver.findElement(locator(prop.getProperty("loan_status_inf_loan_status"))).getText();
+						String loan_status_inf_checkstatus= driver.findElement(locator(prop.getProperty("loan_status_inf_checkstatus"))).getText();
+						String loan_status_inf_due_date= driver.findElement(locator(prop.getProperty("loan_status_inf_due_date"))).getText();
+						//String loan_balance_inf_principal_bal= driver.findElement(locator(prop.getProperty("loan_balance_inf_principal_bal"))).getText();
 						
 						String loan_balance_inf_principal_bal=driver.findElement(By.xpath("//*[@id='transactionHistoryTable']/tbody/tr/td[3]/table/tbody/tr[16]/td/span[2]")).getText();
 						
-						String loan_balance_inf_fee_due= driver.findElement(locator(Rprop.getProperty("loan_balance_inf_fee_due"))).getText();
-						String loan_balance_inf_return_fee_due= driver.findElement(locator(Rprop.getProperty("loan_balance_inf_return_fee_due"))).getText();
-						String loan_balance_inf_late_fee_due= driver.findElement(locator(Rprop.getProperty("loan_balance_inf_late_fee_due"))).getText();
-						String loan_balance_inf_pay_off_amt= driver.findElement(locator(Rprop.getProperty("loan_balance_inf_pay_off_amt"))).getText();
+						String loan_balance_inf_fee_due= driver.findElement(locator(prop.getProperty("loan_balance_inf_fee_due"))).getText();
+						String loan_balance_inf_return_fee_due= driver.findElement(locator(prop.getProperty("loan_balance_inf_return_fee_due"))).getText();
+						String loan_balance_inf_late_fee_due= driver.findElement(locator(prop.getProperty("loan_balance_inf_late_fee_due"))).getText();
+						String loan_balance_inf_pay_off_amt= driver.findElement(locator(prop.getProperty("loan_balance_inf_pay_off_amt"))).getText();
 						String loan_account_inf_product_name= driver.findElement(By.xpath("//*[@id='transactionHistoryTable']/tbody/tr/td[4]/table/tbody/tr[2]/td/span")).getText();
-						String loan_account_inf_product_type= driver.findElement(locator(Rprop.getProperty("loan_account_inf_product_type"))).getText();
-						String loan_account_inf_loan_nbr= driver.findElement(locator(Rprop.getProperty("loan_account_inf_loan_nbr"))).getText();
-						String loan_account_inf_loan_amt= driver.findElement(locator(Rprop.getProperty("loan_account_inf_loan_amt"))).getText();
-						//String loan_account_inf_finance_charge= driver.findElement(locator(Rprop.getProperty("loan_account_inf_finance_charge"))).getText();
+						String loan_account_inf_product_type= driver.findElement(locator(prop.getProperty("loan_account_inf_product_type"))).getText();
+						String loan_account_inf_loan_nbr= driver.findElement(locator(prop.getProperty("loan_account_inf_loan_nbr"))).getText();
+						String loan_account_inf_loan_amt= driver.findElement(locator(prop.getProperty("loan_account_inf_loan_amt"))).getText();
+						//String loan_account_inf_finance_charge= driver.findElement(locator(prop.getProperty("loan_account_inf_finance_charge"))).getText();
 						String loan_account_inf_APR= driver.findElement(By.xpath("//*[@id='transactionHistoryTable']/tbody/tr/td[4]/table/tbody/tr[6]/td/span[2]")).getText();
-						String loan_account_inf_interest_rate= driver.findElement(locator(Rprop.getProperty("loan_account_inf_interest_rate"))).getText();
-						String loan_account_inf_inst_amt= driver.findElement(locator(Rprop.getProperty("loan_account_inf_loan_date"))).getText();
-						String loan_account_inf_no_of_installments= driver.findElement(locator(Rprop.getProperty("loan_account_inf_max_term_date"))).getText();
-						String loan_account_inf_collateral_type= driver.findElement(locator(Rprop.getProperty("loan_account_inf_collateral_type"))).getText();
-						String loan_account_inf_loan_frequency= driver.findElement(locator(Rprop.getProperty("loan_account_inf_loan_frequency"))).getText();
-						String loan_account_inf_original_store= driver.findElement(locator(Rprop.getProperty("loan_account_inf_original_store"))).getText();
-						//String loan_account_inf_origination= driver.findElement(locator(Rprop.getProperty("loan_account_inf_origination"))).getText();
+						String loan_account_inf_interest_rate= driver.findElement(locator(prop.getProperty("loan_account_inf_interest_rate"))).getText();
+						String loan_account_inf_inst_amt= driver.findElement(locator(prop.getProperty("loan_account_inf_loan_date"))).getText();
+						String loan_account_inf_no_of_installments= driver.findElement(locator(prop.getProperty("loan_account_inf_max_term_date"))).getText();
+						String loan_account_inf_collateral_type= driver.findElement(locator(prop.getProperty("loan_account_inf_collateral_type"))).getText();
+						String loan_account_inf_loan_frequency= driver.findElement(locator(prop.getProperty("loan_account_inf_loan_frequency"))).getText();
+						String loan_account_inf_original_store= driver.findElement(locator(prop.getProperty("loan_account_inf_original_store"))).getText();
+						//String loan_account_inf_origination= driver.findElement(locator(prop.getProperty("loan_account_inf_origination"))).getText();
 						String loan_account_inf_available_credit= driver.findElement(By.xpath("//*[@id='transactionHistoryTable']/tbody/tr/td[4]/table/tbody/tr[16]/td/span[2]")).getText();
 						
-						String cust_underwriting_veritec_tran_nbr= driver.findElement(locator(Rprop.getProperty("cust_underwriting_veritec_tran_nbr"))).getText();
-						String cust_underwriting_mla_status= driver.findElement(locator(Rprop.getProperty("cust_underwriting_mla_status"))).getText();
-						String cust_underwriting_ofac_status= driver.findElement(locator(Rprop.getProperty("cust_underwriting_ofac_status"))).getText();
-						String cust_promotion_campaign_name= driver.findElement(locator(Rprop.getProperty("cust_promotion_campaign_name"))).getText();
-						String cust_promotion_coupon_code= driver.findElement(locator(Rprop.getProperty("cust_promotion_coupon_code"))).getText();
-						cust_promotion_coupon_code= driver.findElement(locator(Rprop.getProperty("cust_promotion_coupon_code"))).getText();
+						String cust_underwriting_veritec_tran_nbr= driver.findElement(locator(prop.getProperty("cust_underwriting_veritec_tran_nbr"))).getText();
+						String cust_underwriting_mla_status= driver.findElement(locator(prop.getProperty("cust_underwriting_mla_status"))).getText();
+						String cust_underwriting_ofac_status= driver.findElement(locator(prop.getProperty("cust_underwriting_ofac_status"))).getText();
+						String cust_promotion_campaign_name= driver.findElement(locator(prop.getProperty("cust_promotion_campaign_name"))).getText();
+						String cust_promotion_coupon_code= driver.findElement(locator(prop.getProperty("cust_promotion_coupon_code"))).getText();
+						cust_promotion_coupon_code= driver.findElement(locator(prop.getProperty("cust_promotion_coupon_code"))).getText();
 //Loan paid to date summary
 						String loan_paid_summary_principal_paid_date= driver.findElement(By.xpath("//*[@id='transactionHistoryTable']/tbody/tr/td[3]/table/tbody/tr[26]/td/span/span")).getText();
 						String loan_paid_summary_fee_paid_date= driver.findElement(By.xpath("//*[@id='transactionHistoryTable']/tbody/tr/td[3]/table/tbody/tr[27]/td/span/span")).getText();
@@ -336,7 +338,7 @@ public class RQCCSRHistory extends QCStore{
 
 					
 						//cust documetn details
-						//String cust_transaction_date= driver.findElement(locator(Rprop.getProperty("cust_transaction_date"))).getText();
+						//String cust_transaction_date= driver.findElement(locator(prop.getProperty("cust_transaction_date"))).getText();
 						
 						
 						List<WebElement>  rows = driver.findElements(By.xpath("//*[@id='transactionDetailsTable']/tbody/tr")); 
@@ -351,7 +353,7 @@ public class RQCCSRHistory extends QCStore{
 							cust_transaction_date=cust_transaction_dates[0].trim();
 									
 						
-						/*String cust_transaction_date= driver.findElement(locator(Rprop.getProperty("cust_transaction_date"))).getText();
+						/*String cust_transaction_date= driver.findElement(locator(prop.getProperty("cust_transaction_date"))).getText();
 						String cust_transaction_date_array[]=cust_transaction_date.split(" ");
 						cust_transaction_date=cust_transaction_date_array[0];*/
 							String cust_tran= driver.findElement(By.xpath("//*[@id='transactionDetailsTable']/tbody/tr["+n+"]/td[6]/font")).getText();
@@ -550,7 +552,7 @@ public class RQCCSRHistory extends QCStore{
 								test.log(LogStatus.FAIL, "available_credit->Expected value:"+available_credit +"; not equals to Actual value:"+loan_account_inf_available_credit);
 
 							}
-							if(courtesy_consent.equalsIgnoreCase(courtesy_inf_courtesy_consent))
+							/*if(courtesy_consent.equalsIgnoreCase(courtesy_inf_courtesy_consent))
 							{
 								test.log(LogStatus.PASS, "courtesy_consent_status->Expected value:"+courtesy_consent +"; == Actual value:"+courtesy_inf_courtesy_consent);
 							}
@@ -558,8 +560,8 @@ public class RQCCSRHistory extends QCStore{
 							{
 								test.log(LogStatus.FAIL, "courtesy_consent_status->Expected value:"+courtesy_consent +"; not equals to Actual value:"+courtesy_inf_courtesy_consent);
 
-							}
-							if(courtesy_consent_status.equalsIgnoreCase(courtesy_inf_courtesy_status))
+							}*/
+							/*if(courtesy_consent_status.equalsIgnoreCase(courtesy_inf_courtesy_status))
 							{
 								test.log(LogStatus.PASS, "courtesy_consent->Expected value:"+courtesy_consent_status +"; == Actual value:"+courtesy_inf_courtesy_status);
 							}
@@ -567,7 +569,7 @@ public class RQCCSRHistory extends QCStore{
 							{
 								test.log(LogStatus.FAIL, "courtesy_consent->Expected value:"+courtesy_consent_status +"; not equals to Actual value:"+courtesy_inf_courtesy_status);
 
-							}
+							}*/
 							if(principal_balance.equalsIgnoreCase(loan_balance_inf_principal_bal))
 							{
 								test.log(LogStatus.PASS, "principal_balance->Expected value:"+principal_balance +"; == Actual value:"+loan_balance_inf_principal_bal);

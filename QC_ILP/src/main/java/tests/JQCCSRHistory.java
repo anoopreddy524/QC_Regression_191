@@ -128,6 +128,7 @@ public class JQCCSRHistory extends QCStore{
 					String Str_date=driver.findElement(By.xpath("/html/body/blink/table/tbody/tr/td[4]")).getText();
 					String appdatelist[]=Str_date.split(":");
 					appdate=appdatelist[1].trim();
+					test.log(LogStatus.PASS, "Business Date is: "+appdate);
 			       String cust_transaction_date_test=appdate;
 			       
 			       
@@ -214,7 +215,7 @@ public class JQCCSRHistory extends QCStore{
 					driver.switchTo().frame("topFrame");
 					driver.findElement(By.xpath("//*[contains(text(),'Loan Transactions')]")).click();	*/		
 					test.log(LogStatus.PASS, "Clicked on Loan Transactions");
-					Thread.sleep(1000);
+					Thread.sleep(10000);
 	
 					driver.switchTo().defaultContent();
 					driver.switchTo().frame("mainFrame");
@@ -520,7 +521,7 @@ public class JQCCSRHistory extends QCStore{
 								test.log(LogStatus.FAIL, "apr->Expected value:"+apr +"; not equals to Actual value:"+loan_account_inf_APR);
 
 							}
-							if(collateral_type.equalsIgnoreCase(loan_account_inf_collateral_type)||"CHK".equalsIgnoreCase(loan_account_inf_collateral_type))
+							if(collateral_type.equalsIgnoreCase(loan_account_inf_collateral_type)||"CHK".equalsIgnoreCase(loan_account_inf_collateral_type)||"NOC".equalsIgnoreCase(loan_account_inf_collateral_type))
 							{
 								test.log(LogStatus.PASS, "collateral_type->Expected value:"+collateral_type +"; == Actual value:"+loan_account_inf_collateral_type);
 							}
@@ -660,13 +661,13 @@ public class JQCCSRHistory extends QCStore{
 							
 							if(tran_date_sheet.isEmpty())
 							{
-									if(cust_transaction_date_test.equalsIgnoreCase(cust_transaction_date))
+									if(appdate.equalsIgnoreCase(cust_transaction_date))
 									{
-										test.log(LogStatus.PASS, "transaction date->Expected value:"+cust_transaction_date_test +"; == Actual value:"+cust_transaction_date);
+										test.log(LogStatus.PASS, "transaction date->Expected value:"+appdate +"; == Actual value:"+cust_transaction_date);
 									}
 									else
 									{
-										test.log(LogStatus.FAIL, "transaction date->Expected value:"+cust_transaction_date_test +"; not equals to Actual value:"+cust_transaction_date);
+										test.log(LogStatus.FAIL, "transaction date->Expected value:"+appdate +"; not equals to Actual value:"+cust_transaction_date);
 		
 									}
 							}
@@ -674,11 +675,11 @@ public class JQCCSRHistory extends QCStore{
 							{
 								if(tran_date_sheet.equalsIgnoreCase(cust_transaction_date))
 								{
-									test.log(LogStatus.PASS, "transaction date->Expected value:"+tran_date_sheet +"; == Actual value:"+cust_transaction_date);
+									test.log(LogStatus.PASS, "transaction date->Expected value:"+appdate +"; == Actual value:"+cust_transaction_date);
 								}
 								else
 								{
-									test.log(LogStatus.FAIL, "transaction date->Expected value:"+tran_date_sheet +"; not equals to Actual value:"+cust_transaction_date);
+									test.log(LogStatus.FAIL, "transaction date->Expected value:"+appdate +"; not equals to Actual value:"+cust_transaction_date);
 	
 								}
 							}

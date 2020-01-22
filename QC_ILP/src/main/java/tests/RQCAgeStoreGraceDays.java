@@ -23,16 +23,28 @@ import com.relevantcodes.extentreports.LogStatus;
 public class RQCAgeStoreGraceDays extends QCStore{
 	//private static String NextDueDate;
 
-	public static void ageStoreGraceDays(String SSN,String AppURL){
-		int i;
+	public static void ageStoreGraceDays(String SSN,String AppURL) throws Exception{
+	/*	int i;
 		for(i=0;i<4;i++)
 		{
+			csrloginpage=
 			//String curr_url=driver.getCurrentUrl();
 			//driver.navigate().back();
-			driver.get("http://192.168.2.203/cc/login/index.jsp");
+			//driver.get("http://192.168.2.203/cc/login/index.jsp");
+			driver.get(csrloginpage);
+			Thread.sleep(1000);
+			
+			try {
+				driver.findElement(By.id("overridelink")).click();
+				Thread.sleep(3000);
+				
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			Thread.sleep(1000);
 			//System.out.println(curr_url);
-		 
-		try{
+*/		 
+		//try{
 			//String FileName= Rprop.getProperty("QC_Store_NewLoan_file_name");
 			
 			//ExcelNew TestData = new ExcelNew(System.getProperty("user.dir")+Rprop.getProperty("QC_Store_NewLoan_Test_data_sheet_path")+FileName+".xls");  		 
@@ -93,10 +105,10 @@ public class RQCAgeStoreGraceDays extends QCStore{
 								driver.findElement(By.name("ssn3")).sendKeys(SSN3);
 								test.log(LogStatus.PASS, "SSN3 is entered: "+SSN3);
 								driver.findElement(By.name("submit1")).click();
-								test.log(LogStatus.PASS, "Click on submit Button");		
-								for(String winHandle : driver.getWindowHandles()){
-							    driver.switchTo().window(winHandle);
-								}
+								test.log(LogStatus.PASS, "Click on submit Button");	
+								Thread.sleep(4000);
+								
+							
 							    driver.switchTo().defaultContent();
 							    driver.switchTo().frame("mainFrame");
 							    driver.switchTo().frame("main");
@@ -107,7 +119,7 @@ public class RQCAgeStoreGraceDays extends QCStore{
 							    driver.findElement(By.name("button")).click();
 								test.log(LogStatus.PASS, "Clicked on GO Button under Search results");
 								// driver.findElement(By.name("button")).click();
-								
+								Thread.sleep(4000);
 							for(String winHandle : driver.getWindowHandles()){
 								    driver.switchTo().window(winHandle);
 									}				    
@@ -124,6 +136,7 @@ public class RQCAgeStoreGraceDays extends QCStore{
 								    if(ProductID.equals("TLP"))
 									 {
 								    	driver.findElement(By.xpath("/html/body/form[1]/table/tbody/tr/td/table/tbody/tr/td/table[2]/tbody/tr[7]/td[2]/table/tbody/tr/td/table/tbody/tr[4]/td[13]/input")).click();
+								    	Thread.sleep(4000);
 									 }
 								    
 								    Thread.sleep(5000);
@@ -187,7 +200,7 @@ public class RQCAgeStoreGraceDays extends QCStore{
 												 }
 												 catch(Exception e)
 												 {
-														driver.get("http://192.168.2.203/cc/login/index.jsp"); 
+														driver.get(csrloginpage); 
 														driver.switchTo().defaultContent();
 														 driver.switchTo().frame("topFrame");
 													 driver.findElement(By.xpath("//*[@id='930000']/a")).click();	
@@ -250,8 +263,8 @@ public class RQCAgeStoreGraceDays extends QCStore{
 				}
 			
 
-		break; //for FOR loop		
-		}
+		//break; //for FOR loop		
+		/*}
 				catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -262,25 +275,36 @@ public class RQCAgeStoreGraceDays extends QCStore{
 					continue;
 
 
-				}
+				}*/
 
-	}
+	/*}
 		if(i==3)
 		{
 			test.log(LogStatus.FAIL, "Age store Grace days is failed");
 	
-		}
+		}*/
 	}
-	public static void ageStoreGraceDays2ndTime(String SSN,String AppURL){
-		int i;
+	public static void ageStoreGraceDays2ndTime(String SSN,String AppURL) throws Exception{
+	/*	int i;
 		for(i=0;i<4;i++)
 		{
 			//String curr_url=driver.getCurrentUrl();
 			//driver.navigate().back();
-			driver.get("http://192.168.2.203/cc/login/index.jsp");
+			driver.get(csrloginpage);
+			Thread.sleep(1000);
+			
+			try {
+				driver.findElement(By.id("overridelink")).click();
+				Thread.sleep(3000);
+				
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			Thread.sleep(1000);
+			
 			//System.out.println(curr_url);
 		 
-		try{
+		try{*/
 			//String FileName= Rprop.getProperty("QC_Store_NewLoan_file_name");
 			
 			//ExcelNew TestData = new ExcelNew(System.getProperty("user.dir")+Rprop.getProperty("QC_Store_NewLoan_Test_data_sheet_path")+FileName+".xls");  		 
@@ -435,7 +459,8 @@ public class RQCAgeStoreGraceDays extends QCStore{
 												 }
 												 catch(Exception e)
 												 {
-														driver.get("http://192.168.2.203/cc/login/index.jsp"); 
+														driver.get(csrloginpage); 
+														
 														driver.switchTo().defaultContent();
 														 driver.switchTo().frame("topFrame");
 													 driver.findElement(By.xpath("//*[@id='930000']/a")).click();	
@@ -498,7 +523,7 @@ public class RQCAgeStoreGraceDays extends QCStore{
 				}
 			
 
-		break; //for FOR loop		
+	/*	break; //for FOR loop		
 		}
 				catch (Exception e) {
 					// TODO Auto-generated catch block
@@ -517,18 +542,38 @@ public class RQCAgeStoreGraceDays extends QCStore{
 		{
 			test.log(LogStatus.FAIL, "Age store Grace days is failed");
 	
-		}
+		}*/
 	}
-	public static void ageStoreGraceDays3rdTime(String SSN,String AppURL){
-		int i;
+	public static void ageStoreGraceDays3rdTime(String SSN,String AppURL)  throws Exception{
+	/*	int i;
 		for(i=0;i<4;i++)
 		{
 			//String curr_url=driver.getCurrentUrl();
 			//driver.navigate().back();
-			driver.get("http://192.168.2.203/cc/login/index.jsp");
+			driver.get(csrloginpage);
+            Thread.sleep(1000);
+			
+			try {
+				driver.findElement(By.id("overridelink")).click();
+				Thread.sleep(3000);
+				
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			Thread.sleep(1000);
+			Thread.sleep(1000);
+			
+			try {
+				driver.findElement(By.id("overridelink")).click();
+				Thread.sleep(3000);
+				
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			Thread.sleep(1000);
 			//System.out.println(curr_url);
 		 
-		try{
+		try{*/
 			//String FileName= Rprop.getProperty("QC_Store_NewLoan_file_name");
 			
 			//ExcelNew TestData = new ExcelNew(System.getProperty("user.dir")+Rprop.getProperty("QC_Store_NewLoan_Test_data_sheet_path")+FileName+".xls");  		 
@@ -683,7 +728,7 @@ public class RQCAgeStoreGraceDays extends QCStore{
 												 }
 												 catch(Exception e)
 												 {
-														driver.get("http://192.168.2.203/cc/login/index.jsp"); 
+														driver.get(csrloginpage); 
 														driver.switchTo().defaultContent();
 														 driver.switchTo().frame("topFrame");
 													 driver.findElement(By.xpath("//*[@id='930000']/a")).click();	
@@ -746,7 +791,7 @@ public class RQCAgeStoreGraceDays extends QCStore{
 				}
 			
 
-		break; //for FOR loop		
+		/*break; //for FOR loop		
 		}
 				catch (Exception e) {
 					// TODO Auto-generated catch block
@@ -765,18 +810,18 @@ public class RQCAgeStoreGraceDays extends QCStore{
 		{
 			test.log(LogStatus.FAIL, "Age store Grace days is failed");
 	
-		}
+		}*/
 	}	
-	public static void ageStoreGraceDays4thTime(String SSN,String AppURL){
-		int i;
+	public static void ageStoreGraceDays4thTime(String SSN,String AppURL)throws Exception{
+	/*	int i;
 		for(i=0;i<4;i++)
 		{
 			//String curr_url=driver.getCurrentUrl();
 			//driver.navigate().back();
-			driver.get("http://192.168.2.203/cc/login/index.jsp");
+			driver.get(csrloginpage);
 			//System.out.println(curr_url);
 		 
-		try{
+		try{*/
 			//String FileName= Rprop.getProperty("QC_Store_NewLoan_file_name");
 			
 			//ExcelNew TestData = new ExcelNew(System.getProperty("user.dir")+Rprop.getProperty("QC_Store_NewLoan_Test_data_sheet_path")+FileName+".xls");  		 
@@ -931,7 +976,7 @@ public class RQCAgeStoreGraceDays extends QCStore{
 												 }
 												 catch(Exception e)
 												 {
-														driver.get("http://192.168.2.203/cc/login/index.jsp"); 
+														driver.get(csrloginpage); 
 														driver.switchTo().defaultContent();
 														 driver.switchTo().frame("topFrame");
 													 driver.findElement(By.xpath("//*[@id='930000']/a")).click();	
@@ -994,7 +1039,7 @@ public class RQCAgeStoreGraceDays extends QCStore{
 				}
 			
 
-		break; //for FOR loop		
+	/*	break; //for FOR loop		
 		}
 				catch (Exception e) {
 					// TODO Auto-generated catch block
@@ -1013,7 +1058,7 @@ public class RQCAgeStoreGraceDays extends QCStore{
 		{
 			test.log(LogStatus.FAIL, "Age store Grace days is failed");
 	
-		}
+		}*/
 	}	
 	
 	

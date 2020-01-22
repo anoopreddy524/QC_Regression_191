@@ -58,7 +58,7 @@ public class RQCRefinance extends QCStore{
 				Thread.sleep(3000);
 				test.log(LogStatus.INFO,"**************RefinanceStepUp  started**************");
 				driver.switchTo().frame("topFrame");
-				driver.findElement(locator(Aprop.getProperty("transactions_tab"))).click();			
+				driver.findElement(locator(prop.getProperty("transactions_tab"))).click();			
 				test.log(LogStatus.PASS, "Clicked on Loan Transactions");
 
 				driver.switchTo().defaultContent();
@@ -70,17 +70,17 @@ public class RQCRefinance extends QCStore{
 				Thread.sleep(500);
 				driver.findElement(By.name("ssn1")).sendKeys(SSN1);
 				test.log(LogStatus.PASS, "SSN1 is entered: "+SSN1);
-				driver.findElement(locator(Aprop.getProperty("CSR_SSN_second_field"))).sendKeys(SSN2);
+				driver.findElement(locator(prop.getProperty("CSR_SSN_second_field"))).sendKeys(SSN2);
 				test.log(LogStatus.PASS, "SSN2 is entered: "+SSN2);
-				driver.findElement(locator(Aprop.getProperty("CSR_SSN_third_field"))).sendKeys(SSN3);
+				driver.findElement(locator(prop.getProperty("CSR_SSN_third_field"))).sendKeys(SSN3);
 				test.log(LogStatus.PASS, "SSN3 is entered: "+SSN3);
-				driver.findElement(locator(Aprop.getProperty("csr_new_loan_submit_button"))).click();
+				driver.findElement(locator(prop.getProperty("csr_new_loan_submit_button"))).click();
 				test.log(LogStatus.PASS, "Clicked on submit Button");		
 
 				driver.switchTo().defaultContent();
 				driver.switchTo().frame("mainFrame");
 				driver.switchTo().frame("main");					    					   					     
-				driver.findElement(locator(Aprop.getProperty("csr_new_loan_go_button"))).click();
+				driver.findElement(locator(prop.getProperty("csr_new_loan_go_button"))).click();
 				test.log(LogStatus.PASS, "Clicked on GO Button under search results");
 				Thread.sleep(2000);					  
 
@@ -356,7 +356,7 @@ public class RQCRefinance extends QCStore{
 				Thread.sleep(3000);
 				test.log(LogStatus.INFO,"**************RefinanceStepUp  started**************");
 				driver.switchTo().frame("topFrame");
-				driver.findElement(locator(Aprop.getProperty("transactions_tab"))).click();			
+				driver.findElement(locator(prop.getProperty("transactions_tab"))).click();			
 				test.log(LogStatus.PASS, "Clicked on Loan Transactions");
 
 				driver.switchTo().defaultContent();
@@ -368,17 +368,17 @@ public class RQCRefinance extends QCStore{
 				Thread.sleep(500);
 				driver.findElement(By.name("ssn1")).sendKeys(SSN1);
 				test.log(LogStatus.PASS, "SSN1 is entered: "+SSN1);
-				driver.findElement(locator(Aprop.getProperty("CSR_SSN_second_field"))).sendKeys(SSN2);
+				driver.findElement(locator(prop.getProperty("CSR_SSN_second_field"))).sendKeys(SSN2);
 				test.log(LogStatus.PASS, "SSN2 is entered: "+SSN2);
-				driver.findElement(locator(Aprop.getProperty("CSR_SSN_third_field"))).sendKeys(SSN3);
+				driver.findElement(locator(prop.getProperty("CSR_SSN_third_field"))).sendKeys(SSN3);
 				test.log(LogStatus.PASS, "SSN3 is entered: "+SSN3);
-				driver.findElement(locator(Aprop.getProperty("csr_new_loan_submit_button"))).click();
+				driver.findElement(locator(prop.getProperty("csr_new_loan_submit_button"))).click();
 				test.log(LogStatus.PASS, "Clicked on submit Button");		
 
 				driver.switchTo().defaultContent();
 				driver.switchTo().frame("mainFrame");
 				driver.switchTo().frame("main");					    					   					     
-				driver.findElement(locator(Aprop.getProperty("csr_new_loan_go_button"))).click();
+				driver.findElement(locator(prop.getProperty("csr_new_loan_go_button"))).click();
 				test.log(LogStatus.PASS, "Clicked on GO Button under search results");
 				Thread.sleep(2000);					  
 
@@ -658,7 +658,7 @@ public class RQCRefinance extends QCStore{
 				Thread.sleep(3000);
 				test.log(LogStatus.INFO,"**************RefinanceStepUp  started**************");
 				driver.switchTo().frame("topFrame");
-				driver.findElement(locator(Aprop.getProperty("transactions_tab"))).click();			
+				driver.findElement(locator(prop.getProperty("transactions_tab"))).click();			
 				test.log(LogStatus.PASS, "Clicked on Loan Transactions");
 
 				driver.switchTo().defaultContent();
@@ -670,17 +670,17 @@ public class RQCRefinance extends QCStore{
 				Thread.sleep(500);
 				driver.findElement(By.name("ssn1")).sendKeys(SSN1);
 				test.log(LogStatus.PASS, "SSN1 is entered: "+SSN1);
-				driver.findElement(locator(Aprop.getProperty("CSR_SSN_second_field"))).sendKeys(SSN2);
+				driver.findElement(locator(prop.getProperty("CSR_SSN_second_field"))).sendKeys(SSN2);
 				test.log(LogStatus.PASS, "SSN2 is entered: "+SSN2);
-				driver.findElement(locator(Aprop.getProperty("CSR_SSN_third_field"))).sendKeys(SSN3);
+				driver.findElement(locator(prop.getProperty("CSR_SSN_third_field"))).sendKeys(SSN3);
 				test.log(LogStatus.PASS, "SSN3 is entered: "+SSN3);
-				driver.findElement(locator(Aprop.getProperty("csr_new_loan_submit_button"))).click();
+				driver.findElement(locator(prop.getProperty("csr_new_loan_submit_button"))).click();
 				test.log(LogStatus.PASS, "Clicked on submit Button");		
 
 				driver.switchTo().defaultContent();
 				driver.switchTo().frame("mainFrame");
 				driver.switchTo().frame("main");					    					   					     
-				driver.findElement(locator(Aprop.getProperty("csr_new_loan_go_button"))).click();
+				driver.findElement(locator(prop.getProperty("csr_new_loan_go_button"))).click();
 				test.log(LogStatus.PASS, "Clicked on GO Button under search results");
 				Thread.sleep(2000);					  
 

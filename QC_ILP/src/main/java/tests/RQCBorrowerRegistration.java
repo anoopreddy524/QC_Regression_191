@@ -1,6 +1,7 @@
 package tests;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -31,14 +32,10 @@ import tests.QCStore;
 
 public class RQCBorrowerRegistration extends QCStore {
 	
-	public static void borrowerRegistration(String SSN,String AppURL)
+	public static void borrowerRegistration(String SSN,String AppURL) throws InterruptedException, ParseException
 	{
 		 
-		try{
-			//String FileName= Rprop.getProperty("QC_Store_NewLoan_file_name");
-			
-			//ExcelNew TestData = new ExcelNew(System.getProperty("user.dir")+Rprop.getProperty("QC_Store_NewLoan_Test_data_sheet_path")+FileName+".xls");  		 
-				int lastrow=TestData.getLastRow("Borrower_Registration");
+			int lastrow=TestData.getLastRow("Borrower_Registration");
 				String sheetName="Borrower_Registration";
 
 				for(int row=2;row<=lastrow;row++)
@@ -81,7 +78,10 @@ public class RQCBorrowerRegistration extends QCStore {
 				       String Misc_PhotoIDType = TestData.getCellData(sheetName,"Misc_PhotoIDType",row);
 				       String BorrDOB = TestData.getCellData(sheetName,"Misc_DOB",row);
 				       String Income_IncomeType = TestData.getCellData(sheetName,"Income_IncomeType",row);
-				       String Income_Employer = TestData.getCellData(sheetName,"Income_Employer",row);
+				       //String Income_Employer = TestData.getCellData(sheetName,"Income_Employer",row);
+				       
+				       String Income_Employer = "Employer";
+						//TestData.getCellData(sheetName,"UserName",row);				       
 				       String Income_WorkPhone = TestData.getCellData(sheetName,"Income_WorkPhone",row);
 				       String Income_NetIncomeAmt = TestData.getCellData(sheetName,"Income_NetIncomeAmt",row);
 				       String Income_GrossIncome = TestData.getCellData(sheetName,"Income_GrossIncome",row);
@@ -132,15 +132,21 @@ public class RQCBorrowerRegistration extends QCStore {
 						        String Monthly_payWeekDay=TestData.getCellData(sheetName,"MonthlyPayWeekDay",row);
 						        String Monthly_payday= TestData.getCellData(sheetName,"MonthlyPayDay",row);
 						        
-						       
-						        
+						        driver.switchTo().frame("bottom");
+								String Str_date=driver.findElement(By.xpath("/html/body/blink/table/tbody/tr/td[4]")).getText();
+								String store_date[]=Str_date.split(":");
+								String business_date=store_date[1].trim();
+								test.log(LogStatus.PASS, "<FONT color=green style=Arial> Business date is : " +business_date );
+								//test.log(LogStatus.PASS, "Business date is : " +business_date);
+								driver.switchTo().defaultContent();	  
+								Thread.sleep(3000);
 						       
 						// wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li[id='900000']")));
 
 				        driver.switchTo().frame("topFrame");	        
 				        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li[id='900000']")));
 				       
-				        driver.findElement(locator(Rprop.getProperty("borrower_tab"))).click();	
+				        driver.findElement(locator(prop.getProperty("borrower_tab"))).click();	
 				        Thread.sleep(2000);
 						
 						test.log(LogStatus.PASS, "Clicked on Borrower");
@@ -148,7 +154,7 @@ public class RQCBorrowerRegistration extends QCStore {
 						driver.switchTo().defaultContent();
 						driver.switchTo().frame("mainFrame");			 
 							wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("li[id='901000']")));
-						driver.findElement(locator(Rprop.getProperty("registration_link"))).click();
+						driver.findElement(locator(prop.getProperty("registration_link"))).click();
 					
 						test.log(LogStatus.PASS, "Clicked on Registration");
 						driver.switchTo().frame("main");
@@ -158,81 +164,81 @@ public class RQCBorrowerRegistration extends QCStore {
 						//driver.switchTo().frame("main");		
 						driver.findElement(By.name("ssn1")).sendKeys(SSN1);
 						 test.log(LogStatus.PASS, "SSN1 is entered: "+SSN1);
-						driver.findElement(locator(Rprop.getProperty("CSR_SSN_second_field"))).sendKeys(SSN2);
+						driver.findElement(locator(prop.getProperty("CSR_SSN_second_field"))).sendKeys(SSN2);
 						test.log(LogStatus.PASS, "SSN2 is entered: "+SSN2);
-						driver.findElement(locator(Rprop.getProperty("CSR_SSN_third_field"))).sendKeys(SSN3);
+						driver.findElement(locator(prop.getProperty("CSR_SSN_third_field"))).sendKeys(SSN3);
 						test.log(LogStatus.PASS, "SSN3 is entered: "+SSN3);
-						driver.findElement(locator(Rprop.getProperty("CSR_SSN_cfm_first_field"))).sendKeys(SSN1);
+						driver.findElement(locator(prop.getProperty("CSR_SSN_cfm_first_field"))).sendKeys(SSN1);
 						test.log(LogStatus.PASS, "Confirm SSN1 is entered: "+SSN1);
-						driver.findElement(locator(Rprop.getProperty("CSR_SSN_cfm_second_field"))).sendKeys(SSN2);
+						driver.findElement(locator(prop.getProperty("CSR_SSN_cfm_second_field"))).sendKeys(SSN2);
 						test.log(LogStatus.PASS, "Confirm SSN2 is entered: "+SSN2);
-						driver.findElement(locator(Rprop.getProperty("CSR_SSN_cfm_third_field"))).sendKeys(SSN3);
+						driver.findElement(locator(prop.getProperty("CSR_SSN_cfm_third_field"))).sendKeys(SSN3);
 						test.log(LogStatus.PASS, "Confirm SSN3 is entered: "+SSN3);		
 						
-						driver.findElement(locator(Rprop.getProperty("CSR_lastname"))).sendKeys(LastName);
+						driver.findElement(locator(prop.getProperty("CSR_lastname"))).sendKeys(LastName);
 						test.log(LogStatus.PASS, "LastName is entered: "+LastName);
-						driver.findElement(locator(Rprop.getProperty("CSR_firstname"))).sendKeys(FirstName);
+						driver.findElement(locator(prop.getProperty("CSR_firstname"))).sendKeys(FirstName);
 						test.log(LogStatus.PASS, "FirstName is entered: "+FirstName);
-						driver.findElement(locator(Rprop.getProperty("CSR_reg_addressline"))).sendKeys(AddressLine);
+						driver.findElement(locator(prop.getProperty("CSR_reg_addressline"))).sendKeys(AddressLine);
 						test.log(LogStatus.PASS, "AddressLine is entered: "+AddressLine);
-						driver.findElement(locator(Rprop.getProperty("CSR_reg_city"))).sendKeys(City);
+						driver.findElement(locator(prop.getProperty("CSR_reg_city"))).sendKeys(City);
 						test.log(LogStatus.PASS, "City is entered: "+City);
-						driver.findElement(locator(Rprop.getProperty("CSR_reg_state"))).sendKeys(State);
+						driver.findElement(locator(prop.getProperty("CSR_reg_state"))).sendKeys(State);
 						test.log(LogStatus.PASS, "State is entered: "+State);
-						driver.findElement(locator(Rprop.getProperty("CSR_reg_zipcode"))).sendKeys(ZipCode);
+						driver.findElement(locator(prop.getProperty("CSR_reg_zipcode"))).sendKeys(ZipCode);
 						test.log(LogStatus.PASS, "ZipCode is entered: "+ZipCode);
-						driver.findElement(locator(Rprop.getProperty("CSR_reg_months_at_address"))).sendKeys(MonthsAtAddress);
+						driver.findElement(locator(prop.getProperty("CSR_reg_months_at_address"))).sendKeys(MonthsAtAddress);
 						test.log(LogStatus.PASS, "MonthsAtAddress is entered: "+MonthsAtAddress);
-						driver.findElement(locator(Rprop.getProperty("CSR_reg_primary_phone1"))).sendKeys(PP1);
+						driver.findElement(locator(prop.getProperty("CSR_reg_primary_phone1"))).sendKeys(PP1);
 						test.log(LogStatus.PASS, "PP1 is entered: "+PP1);
-						driver.findElement(locator(Rprop.getProperty("CSR_reg_primary_phone2"))).sendKeys(PP2);
+						driver.findElement(locator(prop.getProperty("CSR_reg_primary_phone2"))).sendKeys(PP2);
 						test.log(LogStatus.PASS, "PP2 is entered: "+PP2);
-						driver.findElement(locator(Rprop.getProperty("CSR_reg_primary_phone3"))).sendKeys(PP3);
+						driver.findElement(locator(prop.getProperty("CSR_reg_primary_phone3"))).sendKeys(PP3);
 						test.log(LogStatus.PASS, "PP3 is entered: "+PP3);
-						//driver.findElement(locator(Rprop.getProperty("phoneNbr3"))(PP3);
+						//driver.findElement(locator(prop.getProperty("phoneNbr3"))(PP3);
 						//test.log(LogStatus.PASS, "PP3 is entered: "+PP3);
-						Select PhoneType  = new Select(driver.findElement(locator(Rprop.getProperty("CSR_reg_phonetype"))));
+						Select PhoneType  = new Select(driver.findElement(locator(prop.getProperty("CSR_reg_phonetype"))));
 						PhoneType.selectByVisibleText(Ctc_PhoneType);
 						test.log(LogStatus.PASS, "Phone Type is selected as: "+Ctc_PhoneType);
-						driver.findElement(locator(Rprop.getProperty("CSR_reg_email_option_no"))).click();
+						driver.findElement(locator(prop.getProperty("CSR_reg_email_option_no"))).click();
 						test.log(LogStatus.PASS, "Does not have e-mail selected");
-						driver.findElement(locator(Rprop.getProperty("CSR_reg_photoID"))).sendKeys(Misc_PhotoIDNbr);
+						driver.findElement(locator(prop.getProperty("CSR_reg_photoID"))).sendKeys(Misc_PhotoIDNbr);
 						test.log(LogStatus.PASS, "PhotoIDNbr is entered: "+Misc_PhotoIDNbr);
-						driver.findElement(locator(Rprop.getProperty("CSR_reg_state_cust"))).sendKeys(State);
+						driver.findElement(locator(prop.getProperty("CSR_reg_state_cust"))).sendKeys(State);
 						test.log(LogStatus.PASS, "ID State is entered: "+State);
-						driver.findElement(locator(Rprop.getProperty("CSR_reg_exp_date1"))).sendKeys(IDExpD1);
+						driver.findElement(locator(prop.getProperty("CSR_reg_exp_date1"))).sendKeys(IDExpD1);
 						test.log(LogStatus.PASS, "ID Expiration Date1 is entered: "+IDExpD1);
-						driver.findElement(locator(Rprop.getProperty("CSR_reg_exp_date2"))).sendKeys(IDExpD2);
+						driver.findElement(locator(prop.getProperty("CSR_reg_exp_date2"))).sendKeys(IDExpD2);
 						test.log(LogStatus.PASS, "ID Expiration Date1 is entered: "+IDExpD2);
-						driver.findElement(locator(Rprop.getProperty("CSR_reg_exp_date3"))).sendKeys(IDExpD3);
+						driver.findElement(locator(prop.getProperty("CSR_reg_exp_date3"))).sendKeys(IDExpD3);
 						test.log(LogStatus.PASS, "ID Expiration Date1 is entered: "+IDExpD3);
-						driver.findElement(locator(Rprop.getProperty("CSR_reg_photoID_type"))).sendKeys(Misc_PhotoIDType);
+						driver.findElement(locator(prop.getProperty("CSR_reg_photoID_type"))).sendKeys(Misc_PhotoIDType);
 						test.log(LogStatus.PASS, "PhotoIDType is entered: "+Misc_PhotoIDType);
-						driver.findElement(locator(Rprop.getProperty("CSR_reg_zipcode_cust"))).sendKeys(ZipCode);
+						driver.findElement(locator(prop.getProperty("CSR_reg_zipcode_cust"))).sendKeys(ZipCode);
 						test.log(LogStatus.PASS, "ZipCode is entered: "+ZipCode);
-						driver.findElement(locator(Rprop.getProperty("CSR_reg_dob_field1"))).sendKeys(DOB1);
+						driver.findElement(locator(prop.getProperty("CSR_reg_dob_field1"))).sendKeys(DOB1);
 						test.log(LogStatus.PASS, "DOB1 Date1 is entered: "+DOB1);
-						driver.findElement(locator(Rprop.getProperty("CSR_reg_dob_field2"))).sendKeys(DOB2);
+						driver.findElement(locator(prop.getProperty("CSR_reg_dob_field2"))).sendKeys(DOB2);
 						test.log(LogStatus.PASS, "DOB3 is entered: "+DOB2);
-						driver.findElement(locator(Rprop.getProperty("CSR_reg_dob_field3"))).sendKeys(DOB3);
+						driver.findElement(locator(prop.getProperty("CSR_reg_dob_field3"))).sendKeys(DOB3);
 						test.log(LogStatus.PASS, "DOB3 is entered: "+DOB3);
-						//driver.findElement(locator(Rprop.getProperty("PhoneNbr2")).sendKeys(PP3);
-						driver.findElement(locator(Rprop.getProperty("CSR_reg_income_type"))).sendKeys(Income_IncomeType);
+						//driver.findElement(locator(prop.getProperty("PhoneNbr2")).sendKeys(PP3);
+						driver.findElement(locator(prop.getProperty("CSR_reg_income_type"))).sendKeys(Income_IncomeType);
 						test.log(LogStatus.PASS, "IncomeType is entered: "+Income_IncomeType);
-						driver.findElement(locator(Rprop.getProperty("CSR_reg_employer"))).sendKeys(Income_Employer);
+						driver.findElement(locator(prop.getProperty("CSR_reg_employer"))).sendKeys(Income_Employer);
 						test.log(LogStatus.PASS, "Employer is entered: "+Income_Employer);
-						driver.findElement(locator(Rprop.getProperty("CSR_reg_work_phone1"))).sendKeys(IncomeP1);
+						driver.findElement(locator(prop.getProperty("CSR_reg_work_phone1"))).sendKeys(IncomeP1);
 						test.log(LogStatus.PASS, "PP1 is entered: "+IncomeP1);
-						driver.findElement(locator(Rprop.getProperty("CSR_reg_work_phone2"))).sendKeys(IncomeP2);
+						driver.findElement(locator(prop.getProperty("CSR_reg_work_phone2"))).sendKeys(IncomeP2);
 						test.log(LogStatus.PASS, "PP2 is entered: "+IncomeP2);
-						driver.findElement(locator(Rprop.getProperty("CSR_reg_work_phone3"))).sendKeys(IncomeP3);
+						driver.findElement(locator(prop.getProperty("CSR_reg_work_phone3"))).sendKeys(IncomeP3);
 						test.log(LogStatus.PASS, "PP3 is entered: "+IncomeP3);
 						Thread.sleep(2000);
-						driver.findElement(locator(Rprop.getProperty("CSR_reg_net_income"))).sendKeys(Income_NetIncomeAmt);
+						driver.findElement(locator(prop.getProperty("CSR_reg_net_income"))).sendKeys(Income_NetIncomeAmt);
 						test.log(LogStatus.PASS, "Income_NetIncomeAmt is entered: "+Income_NetIncomeAmt);
-						driver.findElement(locator(Rprop.getProperty("CSR_reg_gross_income"))).sendKeys(Income_GrossIncome);
+						driver.findElement(locator(prop.getProperty("CSR_reg_gross_income"))).sendKeys(Income_GrossIncome);
 						test.log(LogStatus.PASS, "Income_GrossIncome is entered: "+Income_GrossIncome);
-						/*driver.findElement(locator(Rprop.getProperty("CSR_reg_pay_frequency"))).sendKeys(Income_PayFrequency);
+						/*driver.findElement(locator(prop.getProperty("CSR_reg_pay_frequency"))).sendKeys(Income_PayFrequency);
 						test.log(LogStatus.PASS, "Income_PayFrequency is entered: "+Income_PayFrequency);*/
 						
 						if(Income_PayFrequency.equals("Bi-Weekly")){
@@ -285,7 +291,7 @@ public class RQCBorrowerRegistration extends QCStore {
 						
 						driver.switchTo().defaultContent();
 						driver.switchTo().frame("bottom");
-						 String  BusinessDt= driver.findElement(locator(Rprop.getProperty(("CSR_reg_business_date")))).getText();
+						 String  BusinessDt= driver.findElement(locator(prop.getProperty(("CSR_reg_business_date")))).getText();
 						 String Busdate[]=BusinessDt.split(":");
 						 String date = Busdate[1];
 						
@@ -308,11 +314,11 @@ public class RQCBorrowerRegistration extends QCStore {
 					        driver.switchTo().defaultContent();
 							 driver.switchTo().frame("mainFrame");
 							 driver.switchTo().frame("main");
-					        driver.findElement(locator(Rprop.getProperty("CSR_reg_paystub_review1"))).sendKeys(PayStubReviewedDate2);
+					        driver.findElement(locator(prop.getProperty("CSR_reg_paystub_review1"))).sendKeys(PayStubReviewedDate2);
 							test.log(LogStatus.PASS, "PayStubReviewed1 is entered: "+PayStubReviewedDate2);
-							driver.findElement(locator(Rprop.getProperty("CSR_reg_paystub_review2"))).sendKeys(PayStubReviewedDate3);
+							driver.findElement(locator(prop.getProperty("CSR_reg_paystub_review2"))).sendKeys(PayStubReviewedDate3);
 							test.log(LogStatus.PASS, "PayStubReviewed2 is entered: "+PayStubReviewedDate3);
-							driver.findElement(locator(Rprop.getProperty("CSR_reg_paystub_review3"))).sendKeys(PayStubReviewedDate4);
+							driver.findElement(locator(prop.getProperty("CSR_reg_paystub_review3"))).sendKeys(PayStubReviewedDate4);
 							test.log(LogStatus.PASS, "PayStubReviewed3 is entered: "+PayStubReviewedDate4);
 							
 							cal.add(Calendar.DATE, -30);
@@ -328,11 +334,11 @@ public class RQCBorrowerRegistration extends QCStore {
 						        String PayStubDate2 = PayStubDate0[0];
 						        String PayStubDate3 = PayStubDate0[1];
 						        String PayStubDate4 = PayStubDate0[2];
-						        driver.findElement(locator(Rprop.getProperty("CSR_reg_paystub_date1"))).sendKeys(PayStubDate2);
+						        driver.findElement(locator(prop.getProperty("CSR_reg_paystub_date1"))).sendKeys(PayStubDate2);
 								test.log(LogStatus.PASS, "payStubDate1 is entered: "+PayStubDate2);
-								driver.findElement(locator(Rprop.getProperty("CSR_reg_paystub_date2"))).sendKeys(PayStubDate3);
+								driver.findElement(locator(prop.getProperty("CSR_reg_paystub_date2"))).sendKeys(PayStubDate3);
 								test.log(LogStatus.PASS, "payStubDate2 is entered: "+PayStubDate3);
-								driver.findElement(locator(Rprop.getProperty("CSR_reg_paystub_date3"))).sendKeys(PayStubDate4);
+								driver.findElement(locator(prop.getProperty("CSR_reg_paystub_date3"))).sendKeys(PayStubDate4);
 								test.log(LogStatus.PASS, "payStubDate3 is entered: "+PayStubDate4);
 								
 								String Income_HireDt0[] =Income_HireDt.split("/");
@@ -340,14 +346,14 @@ public class RQCBorrowerRegistration extends QCStore {
 						        String Income_HireDt2 = Income_HireDt0[1];
 						        String Income_HireDt3 = Income_HireDt0[2];
 						        
-						        driver.findElement(locator(Rprop.getProperty("CSR_reg_hiredate1"))).sendKeys(Income_HireDt1);
+						        driver.findElement(locator(prop.getProperty("CSR_reg_hiredate1"))).sendKeys(Income_HireDt1);
 								test.log(LogStatus.PASS, "hireDate1 is entered: "+Income_HireDt1);
-								driver.findElement(locator(Rprop.getProperty("CSR_reg_hiredate2"))).sendKeys(Income_HireDt2);
+								driver.findElement(locator(prop.getProperty("CSR_reg_hiredate2"))).sendKeys(Income_HireDt2);
 								test.log(LogStatus.PASS, "hireDate2 is entered: "+Income_HireDt2);
-								driver.findElement(locator(Rprop.getProperty("CSR_reg_hiredate3"))).sendKeys(Income_HireDt3);
+								driver.findElement(locator(prop.getProperty("CSR_reg_hiredate3"))).sendKeys(Income_HireDt3);
 								test.log(LogStatus.PASS, "hireDate3 is entered: "+Income_HireDt3);
 					
-						driver.findElement(locator(Rprop.getProperty("CSR_reg_direct_deposit"))).sendKeys(Income_DirectDeposit);
+						driver.findElement(locator(prop.getProperty("CSR_reg_direct_deposit"))).sendKeys(Income_DirectDeposit);
 						test.log(LogStatus.PASS, "DirectDeposit is entered: "+Income_DirectDeposit);
 						cal.add(Calendar.DATE, -60);
 						 Date Bank_AcctVerificationDt0= cal.getTime();
@@ -357,76 +363,99 @@ public class RQCBorrowerRegistration extends QCStore {
 						        String Bank_AcctVerificationDt2 = Bank_AcctVerificationDt1[0];
 						        String Bank_AcctVerificationDt3 = Bank_AcctVerificationDt1[1];
 						        String Bank_AcctVerificationDt4 = Bank_AcctVerificationDt1[2];
-								driver.findElement(locator(Rprop.getProperty("CSR_reg_acc_verify_date1"))).sendKeys(Bank_AcctVerificationDt2);
+								driver.findElement(locator(prop.getProperty("CSR_reg_acc_verify_date1"))).sendKeys(Bank_AcctVerificationDt2);
 								test.log(LogStatus.PASS, "Bank_AcctVerificationDt1 is entered: "+Bank_AcctVerificationDt2);
 								driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-								driver.findElement(locator(Rprop.getProperty("CSR_reg_acc_verify_date2"))).sendKeys(Bank_AcctVerificationDt3);
+								driver.findElement(locator(prop.getProperty("CSR_reg_acc_verify_date2"))).sendKeys(Bank_AcctVerificationDt3);
 								test.log(LogStatus.PASS, "Bank_AcctVerificationDt2 is entered: "+Bank_AcctVerificationDt3);
 								driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-								driver.findElement(locator(Rprop.getProperty("CSR_reg_acc_verify_date3"))).sendKeys(Bank_AcctVerificationDt4);
+								driver.findElement(locator(prop.getProperty("CSR_reg_acc_verify_date3"))).sendKeys(Bank_AcctVerificationDt4);
 								test.log(LogStatus.PASS, "Bank_AcctVerificationDt3 is entered: "+Bank_AcctVerificationDt4);
 							
-						 //driver.findElement(locator(Rprop.getProperty("customerBean.abaNbrDisp")).sendKeys(Bank_ABARoutingNbr);
-						//driver.findElement(locator(Rprop.getProperty("phoneNbr3"))(PP3);
+						 //driver.findElement(locator(prop.getProperty("customerBean.abaNbrDisp")).sendKeys(Bank_ABARoutingNbr);
+						//driver.findElement(locator(prop.getProperty("phoneNbr3"))(PP3);
 						//test.log(LogStatus.PASS, "PP3 is entered: "+PP3);
-								driver.findElement(locator(Rprop.getProperty("CSR_reg_ABA_number"))).sendKeys(Bank_ABARoutingNbr);
+								driver.findElement(locator(prop.getProperty("CSR_reg_ABA_number"))).sendKeys(Bank_ABARoutingNbr);
 								test.log(LogStatus.PASS, "Bank_ABARoutingNbr is entered: "+Bank_ABARoutingNbr);
-								driver.findElement(locator(Rprop.getProperty("CSR_reg_confirm_ABA_number"))).sendKeys(Bank_ABARoutingNbr);
+								driver.findElement(locator(prop.getProperty("CSR_reg_confirm_ABA_number"))).sendKeys(Bank_ABARoutingNbr);
 								test.log(LogStatus.PASS, "Confirm ABA/Routing Nbr is entered: "+Bank_ABARoutingNbr);
-								driver.findElement(locator(Rprop.getProperty("CSR_reg_acc_number"))).sendKeys(Bank_ChkgAcctNbr);
+								driver.findElement(locator(prop.getProperty("CSR_reg_acc_number"))).sendKeys(Bank_ChkgAcctNbr);
 								test.log(LogStatus.PASS, "Chkg Acct Nbr is entered: "+Bank_ChkgAcctNbr);			
-								driver.findElement(locator(Rprop.getProperty("CSR_reg_confirm_acc_number"))).sendKeys(Bank_ChkgAcctNbr);
+								driver.findElement(locator(prop.getProperty("CSR_reg_confirm_acc_number"))).sendKeys(Bank_ChkgAcctNbr);
 								test.log(LogStatus.PASS, "Confirm Chkg Acct Nbr is entered: "+Bank_ChkgAcctNbr);			
-						//driver.findElement(locator(Rprop.getProperty("customerBean.drivingZipcode")).sendKeys(Bank_ChkgAcctNbr);
+						//driver.findElement(locator(prop.getProperty("customerBean.drivingZipcode")).sendKeys(Bank_ChkgAcctNbr);
 						//test.log(LogStatus.PASS, "drivingZipcode is entered: "+MiscZipCode);
 						
 						//Primary Reference Details
 						
 						
-								driver.findElement(locator(Rprop.getProperty("CSR_reg_primary_ref_lastname"))).sendKeys(PrimaryRef_LastName);
+								driver.findElement(locator(prop.getProperty("CSR_reg_primary_ref_lastname"))).sendKeys(PrimaryRef_LastName);
 								test.log(LogStatus.PASS, "PRLast Name is entered: "+PrimaryRef_LastName);
-								driver.findElement(locator(Rprop.getProperty("CSR_reg_primary_ref_firstname"))).sendKeys(PrimaryRef_FirstName);
+								driver.findElement(locator(prop.getProperty("CSR_reg_primary_ref_firstname"))).sendKeys(PrimaryRef_FirstName);
 								test.log(LogStatus.PASS, "PRFirst Name is entered: "+PrimaryRef_FirstName);
 						
-						//driver.findElement(locator(Rprop.getProperty("customerBean.contName")).sendKeys(PrimaryRef_LastName);
-								driver.findElement(locator(Rprop.getProperty("CSR_reg_primary_relation"))).sendKeys(PrimaryRef_Relationship);
+						//driver.findElement(locator(prop.getProperty("customerBean.contName")).sendKeys(PrimaryRef_LastName);
+								driver.findElement(locator(prop.getProperty("CSR_reg_primary_relation"))).sendKeys(PrimaryRef_Relationship);
 								test.log(LogStatus.PASS, "Contactrelation is entered: "+PrimaryRef_Relationship);
-								driver.findElement(locator(Rprop.getProperty("CSR_reg_primary_ref_phone1"))).sendKeys(PrimaryRef_PhoneNbr1);
+								driver.findElement(locator(prop.getProperty("CSR_reg_primary_ref_phone1"))).sendKeys(PrimaryRef_PhoneNbr1);
 								test.log(LogStatus.PASS, "PrimaryReference Phone Nbr1 is entered: "+PrimaryRef_PhoneNbr1);
-								driver.findElement(locator(Rprop.getProperty("CSR_reg_primary_ref_phone2"))).sendKeys(PrimaryRef_PhoneNbr2);
+								driver.findElement(locator(prop.getProperty("CSR_reg_primary_ref_phone2"))).sendKeys(PrimaryRef_PhoneNbr2);
 								test.log(LogStatus.PASS, "PrimaryReference Phone Nbr1 is entered: "+PrimaryRef_PhoneNbr2);
-								driver.findElement(locator(Rprop.getProperty("CSR_reg_primary_ref_phone3"))).sendKeys(PrimaryRef_PhoneNbr3);
+								driver.findElement(locator(prop.getProperty("CSR_reg_primary_ref_phone3"))).sendKeys(PrimaryRef_PhoneNbr3);
 								test.log(LogStatus.PASS, "PrimaryReference Phone Nbr1 is entered: "+PrimaryRef_PhoneNbr3);
 						//Thread.sleep(10000);
 						// Reference Details
-								//driver.findElement(locator(Rprop.getProperty("bt_Reference")).click();			
+								//driver.findElement(locator(prop.getProperty("bt_Reference")).click();			
 								//test.log(LogStatus.PASS, "Clicked on ADD Reference");
 							
-								driver.findElement(locator(Rprop.getProperty("CSR_reg_secondary_ref_lastname"))).sendKeys(Ref_LastName);
+								driver.findElement(locator(prop.getProperty("CSR_reg_secondary_ref_lastname"))).sendKeys(Ref_LastName);
 								test.log(LogStatus.PASS, "RLast Name is entered: "+Ref_LastName);
-								driver.findElement(locator(Rprop.getProperty("CSR_reg_secondary_ref_firstname"))).sendKeys(Ref_FirstName);
+								driver.findElement(locator(prop.getProperty("CSR_reg_secondary_ref_firstname"))).sendKeys(Ref_FirstName);
 								test.log(LogStatus.PASS, "RFirst Name is entered: "+Ref_FirstName);
-							    driver.findElement(locator(Rprop.getProperty("CSR_reg_secondary_relation"))).sendKeys(Ref_Relationship);
+							    driver.findElement(locator(prop.getProperty("CSR_reg_secondary_relation"))).sendKeys(Ref_Relationship);
 								test.log(LogStatus.PASS, "reference relation is entered: "+Ref_Relationship);
-								driver.findElement(locator(Rprop.getProperty("CSR_reg_secondary_ref_phone1"))).sendKeys(Ref_PhoneNbr1);
+								driver.findElement(locator(prop.getProperty("CSR_reg_secondary_ref_phone1"))).sendKeys(Ref_PhoneNbr1);
 								test.log(LogStatus.PASS, "Reference Phone Nbr1 is entered: "+Ref_PhoneNbr1);
-								driver.findElement(locator(Rprop.getProperty("CSR_reg_secondary_ref_phone2"))).sendKeys(Ref_PhoneNbr2);
+								driver.findElement(locator(prop.getProperty("CSR_reg_secondary_ref_phone2"))).sendKeys(Ref_PhoneNbr2);
 								test.log(LogStatus.PASS, "Reference Phone Nbr1 is entered: "+Ref_PhoneNbr2);
-								driver.findElement(locator(Rprop.getProperty("CSR_reg_secondary_ref_phone3"))).sendKeys(Ref_PhoneNbr3);
+								driver.findElement(locator(prop.getProperty("CSR_reg_secondary_ref_phone3"))).sendKeys(Ref_PhoneNbr3);
 								test.log(LogStatus.PASS, "Reference Phone Nbr1 is entered: "+Ref_PhoneNbr3);
 								//Thread.sleep(10000);
 
-								driver.findElement(locator(Rprop.getProperty("CSR_reg_add_reference_button"))).click();			
+								driver.findElement(locator(prop.getProperty("CSR_reg_add_reference_button"))).click();			
 								test.log(LogStatus.PASS, "Clicked on ADD Reference");
 						
 								
-								driver.findElement(locator(Rprop.getProperty("CSR_reg_bunkrupty_selection"))).sendKeys(Bankruptcy);
+								driver.findElement(locator(prop.getProperty("CSR_reg_bunkrupty_selection"))).sendKeys(Bankruptcy);
 								test.log(LogStatus.PASS, "Bankrupty is selected as: "+Bankruptcy);
-								 
+								Thread.sleep(500);
 								 for(int i=1;i<=7;i++){       //''''''For Performed on Save&Exit Button
-								 driver.findElement(locator(Rprop.getProperty("CSR_reg_bunkrupty_selection"))).sendKeys(Keys.TAB);
+								 driver.findElement(locator(prop.getProperty("CSR_reg_bunkrupty_selection"))).sendKeys(Keys.TAB);
 								 break;
 								 }
+								 
+								//===================== Extra Line Added in LocalReg Build =====================================
+									
+									//*************New Request Change for Borrower Registration********************
+															
+															driver.findElement(By.id("oprRadioAutoCallOptOut")).click();
+															test.log(LogStatus.PASS, "Click on Operational Services Auto call Opt-Out ");	
+															Thread.sleep(500);
+															driver.findElement(By.id("marRadioAutoCallOut")).click();
+															test.log(LogStatus.PASS, "Click on Marketing Services Auto call Opt-Out ");	
+															Thread.sleep(500);
+															driver.findElement(By.id("marRadioEmailOptOut")).click();
+															test.log(LogStatus.PASS, "Click on Marketing Services Email Opt-Out ");
+															Thread.sleep(500);
+															driver.findElement(By.id("marRadioSmsOptOut")).click();
+															test.log(LogStatus.PASS, "Click on Marketing Services SMS Opt-Out ");
+															Thread.sleep(500);
+															driver.findElement(By.id("marRadioMailOptOut")).click();
+															test.log(LogStatus.PASS, "Click on Marketing Services Auto Mail Opt-Out ");	
+															
+															//*****************************************END*******************************************************
+														 
+									//======================================================================================
 								 
 								driver.findElement(By.xpath("//*[@id='btnShowModalExit']")).sendKeys(Keys.ENTER);
 								test.log(LogStatus.PASS, "Clicked on Save & Exit");
@@ -455,11 +484,12 @@ public class RQCBorrowerRegistration extends QCStore {
 							
 								
 							    if(driver.findElement(By.xpath("/html/body/form/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr[3]/td/b/font")).isDisplayed())
-							    	
+									 //if(driver.findElement(By.name("Print CIS")).isDisplayed())
 							 	{
 								
 								  // test.log(LogStatus.PASS, "Borrower is Registered Successfully with SSN as " +SSN);		
-									 test.log(LogStatus.PASS,"Borrower is Registered Successfully with SSN as " +SSN);
+							    	test.log(LogStatus.PASS, "<FONT color=green style=Arial> Borrower is Registered Successfully with SSN as : " +SSN );						 
+									test.log(LogStatus.INFO, "******************************************************** ");
 
 							 	}
 							 	else
@@ -489,14 +519,7 @@ public class RQCBorrowerRegistration extends QCStore {
 					
 					}	
 			
-			}
-			catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-				test.log(LogStatus.FAIL,"Borrower Registration is failed");
-
-			}
-
+			
 }
 	}
 

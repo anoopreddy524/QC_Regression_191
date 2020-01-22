@@ -49,7 +49,7 @@ public class JQCAgeStoreDueDate extends QCStore{
 					        driver.findElement(By.cssSelector("li[id='910000']")).click();	
 								
 							test.log(LogStatus.PASS, "Clicked on Loan Transactions");
-							Thread.sleep(1000);
+							Thread.sleep(5000);
 							try{
 							driver.switchTo().defaultContent();
 							driver.switchTo().frame("mainFrame");
@@ -59,7 +59,7 @@ public class JQCAgeStoreDueDate extends QCStore{
 							}
 							catch(Exception e)
 							{
-								driver.get("http://192.168.2.203/cc/login/index.jsp");
+								//driver.get("http://192.168.2.203/cc/login/index.jsp");
 								driver.switchTo().defaultContent();	
 								
 						        wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("topFrame")));
@@ -82,8 +82,10 @@ public class JQCAgeStoreDueDate extends QCStore{
 							driver.findElement(By.name("ssn3")).sendKeys(SSN3);
 							test.log(LogStatus.PASS, "SSN3 is entered: "+SSN3);
 							driver.findElement(By.name("submit1")).click();
-							test.log(LogStatus.PASS, "Click on submit Button");		
-							for(String winHandle : driver.getWindowHandles()){
+							test.log(LogStatus.PASS, "Click on submit Button");	
+							
+							//============= Taking Due Date From Customer link ====================	
+							/*for(String winHandle : driver.getWindowHandles()){
 						    driver.switchTo().window(winHandle);
 							}
 						    driver.switchTo().defaultContent();
@@ -113,10 +115,56 @@ public class JQCAgeStoreDueDate extends QCStore{
 										break;
 										}
 								    }
-										driver.switchTo().window(mainwindow);
+										driver.switchTo().window(mainwindow);*/
 									
 								  
+							//==============================================================================
+							
+							//============= Taking Due Date From History ====================
+							
+							for(String winHandle : driver.getWindowHandles()){
+							    driver.switchTo().window(winHandle);
+								}
+							    driver.switchTo().defaultContent();
+							    driver.switchTo().frame("mainFrame");
+							    driver.switchTo().frame("main");
+							    
+							    
+							  // String loan_nbr= driver.findElement(locator(Rprop.getProperty("csr_loan_nbr"))).getText();
+							  // test.log(LogStatus.PASS, "Loan Number is" + loan_nbr);
+							    driver.findElement(By.name("button")).click();
+								test.log(LogStatus.PASS, "Clicked on GO Button under search results");
+								// driver.findElement(By.name("button")).click();
+								
+							for(String winHandle : driver.getWindowHandles()){
+								    driver.switchTo().window(winHandle);
+									}				    
+								 driver.switchTo().defaultContent();
+								    driver.switchTo().frame("mainFrame");
+								    driver.switchTo().frame("main");
+								   					    
+								    Thread.sleep(5000);
+								    
+								    	 driver.findElement(By.xpath("//input[@value='Go' and @type='button']")).click();
+										    test.log(LogStatus.PASS, "Clicked on Go button under Loans section");
+								
+								   //  String loan_nbr= driver.findElement(locator(Rprop.getProperty("csr_loan_nbr"))).getText();
+									//   test.log(LogStatus.PASS, "Loan Number is" + loan_nbr);
+									 driver.findElement(By.name("transactionList")).sendKeys("History");
+									 test.log(LogStatus.PASS, "Transaction Type is selected as History");
+									 driver.findElement(By.name("button")).click();
+									 test.log(LogStatus.PASS, "Clicked on Go button under Transaction selection section");													 													
+									 Thread.sleep(3000); 
+									 
+									 NextDueDate=driver.findElement(locator(prop.getProperty("loan_status_inf_due_date"))).getText();
+								     test.log(LogStatus.PASS, "Next due date is "+NextDueDate);		
+								     Thread.sleep(1000); 
+								     loan_nbr=driver.findElement(By.xpath("//*[@id='transactionHistoryTable']/tbody/tr/td[4]/table/tbody/tr[4]/td/span[2]")).getText();
 								  
+								     test.log(LogStatus.PASS, "Loan Number  is "+loan_nbr);	
+								     //==============================================================================
+		
+
 								 test.log(LogStatus.PASS, "Age Store Date is :"+NextDueDate);
 								 Thread.sleep(5000);
 								 

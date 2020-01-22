@@ -2,27 +2,27 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="CSRBorrowerRegistration.borrowerReg(SSN, AppURL);" key="selection"/>
+		<item value="prop" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="ACSRBorrowerRegistration.borrowerReg(SSN, AppURL);"/>
-			<item value="ACSRLoginLogout.logout();"/>
-			<item value="QCCSRLoginLogout.adminLogin(SSN, AppURL);"/>
-			<item value="ACSRLoginLogout.login(SSN, AppURL);"/>
-			<item value="QC_PartialPayment_RefundVoid"/>
-			<item value="QC_Void_FullReturnPayment"/>
-			<item value="QC_Epp_Return_ReDeposit"/>
-			<item value="QC_Epp_Return_NSFPayment_Txn"/>
+			<item value="Rprop"/>
+			<item value="Aprop"/>
+			<item value="Jprop"/>
+			<item value="Ratikanta_ILP1"/>
+			<item value="AdminURL"/>
+			<item value="//rat"/>
+			<item value="prop"/>
+			<item value="&#x09;System.out.println(AppURL);"/>
 		</list>
 		<list key="replacehistory">
-			<item value="CSRBorrowerRegistration.borrowerReg(SSN, AppURL);"/>
-			<item value="CSRLoginLogout.logout();"/>
-			<item value="CSRLoginLogout.adminLogin(SSN, AppURL);"/>
-			<item value="CSRLoginLogout.login(SSN, AppURL);"/>
+			<item value="prop"/>
 			<item value=""/>
+			<item value="QCBorrowerRegistration.borrowerRegistration(SSN, AppURL);"/>
+			<item value="QCCSRLoginLogout.logout(SSN, AppURL);"/>
+			<item value="QCCSRLoginLogout.login(SSN, AppURL);"/>
 			<item value="ACSRBorrowerRegistration.borrowerReg(SSN, AppURL);"/>
 			<item value="ACSRLoginLogout.logout();"/>
 			<item value="ACSRLoginLogout.login(SSN, AppURL);"/>
@@ -31,8 +31,8 @@
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="257" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
-		<item value="381" key="DIALOG_HEIGHT"/>
+		<item value="380" key="DIALOG_HEIGHT"/>
 		<item value="1082" key="DIALOG_X_ORIGIN"/>
-		<item value="95" key="DIALOG_Y_ORIGIN"/>
+		<item value="96" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

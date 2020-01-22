@@ -1,5 +1,6 @@
 package tests;
 
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -29,13 +30,9 @@ import junit.framework.Assert;
 public class RAdminLoginForDischarged extends QCStore{
 
 
-	public static void discharged(WebDriver driver,String SSN,String AppURL)
+	public static void discharged(WebDriver driver,String SSN,String AppURL) throws MalformedURLException, InterruptedException
 	{
-	try{
-		//String FileName= prop.getProperty("QC_Store_NewLoan_file_name");
-		
-		//ExcelNew TestData = new ExcelNew(System.getProperty("user.dir")+prop.getProperty("QC_Store_NewLoan_Test_data_sheet_path")+FileName+".xls");  		 
-			int lastrow=TestData.getLastRow("Discharged");
+		int lastrow=TestData.getLastRow("Discharged");
 			String sheetName="Discharged";
 
 			for(int row=2;row<=lastrow;row++)
@@ -45,7 +42,12 @@ public class RAdminLoginForDischarged extends QCStore{
 				{
 				String AdminUserName = TestData.getCellData(sheetName,"AdminUserName",row);
 				String AdminPassword = TestData.getCellData(sheetName,"AdminPassword",row);
-				String AdminURL = TestData.getCellData(sheetName,"AdminURL",row);
+				//String AdminURL = TestData.getCellData(sheetName,"AdminURL",row);
+				//String AdminURL = "AdminURL";
+				
+				
+				
+				
 				String PIN = TestData.getCellData(sheetName,"PIN",row);
 				String Trancd = TestData.getCellData(sheetName,"Trancd",row);
 				String StoreID = TestData.getCellData(sheetName,"StoreID",row);
@@ -178,7 +180,7 @@ public class RAdminLoginForDischarged extends QCStore{
 	
 	test.log(LogStatus.PASS, "Clicked on GO Button");
 			 
-	Thread.sleep(500);
+	Thread.sleep(8000);
 	
     driver.switchTo().defaultContent();
 	
@@ -240,15 +242,6 @@ break;
 			}	
 	
 	
-}
-
-				catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-					test.log(LogStatus.FAIL,"Discharged in Admin is failed");
-					Assert.assertTrue(false);
-
-				}
 
 	}
 }

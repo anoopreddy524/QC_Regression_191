@@ -117,6 +117,7 @@ public static String InsuranceExpiryDate1;
 					test.log(LogStatus.PASS, "SSN3 is entered: " + SSN3);
 					driver.findElement(By.name("submit1")).click();
 					test.log(LogStatus.PASS, "Click on submit Button");
+					Thread.sleep(4000);
 					for (String winHandle : driver.getWindowHandles()) {
 						driver.switchTo().window(winHandle);
 					}
@@ -127,7 +128,7 @@ public static String InsuranceExpiryDate1;
 					Thread.sleep(4000);
 					driver.findElement(By.xpath("//input[@value='Go' and @type='button']")).click();
 					test.log(LogStatus.PASS, "Clicked on Go button under search results");
-				
+					Thread.sleep(4000);
 
 					for (String winHandle : driver.getWindowHandles()) {
 						driver.switchTo().window(winHandle);
@@ -138,24 +139,32 @@ public static String InsuranceExpiryDate1;
 					
 					driver.findElement(By.xpath("//input[@value='Go' and @type='button']")).click();
 					test.log(LogStatus.PASS, "Clicked on Go button under Loans section");
-					
+					Thread.sleep(4000);
                    				
 					driver.findElement(By.name("transactionList")).sendKeys(TxnType);
 					test.log(LogStatus.PASS, "Transaction Type is selected as :" + TxnType);
-					Thread.sleep(500);
+					Thread.sleep(1000);
 					driver.findElement(By.xpath("//*[@id='go_Button']")).click();
 					test.log(LogStatus.PASS, "Clicked on Go button");
-					//Thread.sleep(30000);
+					Thread.sleep(10000);
+					driver.findElement(By.xpath("//input[@value='Continue' and @type='button']")).click();
+					test.log(LogStatus.PASS, "Clicked on Continue Button");
+					
+					Thread.sleep(8000);
 					 
 					wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("vehicleType_dd"))));
 					driver.findElement(By.name("vehicleType_dd")).sendKeys(VehicleType);
 					test.log(LogStatus.PASS, "Vehicle Type is :" +VehicleType);
+					Thread.sleep(1000);
 					driver.findElement(By.name("existingVin")).sendKeys(VIN);
 					test.log(LogStatus.PASS, "VIN Type is :" +VIN);
+					Thread.sleep(1000);
 					driver.findElement(By.name("newVinNbr")).sendKeys(NewVIN);
 					test.log(LogStatus.PASS, "New VIN nbr is :" +NewVIN);
+					Thread.sleep(1000);
 					driver.findElement(By.name("miles")).sendKeys(Miles);
 					test.log(LogStatus.PASS, "Miles entered is :" +Miles);
+					Thread.sleep(1000);
 					driver.findElement(By.name("bbHit_Button")).click();
 					test.log(LogStatus.PASS, "Clicked on HitBlackBook Button");
 					Thread.sleep(30000);
@@ -193,7 +202,7 @@ public static String InsuranceExpiryDate1;
 								Thread.sleep(3000);
 								driver.findElement(By.xpath("//*[@id='LoanButtonId']")).click();
 								test.log(LogStatus.PASS, "Clicked on Conversion");
-								
+								Thread.sleep(10000);
 								wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='titleNumber']")));
 								driver.findElement(By.xpath("//*[@id='titleNumber']")).clear();
 								Thread.sleep(3000);
@@ -207,7 +216,9 @@ public static String InsuranceExpiryDate1;
 								//driver.findElement(By.name("requestBean.vehicleMake")).clear();
 								driver.findElement(By.name("requestBean.vehicleMake")).sendKeys(VehicleMake);
 								test.log(LogStatus.PASS, "Vehicle Make is :" +VehicleMake);
-								Thread.sleep(3000);
+								Thread.sleep(1000);
+								driver.findElement(By.name("requestBean.vehicleMake")).sendKeys(VehicleMake);
+								Thread.sleep(500);
 								//driver.findElement(By.name("requestBean.vehicleModel")).clear();
 								driver.findElement(By.name("requestBean.vehicleModel")).sendKeys(VehicleModel);
 								test.log(LogStatus.PASS, "Vehicle Model is :" +VehicleModel);
@@ -215,30 +226,30 @@ public static String InsuranceExpiryDate1;
 								//driver.findElement(By.name("requestBean.vehicleYear")).clear();
 								driver.findElement(By.name("requestBean.vehicleYear")).sendKeys(VehicleYear);
 								test.log(LogStatus.PASS, "Vehicle Year is :" +VehicleYear);
-								Thread.sleep(500);
+								Thread.sleep(1000);
 								//driver.findElement(By.name("requestBean.licensePltNbr")).clear();
 								driver.findElement(By.name("requestBean.licensePltNbr")).sendKeys(License_Plate_Number);
 								test.log(LogStatus.PASS, "License number is :" +License_Plate_Number);
-								Thread.sleep(500);
+								Thread.sleep(1000);
 								driver.findElement(By.name("requestBean.extClr")).sendKeys(ExteriorColor);
 								test.log(LogStatus.PASS, "Exterior Color is :" +ExteriorColor);
-								Thread.sleep(500);
+								Thread.sleep(1000);
 								//driver.findElement(By.name("requestBean.vehicleGrade")).clear();
 								driver.findElement(By.name("requestBean.vehicleGrade")).sendKeys(VehicleGrade);
 								test.log(LogStatus.PASS, "Vehicle grade is :" +VehicleGrade);
-								Thread.sleep(500);
+								Thread.sleep(1000);
 								//driver.findElement(By.name("requestBean.coverageType")).clear();
 								driver.findElement(By.name("requestBean.coverageType")).sendKeys(InsuranceCoverage);
 								test.log(LogStatus.PASS, "Insurance is :" +InsuranceCoverage);
-								Thread.sleep(500);
+								Thread.sleep(1000);
 								//driver.findElement(By.name("requestBean.companyName")).clear();
 								driver.findElement(By.name("requestBean.companyName")).sendKeys(InsuranceCompany);
 								test.log(LogStatus.PASS, "Insurance Company is :" +InsuranceCompany);
-								Thread.sleep(500);
+								Thread.sleep(1000);
 								//driver.findElement(By.name("requestBean.polocyNbr")).clear();
 								driver.findElement(By.name("requestBean.polocyNbr")).sendKeys(PolicyNumber);
 								test.log(LogStatus.PASS, "Policy Number is :" +PolicyNumber);
-								
+								Thread.sleep(300);
 								PhoneNbr  = TestData.getCellData(sheetName, "PhoneNbr", row);
 								PhoneNbr1 = PhoneNbr.substring(0, 3);
 								PhoneNbr2 = PhoneNbr.substring(3, 6);
@@ -246,11 +257,11 @@ public static String InsuranceExpiryDate1;
 								//driver.findElement(By.name("iPhoneNbr1")).clear();
 								driver.findElement(By.name("iPhoneNbr1")).sendKeys(PhoneNbr1);
 								test.log(LogStatus.PASS, "Entereted phone number field 1 as  " + PhoneNbr1);
-								Thread.sleep(500);
+								Thread.sleep(800);
 								driver.findElement(By.name("iPhoneNbr2")).clear();
 								driver.findElement(By.name("iPhoneNbr2")).sendKeys(PhoneNbr2);
 								test.log(LogStatus.PASS, "Entereted phone number field 2 as  " + PhoneNbr2);
-								Thread.sleep(500);
+								Thread.sleep(800);
 								driver.findElement(By.name("iPhoneNbr3")).clear();
 								driver.findElement(By.name("iPhoneNbr3")).sendKeys(PhoneNbr3);
 								test.log(LogStatus.PASS, "Entereted phone number field 3 as  " + PhoneNbr3);
@@ -261,16 +272,16 @@ public static String InsuranceExpiryDate1;
 								InsuranceExpiryDate1 = InsuranceExpiryDate0[0];
 								InsuranceExpiryDate2 = InsuranceExpiryDate0[1];
 								InsuranceExpiryDate3 = InsuranceExpiryDate0[2];
-								Thread.sleep(500);
+								Thread.sleep(800);
 								driver.findElement(By.name("iexpiry1")).clear();
 								driver.findElement(By.name("iexpiry1")).sendKeys(InsuranceExpiryDate1);									
 								test.log(LogStatus.PASS, "Entereted Insurance expiry date field 1 as  " + InsuranceExpiryDate1);
-								Thread.sleep(500);
+								Thread.sleep(800);
 								driver.findElement(By.name("iexpiry2")).clear();
 								driver.findElement(By.name("iexpiry2")).sendKeys(InsuranceExpiryDate2);
 								
 								test.log(LogStatus.PASS, "Entereted Insurance expiry date field 2 as  " + InsuranceExpiryDate2);
-								Thread.sleep(500);
+								Thread.sleep(1000);
 								driver.findElement(By.name("iexpiry3")).clear();
 								driver.findElement(By.name("iexpiry3")).sendKeys(InsuranceExpiryDate3);
 								
@@ -281,26 +292,27 @@ public static String InsuranceExpiryDate1;
 								Thread.sleep(6000);
 								wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("button2")));
 								driver.findElement(By.name("button2")).click();
-								Thread.sleep(500);
+								Thread.sleep(900);
 								driver.findElement(By.name("button2")).click();
 								//driver.findElement(By.xpath("//*[@id='vehicleInformation']/td/table/tbody/tr[10]/td/input")).clear();
 								test.log(LogStatus.PASS, "Clicked on update button ");
-								Thread.sleep(5000);
+								Thread.sleep(9000);
 
 								wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("process")));
 								driver.findElement(By.name("process")).click();
 
 								test.log(LogStatus.PASS, "click on process Loan button ");							
-								Thread.sleep(5000);
+								Thread.sleep(10000);
                                 wait.until(ExpectedConditions.elementToBeClickable(By.name("qualify")));
                                 driver.findElement(By.name("qualify")).click();
                                 test.log(LogStatus.PASS, "Clicked on Qualify button ");
+                                Thread.sleep(20000);
                                 wait.until(ExpectedConditions.elementToBeClickable(By.name("requestBean.siilBean.tenderTypeFirst")));
                                 Thread.sleep(5000);
                                 driver.findElement(By.name("requestBean.siilBean.tenderTypeFirst")).sendKeys(TenderType);
                                 String PaymentAmt = driver.findElement(By.name("requestBean.siilBean.paymentAmt")).getAttribute("value");
     							test.log(LogStatus.PASS, "PaymentAmt is :" + PaymentAmt);
-    							Thread.sleep(500);
+    							Thread.sleep(900);
     							driver.findElement(By.name("requestBean.siilBean.tenderAmtFirst")).clear();
     							driver.findElement(By.name("requestBean.siilBean.tenderAmtFirst")).sendKeys(PaymentAmt);
     							test.log(LogStatus.PASS, "TenderAmt is :" + PaymentAmt);
@@ -309,26 +321,26 @@ public static String InsuranceExpiryDate1;
     							 if (ESign_CollateralType.equals("DEBIT CARD")) {
     								 driver.findElement(By.name("collateralType")).sendKeys(ESign_CollateralType);
     	    						 test.log(LogStatus.PASS, "collateralType is :" + ESign_CollateralType);
-    	    						 Thread.sleep(500);
+    	    						 Thread.sleep(1000);
     	    						 //driver.findElement(By.name("cardNmbr")).sendKeys(Selectcard);
     	    						 driver.findElement(By.xpath("//*[@id='cardsList']/select")).sendKeys(Selectcard);
 
     	    							test.log(LogStatus.PASS, "Select card as : " + "Selectcard");
-    	    							Thread.sleep(500);
+    	    							Thread.sleep(1000);
     	    							driver.findElement(By.xpath("//*[@id='ccnumber']")).sendKeys(CardNbr);
 
     	    							test.log(LogStatus.PASS, "Card number is :" + CardNbr);
-    	    							Thread.sleep(500);
+    	    							Thread.sleep(1000);
     	    							driver.findElement(By.xpath("//*[@id='cardType']/select")).sendKeys(CardType);
 
     	    							test.log(LogStatus.PASS, "Enterd card Type : " + CardType);
-    	    							Thread.sleep(500);
+    	    							Thread.sleep(1000);
     	    							driver.findElement(By.xpath("//*[@id='expmonth']")).sendKeys(Expmonth);
 
     	    							test.log(LogStatus.PASS, "Enterd Expiry month " + Expmonth);
-    	    							Thread.sleep(500);
+    	    							Thread.sleep(1000);
     	    							driver.findElement(By.xpath("//*[@id='expyear']")).sendKeys(Expyear);
-    	    							Thread.sleep(500);
+    	    							Thread.sleep(1000);
     	    							test.log(LogStatus.PASS, "Enterd Expiry year " + Expyear);
 
     	    							driver.findElement(By.xpath("//*[@id='cvvnumber']")).sendKeys(CVV);
@@ -353,15 +365,26 @@ public static String InsuranceExpiryDate1;
     	    							wait.until(ExpectedConditions.elementToBeClickable(By.name("requestBean.siilBean.courtesyCallFlag")));
     	    							driver.findElement(By.name("requestBean.siilBean.courtesyCallFlag")).sendKeys(ESign_CourtesyCallConsent);
     	    							test.log(LogStatus.PASS, "Courtesy call selected : "+ESign_CourtesyCallConsent);
+    	    							Thread.sleep(8000);
     								 
     							 }
     							 else{
     								 driver.findElement(By.name("collateralType")).sendKeys(ESign_CollateralType);
     	    						 test.log(LogStatus.PASS, "collateralType is :" + ESign_CollateralType);
-    	    						 Thread.sleep(5000);
+    	    						 Thread.sleep(1000);
+    	    					//===================== For Disb Type & Disb Amount =====================
+    	    						 /*driver.findElement(By.name("requestBean.siilBean.disbType")).sendKeys("Cash");
+    	    						 test.log(LogStatus.PASS, "Disb type selected :Cash ");
+    	    						 Thread.sleep(1000);
+    	    						 String Disbamount=driver.findElement(By.id("refinanceLoanAmt")).getAttribute("value");
+    	    						 test.log(LogStatus.PASS, "Disb amount is : "+Disbamount);
+    	    						 Thread.sleep(1000);
+    	    						 driver.findElement(By.name("requestBean.siilBean.disbAmtFirst")).sendKeys(Disbamount);
+    	    						 test.log(LogStatus.PASS, "Disb amount Entered as: "+Disbamount);
+    	    						 Thread.sleep(1000);*/
     	    						 driver.findElement(By.name("requestBean.siilBean.courtesyCallFlag")).sendKeys(ESign_CourtesyCallConsent);
  	    							test.log(LogStatus.PASS, "Courtesy call selected : "+ESign_CourtesyCallConsent);   								 
-    								 
+    							//=========================================================================	 
     							 }
     								    							     							 
     							 Thread.sleep(5000);
@@ -373,9 +396,10 @@ public static String InsuranceExpiryDate1;
     							wait.until(ExpectedConditions.elementToBeClickable(By.name("OKBut")));
     							driver.findElement(By.name("OKBut")).click();
     							test.log(LogStatus.PASS, "Clicked on Yes");
-    							Thread.sleep(500);
+    							Thread.sleep(1000);
     							test.log(LogStatus.PASS, "Conversion Completed Successfully");
     							driver.close();
+    							Thread.sleep(500);
     							
     							
     							

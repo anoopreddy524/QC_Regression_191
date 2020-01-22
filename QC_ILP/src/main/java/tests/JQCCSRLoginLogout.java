@@ -4,11 +4,12 @@ package tests;
 
 
 
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -19,9 +20,9 @@ import tests.QCStore;
 
 public class JQCCSRLoginLogout extends QCStore
 {
-	public static void login(String SSN,String AppURL)
+	public static void login(String SSN,String AppURL) throws InterruptedException, MalformedURLException
 	{
-		try{
+		
 			test.log(LogStatus.PASS, "********Performing Login functionality********");
 			int lastrow=TestData.getLastRow("Login");
 				System.out.println(lastrow);
@@ -35,20 +36,29 @@ public class JQCCSRLoginLogout extends QCStore
 					if(SSN.equals(RegSSN))
 					{	
 				
-						String csr_url = TestData.getCellData(sheetName,"AppURL",row);
-
+						//String csr_url = TestData.getCellData(sheetName,"AppURL",row);
+						
+						String csr_url =prop.getProperty("csrURL");;
+						
 						String username = TestData.getCellData(sheetName,"UserName",row);
 						System.out.println("ÜN"+username);
 						String password = TestData.getCellData(sheetName,"Password",row);
 						System.out.println("PWD"+password);
 						String store_id = TestData.getCellData(sheetName,"StoreID",row);
 						System.out.println("St"+store_id);
+
 						Thread.sleep(4000);
-						test.log(LogStatus.INFO, "Opened the CSR URL " +AppURL);
-						test.log(LogStatus.INFO, "CSR Application is launched " );
+						test.log(LogStatus.INFO, "Opened the CSR URL " +csr_url);
+ 						test.log(LogStatus.INFO, "CSR Application is launched " );
 						if(prop.getProperty("login_method").equalsIgnoreCase("local"))
 						{
 							driver = new InternetExplorerDriver();
+							//=========== For Browser info in report ===============
+							Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
+
+							String browserName = cap.getBrowserName();
+
+							reports.addSystemInfo("Browser",browserName);
 						}
 						else
 						{
@@ -75,6 +85,13 @@ public class JQCCSRLoginLogout extends QCStore
 					
 						driver.get(csr_url);
 						
+						/*try{
+						driver.findElement(By.id("overridelink")).click();
+						Thread.sleep(1000);
+						}catch(Exception e){
+							continue;
+						}*/
+						
 					    driver.findElement(locator(prop.getProperty("csr_username"))).sendKeys(username);
 				        test.log(LogStatus.PASS, "Username is entered: "+username);
 				        
@@ -95,12 +112,7 @@ public class JQCCSRLoginLogout extends QCStore
 }
 					
 	}
-	}
-	catch (Exception e) {
-		test.log(LogStatus.FAIL,"CSR login is failed");
-		e.printStackTrace();
-	}
-
+	
 }
 	
 public static void logout(String SSN,String AppURL){

@@ -28,7 +28,8 @@ public class JQCAdminStoreSetup extends QCStore
 				{
 					String UserName = TestData.getCellData(sheetName,"AdminUserName",row);
 					String Password = TestData.getCellData(sheetName,"AdminPassword",row);
-					String AdminURL = TestData.getCellData(sheetName,"AdminURL",row);
+					//String AdminURL = TestData.getCellData(sheetName,"AdminURL",row);
+					String AdminURL =prop.getProperty("AdminURL");
 
 					String StoreID = TestData.getCellData(sheetName,"StoreID",row);
 

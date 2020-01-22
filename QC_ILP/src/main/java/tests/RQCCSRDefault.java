@@ -24,71 +24,14 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;*/
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
-//import com.relevantcodes.extentreports.LogStatus;
-//import com.relevantcodes.extentreports.LogStatus;
 
-//public class QCCSRDueDate extends QCStore {
-
-//}
 public class RQCCSRDefault extends QCStore{
 	public static String State;
 	public static String SSN1;
 	public static String SSN2;
 	public static String SSN3;
 	
-	/*public static String ESign_CheckNbr;
-	public static String ESign_Password;
-	public static String ESign_Checks;
-	public static String CouponNbr;
-	public static String ChkgAcctNbr;
-	public static String AllowPromotion;
-	public static String ESign_Preference;
-	public static String ESign_CourtesyCallConsent;
-	public static String ESign_DisbType;
-	public static String ESign_LoanAmt;
-	public static String ESign_CollateralType;
-	public static String stateProductType;
-	public static String stateProduct;
-	public static String StoreID;
-	public static String NewVIN;
-	public static String VehicleType;
-	public static String NewLoan_Term;
-	public static String NewLoan_ProductName;
-	public static String ProductType;
-	public static String Password;
-	public static String UserName;
-	public static String ProductID;
-	public static String last4cheknum;
-	public static String InsuranceExpiryDate0[]=null;
-	public static String InsuranceExpiryDate3;
-	public static String InsuranceExpiryDate2;
-	public static String InsuranceExpiryDate1;
-	public static String PolicyNumber;
 	
-	public static String InsuranceCompany;
-	public static String PhoneNbr3;
-	public static String PhoneNbr2;
-	public static String PhoneNbr1;
-	public static String PhoneNbr;
-	public static String InsuranceCoverage;
-	public static String LicensePlateExp;
-	public static String LicensePlateNumber;
-	public static String ExteriorColor;
-	public static String AppraisalValue;
-	public static String InsuranceExpiryDate;
-	public static String TitleNumber;
-	public static int rnum;
-	public static int cnum;
-	public static String product_name;
-	public static int count;
-	public static List<WebElement> rows;
-	public static String No_of_checks;
-	 public static String cardType;
-		public static String cardNumber;
-		public static String  cardEx_month;
-		public static String cardEx_Year;
-		public static String cvv;
-		public static String CardHolderName;*/
 
 
 
@@ -230,7 +173,7 @@ public static void sdefault(String SSN,String AppURL)
 									catch (NoAlertPresentException e) {
 									    //do what you normally would if you didn't have the alert.
 									}
-								 Thread.sleep(5000);
+								 Thread.sleep(10000);
 								 WebDriverWait wait = new WebDriverWait(driver, 100000);	
 								 wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("ok")));
 								 Thread.sleep(5000);
@@ -239,6 +182,7 @@ public static void sdefault(String SSN,String AppURL)
 								 test.log(LogStatus.PASS, "Clicked on Scheduler Ok Successfully");
 								 Thread.sleep(5000);
 								 driver.close();
+								 Thread.sleep(1000);
 								 
 							 
 							}
@@ -296,7 +240,7 @@ public static void sdefault(String SSN,String AppURL)
 									catch (NoAlertPresentException e) {
 									    //do what you normally would if you didn't have the alert.
 									}
-								 Thread.sleep(5000);
+								 Thread.sleep(10000);
 								 WebDriverWait wait = new WebDriverWait(driver, 100000);	
 								 wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("ok")));
 								 Thread.sleep(5000);
@@ -305,6 +249,7 @@ public static void sdefault(String SSN,String AppURL)
 								 test.log(LogStatus.PASS, "Clicked on Scheduler Ok Successfully");
 								 Thread.sleep(5000);
 								 driver.close();
+								 Thread.sleep(1000);
 							 }
 								  
 						 }
@@ -368,7 +313,7 @@ public static void sdefault(String SSN,String AppURL)
 									catch (NoAlertPresentException e) {
 									    //do what you normally would if you didn't have the alert.
 									}
-								 Thread.sleep(5000);
+								 Thread.sleep(10000);
 								 WebDriverWait wait = new WebDriverWait(driver, 100000);	
 								 wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("ok")));
 								 Thread.sleep(5000);
@@ -376,7 +321,9 @@ public static void sdefault(String SSN,String AppURL)
 								 //test.log(LogStatus.PASS, "Clicked on Scheduler Ok");
 								 test.log(LogStatus.PASS, "Clicked on Scheduler Ok Successfully");
 								 Thread.sleep(5000);
+								 //driver.quit();
 								 driver.close();
+								 Thread.sleep(1000);
 								 
 							 
 							}
@@ -434,7 +381,7 @@ public static void sdefault(String SSN,String AppURL)
 									catch (NoAlertPresentException e) {
 									    //do what you normally would if you didn't have the alert.
 									}
-								 Thread.sleep(5000);
+								 Thread.sleep(10000);
 								 WebDriverWait wait = new WebDriverWait(driver, 100000);	
 								 wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("ok")));
 								 Thread.sleep(5000);
@@ -443,6 +390,7 @@ public static void sdefault(String SSN,String AppURL)
 								 test.log(LogStatus.PASS, "Clicked on Scheduler Ok Successfully");
 								 Thread.sleep(5000);
 								 driver.close();
+								 //Thread.sleep(1000);
 							 }
 								  
 						 }
@@ -506,7 +454,7 @@ public static void sdefault(String SSN,String AppURL)
 									catch (NoAlertPresentException e) {
 									    //do what you normally would if you didn't have the alert.
 									}
-								 Thread.sleep(5000);
+								 Thread.sleep(10000);
 								 WebDriverWait wait = new WebDriverWait(driver, 100000);	
 								 wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("ok")));
 								 Thread.sleep(5000);
@@ -515,6 +463,7 @@ public static void sdefault(String SSN,String AppURL)
 								 test.log(LogStatus.PASS, "Clicked on Scheduler Ok Successfully");
 								 Thread.sleep(5000);
 								 driver.close();
+								 Thread.sleep(1000);
 								 
 							 
 							}
@@ -572,7 +521,7 @@ public static void sdefault(String SSN,String AppURL)
 									catch (NoAlertPresentException e) {
 									    //do what you normally would if you didn't have the alert.
 									}
-								 Thread.sleep(5000);
+								 Thread.sleep(10000);
 								 WebDriverWait wait = new WebDriverWait(driver, 100000);	
 								 wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("ok")));
 								 Thread.sleep(5000);
@@ -581,6 +530,7 @@ public static void sdefault(String SSN,String AppURL)
 								 test.log(LogStatus.PASS, "Clicked on Scheduler Ok Successfully");
 								 Thread.sleep(5000);
 								 driver.close();
+								 Thread.sleep(1000);
 							 }
 								  
 						 }
@@ -720,7 +670,7 @@ public static void sdefault(String SSN,String AppURL)
 			catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-				test.log(LogStatus.FAIL, "Duedate is failed");
+				//test.log(LogStatus.FAIL, "Duedate is failed");
 
 			}
 	

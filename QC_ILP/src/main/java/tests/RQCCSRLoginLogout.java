@@ -5,12 +5,15 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -32,19 +35,17 @@ import tests.QCStore;
 
 public class RQCCSRLoginLogout extends QCStore
 {
-	public static void login(String SSN,String AppURL)
-	{
-		try{
-			//String FileName= Rprop.getProperty("QC_Store_NewLoan_file_name");
-			
-			//ExcelNew TestData = new ExcelNew(System.getProperty("user.dir")+Rprop.getProperty("QC_Store_NewLoan_Test_data_sheet_path")+FileName+".xls");  		 
-				int lastrow=TestData.getLastRow("Login");
+	public static void login(String SSN,String AppURL) throws InterruptedException, MalformedURLException
+	{ 
+		
+	
+		int lastrow=TestData.getLastRow("Login");
 				String sheetName="Login";
 
 				for(int row=2;row<=lastrow;row++)
 				{		
 					String RegSSN = TestData.getCellData(sheetName,"SSN",row);
-					//String csr_url = TestData.getCellData(sheetName,"AppURL",row);
+					String csr_url = prop.getProperty("csrURL");
 
 					String username = TestData.getCellData(sheetName,"UserName",row);
 					String password = TestData.getCellData(sheetName,"Password",row);
@@ -65,9 +66,16 @@ public class RQCCSRLoginLogout extends QCStore
 						//test.log(LogStatus.INFO, "CSR Application is launched " );
 						test.log(LogStatus.INFO,"CSR Application is launched");
 
-						if(Rprop.getProperty("login_method").equalsIgnoreCase("local"))
+						if(prop.getProperty("login_method").equalsIgnoreCase("local"))
 						{
 							driver = new InternetExplorerDriver();
+							
+				//=========== For Browser info in report ===============
+							Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
+
+							String browserName = cap.getBrowserName();
+
+							reports.addSystemInfo("Browser",browserName);
 						}
 						else
 						{
@@ -82,36 +90,41 @@ public class RQCCSRLoginLogout extends QCStore
 						driver.manage().timeouts().implicitlyWait(05, TimeUnit.SECONDS);
 					
 						driver.get(csr_url);
+						Thread.sleep(1000);
 						
-					    driver.findElement(locator(Rprop.getProperty("csr_username"))).sendKeys(username);
+						try {
+							driver.findElement(By.id("overridelink")).click();
+							Thread.sleep(3000);
+							
+						} catch (Exception e) {
+							// TODO: handle exception
+						}
+						Thread.sleep(1000);
+						
+					    driver.findElement(locator(prop.getProperty("csr_username"))).sendKeys(username);
 				        test.log(LogStatus.PASS, "Username is entered: "+username);
 				        
 				        
 
-					    driver.findElement(locator(Rprop.getProperty("csr_password"))).clear();
-					    driver.findElement(locator(Rprop.getProperty("csr_password"))).sendKeys(password);
+					    driver.findElement(locator(prop.getProperty("csr_password"))).clear();
+					    driver.findElement(locator(prop.getProperty("csr_password"))).sendKeys(password);
 				        test.log(LogStatus.PASS, "Password is entered: "+password);
 				        
 				       
-				        driver.findElement(locator(Rprop.getProperty("csr_storeid"))).sendKeys(store_id);;
+				        driver.findElement(locator(prop.getProperty("csr_storeid"))).sendKeys(store_id);;
 				        test.log(LogStatus.PASS, "Storenumber is entered: "+store_id);
 				        //Click Login Button
-				        driver.findElement(locator(Rprop.getProperty("csr_login_button"))).click();
+				        driver.findElement(locator(prop.getProperty("csr_login_button"))).click();
 				        test.log(LogStatus.PASS, "Clicked on login button");
 				        
 				       Thread.sleep(10000);
+				       test.log(LogStatus.PASS, "<FONT color=green> Login Successfully"); 
+				       test.log(LogStatus.INFO, "******************************************************** ");
 				       break;
 }
 					
 	}
-	}
-	catch (Exception e) {
-		// TODO Auto-generated catch block
-		test.log(LogStatus.FAIL,"CSR login is failed");
-
-		e.printStackTrace();
-	}
-
+	
 }
 	
 public static void logout(String SSN,String AppURL){
@@ -123,15 +136,15 @@ public static void logout(String SSN,String AppURL){
 					driver.switchTo().defaultContent();
 					 driver.switchTo().frame("topFrame");
 					 Thread.sleep(5000);		
-			driver.findElement(locator(Rprop.getProperty(("csr_logout_link")))).click();
+			driver.findElement(locator(prop.getProperty(("csr_logout_link")))).click();
 			     test.log(LogStatus.PASS, "Clicked On logout Button");
-			     if(driver.getTitle().contains("Login")){
-			    	 test.log(LogStatus.PASS, "Logout is Successfully"); 
-			    	 test.log(LogStatus.INFO,"loggged out from the CSR Application");
+			     if(driver.getTitle().contains("Login")){			    	  
+			    	 test.log(LogStatus.PASS, "<FONT color=green> Logout Successfully"); 
+			    	 test.log(LogStatus.INFO, "******************************************************** ");			    	 
+			    	 Thread.sleep(8000);
+			     driver.close();
+			    	 //driver.quit();
 			    	 Thread.sleep(5000);
-			     //driver.close();
-			    	 driver.quit();
-			    	 Thread.sleep(10000);
 			     }
 			    else{
 			    	 test.log(LogStatus.PASS, "Logout was Successfull"); 
@@ -163,14 +176,15 @@ public static void Adminlogout(String SSN,String AdminURL){
 		driver.switchTo().defaultContent();
 		 driver.switchTo().frame("topFrame");
 		
-driver.findElement(locator(Rprop.getProperty(("admin_logout_link")))).click();
+driver.findElement(locator(prop.getProperty(("admin_logout_link")))).click();
      test.log(LogStatus.PASS, "Clicked On logout Button");
      if(driver.getTitle().contains("Login")){
     	 test.log(LogStatus.PASS, "Logout is Successfully"); 
     	 test.log(LogStatus.INFO,"loggged out from the Admin Application");
     	 Thread.sleep(5000);
-     //driver.close();
-    	 driver.quit();
+     driver.close();
+    	 //driver.quit();
+     Thread.sleep(5000);
      }
     else{
     	 test.log(LogStatus.PASS, "Logout was unsuccessfull"); 

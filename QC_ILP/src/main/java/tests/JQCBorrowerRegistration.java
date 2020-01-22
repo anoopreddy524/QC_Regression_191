@@ -77,7 +77,8 @@ public class JQCBorrowerRegistration extends QCStore {
 				       String Misc_PhotoIDType = TestData.getCellData(sheetName,"Misc_PhotoIDType",row);
 				       String BorrDOB = TestData.getCellData(sheetName,"Misc_DOB",row);
 				       String Income_IncomeType = TestData.getCellData(sheetName,"Income_IncomeType",row);
-				       String Income_Employer = TestData.getCellData(sheetName,"Income_Employer",row);
+				       //String Income_Employer = TestData.getCellData(sheetName,"Income_Employer",row);
+				       String Income_Employer ="Employer";
 				       String Income_WorkPhone = TestData.getCellData(sheetName,"Income_WorkPhone",row);
 				       String Income_NetIncomeAmt = TestData.getCellData(sheetName,"Income_NetIncomeAmt",row);
 				       String Income_GrossIncome = TestData.getCellData(sheetName,"Income_GrossIncome",row);
@@ -159,10 +160,13 @@ public class JQCBorrowerRegistration extends QCStore {
 						test.log(LogStatus.PASS, "SSN2 is entered: "+SSN2);
 						driver.findElement(locator(prop.getProperty("CSR_SSN_third_field"))).sendKeys(SSN3);
 						test.log(LogStatus.PASS, "SSN3 is entered: "+SSN3);
+					       Thread.sleep(5000);
 						driver.findElement(locator(prop.getProperty("CSR_SSN_cfm_first_field"))).sendKeys(SSN1);
 						test.log(LogStatus.PASS, "Confirm SSN1 is entered: "+SSN1);
+					       Thread.sleep(2000);
 						driver.findElement(locator(prop.getProperty("CSR_SSN_cfm_second_field"))).sendKeys(SSN2);
 						test.log(LogStatus.PASS, "Confirm SSN2 is entered: "+SSN2);
+					       Thread.sleep(2000);
 						driver.findElement(locator(prop.getProperty("CSR_SSN_cfm_third_field"))).sendKeys(SSN3);
 						test.log(LogStatus.PASS, "Confirm SSN3 is entered: "+SSN3);		
 						
@@ -401,7 +405,27 @@ public class JQCBorrowerRegistration extends QCStore {
 								driver.findElement(locator(prop.getProperty("CSR_reg_bunkrupty_selection"))).sendKeys(Bankruptcy);
 								test.log(LogStatus.PASS, "Bankrupty is selected as: "+Bankruptcy);
 								 
-								 for(int j=1;j<=7;j++){       //''''''For Performed on Save&Exit Button
+
+								//*************New Request Change for Borrower Registration********************
+								
+								driver.findElement(By.id("oprRadioAutoCallOptOut")).click();
+								test.log(LogStatus.PASS, "Click on Operational Services Auto call Opt-Out ");	
+								
+								driver.findElement(By.id("marRadioAutoCallOut")).click();
+								test.log(LogStatus.PASS, "Click on Marketing Services Auto call Opt-Out ");	
+								
+								driver.findElement(By.id("marRadioEmailOptOut")).click();
+								test.log(LogStatus.PASS, "Click on Marketing Services Email Opt-Out ");
+								
+								driver.findElement(By.id("marRadioSmsOptOut")).click();
+								test.log(LogStatus.PASS, "Click on Marketing Services SMS Opt-Out ");
+								
+								driver.findElement(By.id("marRadioMailOptOut")).click();
+								test.log(LogStatus.PASS, "Click on Marketing Services Auto Mail Opt-Out ");	
+								
+								//*****************************************END*******************************************************
+								 
+								for(int j=1;j<=7;j++){       //''''''For Performed on Save&Exit Button
 								 driver.findElement(locator(prop.getProperty("CSR_reg_bunkrupty_selection"))).sendKeys(Keys.TAB);
 								 break;
 								 }
@@ -429,12 +453,12 @@ public class JQCBorrowerRegistration extends QCStore {
 								  driver.switchTo().frame("main");
 									 
 									 Thread.sleep(10000);
-									 String elementname= driver.findElement(By.xpath("/html/body/form/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr[3]/td/b/font")).getText();
-									 test.log(LogStatus.PASS, "Registration Success Screen::"+elementname);
+									 //String elementname= driver.findElement(By.xpath("/html/body/form/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr[3]/td/b/font")).getText();
+									 //test.log(LogStatus.PASS, "Registration Success Screen::"+elementname);
 							
 								
-							    if(driver.findElement(By.xpath("/html/body/form/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr[3]/td/b/font")).isDisplayed())
-							    	
+							    //if(driver.findElement(By.xpath("/html/body/form/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr[3]/td/b/font")).isDisplayed())
+							    	 if(driver.findElement(By.name("Print CIS")).isDisplayed())	
 							 	{
 								
 								   test.log(LogStatus.PASS, "Borrower is Registered Successfully with SSN as " +SSN);	

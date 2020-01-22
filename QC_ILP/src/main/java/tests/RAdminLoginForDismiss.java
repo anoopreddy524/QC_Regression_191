@@ -26,13 +26,10 @@ import junit.framework.Assert;
 public class RAdminLoginForDismiss extends QCStore{
 
 
-	public static void dismiss(WebDriver driver,String SSN,String AppURL)
+	public static void dismiss(WebDriver driver,String SSN,String AppURL) throws InterruptedException
 	{
-	try{
-		//String FileName= Rprop.getProperty("QC_Store_NewLoan_file_name");
-		
-		//ExcelNew TestData = new ExcelNew(System.getProperty("user.dir")+Rprop.getProperty("QC_Store_NewLoan_Test_data_sheet_path")+FileName+".xls");  		 
-			int lastrow=TestData.getLastRow("Dismiss");
+
+		int lastrow=TestData.getLastRow("Dismiss");
 			String sheetName="Dismiss";
 
 			for(int row=2;row<=lastrow;row++)
@@ -54,12 +51,6 @@ public class RAdminLoginForDismiss extends QCStore{
 				String AttorneyP1 = AttorneyPhone.substring(0, 3);
 		        String AttorneyP2 = AttorneyPhone.substring(3, 6);
 		        String AttorneyP3 = AttorneyPhone.substring(6, 10);
-				
-				
-				
-				
-				
-				
 				
 
 				test.log(LogStatus.INFO,"Admin Application is launched");
@@ -165,7 +156,7 @@ public class RAdminLoginForDismiss extends QCStore{
 	
 	test.log(LogStatus.PASS, "Clicked on GO Button");
 			 
-	Thread.sleep(500);
+	Thread.sleep(8000);
 	
     driver.switchTo().defaultContent();
 	
@@ -229,15 +220,6 @@ break;
 			}	
 	
 	
-}
-
-				catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-					test.log(LogStatus.FAIL,"Dismissed in Admin is failed");
-					Assert.assertTrue(false);
-
-				}
 
 	}
 }

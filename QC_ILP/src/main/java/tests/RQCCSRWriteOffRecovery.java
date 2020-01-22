@@ -2,26 +2,18 @@ package tests;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoAlertPresentException;
-
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.relevantcodes.extentreports.LogStatus;
 
 public class RQCCSRWriteOffRecovery extends QCStore {
-	public static void writeoffrecovery(String SSN, String AppURL) {
+	public static void writeoffrecovery(String SSN, String AppURL) throws InterruptedException {
 		
-		try {
+		
 		
 			int lastrow = TestData.getLastRow("Writeoff_Recovery");
 			String sheetName = "Writeoff_Recovery";
@@ -76,6 +68,7 @@ public class RQCCSRWriteOffRecovery extends QCStore {
 					test.log(LogStatus.PASS, "SSN3 is entered: " + SSN3);
 					driver.findElement(By.name("submit1")).click();
 					test.log(LogStatus.PASS, "Click on submit Button");
+					Thread.sleep(4000);
 					for (String winHandle : driver.getWindowHandles()) {
 						driver.switchTo().window(winHandle);
 					}
@@ -87,7 +80,7 @@ public class RQCCSRWriteOffRecovery extends QCStore {
 					driver.findElement(By.name("button")).click();
 					test.log(LogStatus.PASS, "Clicked on Go button under search results");
 					// driver.findElement(By.name("button")).click();
-
+					Thread.sleep(4000);
 					for (String winHandle : driver.getWindowHandles()) {
 						driver.switchTo().window(winHandle);
 					}
@@ -100,6 +93,7 @@ public class RQCCSRWriteOffRecovery extends QCStore {
 						
 						driver.findElement(By.xpath("//input[@value='Go' and @type='button']")).click();
 						test.log(LogStatus.PASS, "Clicked on Go button under Loans section");
+						Thread.sleep(4000);
 					}
 					if (ProductID.equals("TLP")) {
 						driver.findElement(By
@@ -121,7 +115,7 @@ public class RQCCSRWriteOffRecovery extends QCStore {
 					Thread.sleep(500);
 					driver.findElement(By.xpath("//*[@id='go_Button']")).click();
 					test.log(LogStatus.PASS, "Clicked on Go button");
-					Thread.sleep(500);
+					Thread.sleep(10000);
 					
 					//driver.findElement(By.name("transactionDataBean.paymentBalAmt")).clear();
 					String WOBalance = driver.findElement(By.name("transactionDataBean.paymentBalAmt")).getAttribute("value");
@@ -169,15 +163,7 @@ public class RQCCSRWriteOffRecovery extends QCStore {
 				}
 			}
 
-		}
-
-		catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			test.log(LogStatus.FAIL, "Writeoff Recovery failed");
-
-		}
-
+		
 	}
 }
 

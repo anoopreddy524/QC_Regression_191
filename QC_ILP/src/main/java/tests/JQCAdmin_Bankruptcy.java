@@ -38,7 +38,9 @@ public class JQCAdmin_Bankruptcy extends QCStore
 				{
 				String UserName = TestData.getCellData(sheetName,"AdminUserName",row);
 				String Password = TestData.getCellData(sheetName,"AdminPassword",row);
-				String AdminURL = TestData.getCellData(sheetName,"AdminURL",row);
+				//String AdminURL = TestData.getCellData(sheetName,"AdminURL",row);
+				String AdminURL =prop.getProperty("adminURL");
+				
 				String PIN = TestData.getCellData(sheetName,"PIN",row);
 				
                 String StoreID= TestData.getCellData(sheetName,"StoreID",row);
@@ -62,6 +64,9 @@ public class JQCAdmin_Bankruptcy extends QCStore
 
 			
 				driver.get(AdminURL);
+				
+				/*driver.findElement(By.id("overridelink")).click();
+				Thread.sleep(1000);*/
 				
 				test.log(LogStatus.INFO, "Opened the Admin URL" + AdminURL);
 

@@ -3,6 +3,7 @@ package tests;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -23,8 +24,8 @@ public class JQCAdminLoginLogout extends QCStore {
 			for(int row=2;row<=lastrow;row++)
 			{		
 				String RegSSN = TestData.getCellData(sheetName,"SSN",row);
-				String admin_url = TestData.getCellData(sheetName,"AdminURL",row);
-
+				//String admin_url = TestData.getCellData(sheetName,"AdminURL",row);
+				String admin_url =prop.getProperty("AdminURL");
 				String uname = TestData.getCellData(sheetName,"AdminUserName",row);
 				String pwd = TestData.getCellData(sheetName,"AdminPassword",row);
 				
@@ -46,6 +47,10 @@ public class JQCAdminLoginLogout extends QCStore {
 					driver.manage().window().maximize();
 					driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);				
 					driver.get(admin_url);
+					
+					/*driver.findElement(By.id("overridelink")).click();
+					Thread.sleep(1000);*/
+					
 					driver.findElement(locator(prop.getProperty("admin_uname"))).clear();
 					driver.findElement(locator(prop.getProperty("admin_uname"))).sendKeys(uname);
 				    test.log(LogStatus.PASS, "Username is entered: "+uname);
