@@ -2,18 +2,18 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="prop" key="selection"/>
+		<item value="//Rat" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="//rat"/>
 			<item value="Rprop"/>
 			<item value="Aprop"/>
 			<item value="Jprop"/>
 			<item value="Ratikanta_ILP1"/>
 			<item value="AdminURL"/>
-			<item value="//rat"/>
 			<item value="prop"/>
 			<item value="&#x09;System.out.println(AppURL);"/>
 		</list>
