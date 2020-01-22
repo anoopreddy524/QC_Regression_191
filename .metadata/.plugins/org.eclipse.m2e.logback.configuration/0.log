@@ -3205,3 +3205,28 @@ Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Could not find
 2020-01-22 11:21:04,488 [Worker-517] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\QC_Regression\QC_ILP\src\main\resources
 2020-01-22 11:21:04,488 [Worker-517] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2020-01-22 11:21:04,488 [Worker-517] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\QC_Regression\QC_ILP\src\test\resources
+2020-01-22 11:34:09,281 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-22 11:34:09,294 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\QC_Regression\QC_ILP\src\main\resources
+2020-01-22 11:34:09,296 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-22 11:34:09,296 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\QC_Regression\QC_ILP\src\test\resources
+2020-01-22 11:34:10,496 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-22 11:34:10,497 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\QC_Regression\QC_ILP\src\main\resources
+2020-01-22 11:34:10,498 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-22 11:34:10,499 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\QC_Regression\QC_ILP\src\test\resources
+2020-01-22 11:34:12,070 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-22 11:34:12,070 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\QC_Regression\QC_PDL\src\main\resources
+2020-01-22 11:34:12,072 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-22 11:34:12,072 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\QC_Regression\QC_PDL\src\test\resources
+2020-01-22 11:34:22,359 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-22 11:34:22,359 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\QC_Regression\QC_ILP\src\main\resources
+2020-01-22 11:34:22,361 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-22 11:34:22,361 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\QC_Regression\QC_ILP\src\test\resources
+2020-01-22 11:34:35,953 [Worker-24] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2020-01-22 11:34:37,024 [Worker-24] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: QC:QC_ILP:0.0.1-SNAPSHOT @ C:\QC_Regression\QC_ILP\pom.xml.
+2020-01-22 11:34:37,926 [Worker-24] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /QC_ILP/src/main/java
+2020-01-22 11:34:37,927 [Worker-24] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /QC_ILP/src/test/java
+2020-01-22 11:34:38,321 [Worker-24] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 2 sec
+2020-01-22 11:34:41,148 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-22 11:34:41,149 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\QC_Regression\QC_ILP\src\main\resources
+2020-01-22 11:34:41,149 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-01-22 11:34:41,150 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\QC_Regression\QC_ILP\src\test\resources
