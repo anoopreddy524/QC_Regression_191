@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-Suite">
+              <span class="suite-name border-failed">Suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-Suite">
+                    <span>C:\QC_Regression\QC_ILP\testng.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-Suite">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-Suite">
+                    <span>1 group</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-Suite">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-Suite">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-Suite">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-Suite">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">1 method, 1 failed,   </span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="tests.QCStore" hash-for-method="RQC_Bankruptcy_WORecovery_Txn_Testdata">RQC_Bankruptcy_WORecovery_Txn_Testdata</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Suite" class="panel Suite">
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">tests.QCStore</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="RQC_Bankruptcy_WORecovery_Txn_Testdata">
+                  </a> <!-- RQC_Bankruptcy_WORecovery_Txn_Testdata -->
+                  <span class="method-name">RQC_Bankruptcy_WORecovery_Txn_Testdata</span>
+                  <div class="stack-trace">org.openqa.selenium.UnhandledAlertException: Modal dialog present: SSN already exist.
+Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
+System info: host: &apos;QTLSYS0-224&apos;, ip: &apos;192.168.0.224&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_181&apos;
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities {browserAttachTimeout: 0, browserName: internet explorer, cssSelectorsEnabled: true, elementScrollBehavior: 0, enableElementCacheCleanup: true, enablePersistentHover: true, handlesAlerts: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.forceCreateProcessApi: false, ie.usePerProcessProxy: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:16993/, javascriptEnabled: true, nativeEvents: true, platform: WINDOWS, platformName: WINDOWS, requireWindowFocus: false, takesScreenshot: true, unexpectedAlertBehaviour: dismiss, unhandledPromptBehavior: dismiss, version: 11}
+Session ID: edc957b9-a586-4a98-9d73-320ac420c2c6
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.createUnhandledAlertException(ErrorHandler.java:195)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:276)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:100)
+	at tests.RQCBorrowerRegistration.borrowerRegistration(RQCBorrowerRegistration.java:171)
+	at tests.QCStore.RQC_Bankruptcy_WORecovery_Txn_Testdata(QCStore.java:2155)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
+        </div> <!-- panel Suite -->
+        <div panel-name="test-xml-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\QC_Regression\QC_ILP\testng.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite configfailurepolicy=&quot;continue&quot; guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Suite&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
+    &lt;groups&gt;
+      &lt;run&gt;
+        &lt;include name=&quot;Ratikanta_ILP1&quot;/&gt;
+      &lt;/run&gt;
+    &lt;/groups&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;tests.QCStore&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Test --&gt;
+&lt;/suite&gt; &lt;!-- Suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Test (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">Ratikanta_ILP1</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">RQC_Bankruptcy_WORecovery_Txn_Testdata</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Suite');
+function tableData_Suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(1);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'RQC_Bankruptcy_WORecovery_Txn_Testdata')
+data.setCell(0, 2, 'tests.QCStore')
+data.setCell(0, 3, 29920);
+window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 29 seconds</span>
+              <div id="times-div-Suite">
+              </div> <!-- times-div-Suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">50 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">tests.QCStore</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">QC_PayAnyotherAmount_Void_Txn</span>
+                <br/>
+                <span class="ignored-method-name">RQC_Bankruptcy_Dismiss_Txn_Testdata</span>
+                <br/>
+                <span class="ignored-method-name">JQC_ILP_GraceDays_Deposit_dropdown_Txn</span>
+                <br/>
+                <span class="ignored-method-name">ILP_RefinanceStepSame</span>
+                <br/>
+                <span class="ignored-method-name">ILP_inactiveNewloan</span>
+                <br/>
+                <span class="ignored-method-name">RQC_WriteOffRecovery_Txn_Testdata</span>
+                <br/>
+                <span class="ignored-method-name">ILP_borrowregNewloan</span>
+                <br/>
+                <span class="ignored-method-name">JQC_ILP_Payment_Refinance_StepUp_Txn</span>
+                <br/>
+                <span class="ignored-method-name">QC_NewLoan_Promotion_Txn</span>
+                <br/>
+                <span class="ignored-method-name">QC_LessInterest_VoidFullPayment_Txn</span>
+                <br/>
+                <span class="ignored-method-name">JQC_ILP_GraceDays_Deposit_Menu_Txn</span>
+                <br/>
+                <span class="ignored-method-name">RQC_Default_TLPConversion_Txn_Testdata</span>
+                <br/>
+                <span class="ignored-method-name">RQC_Bankruptcy_Discharge_Txn_Testdata</span>
+                <br/>
+                <span class="ignored-method-name">QC_ILP_NewLoanInstallmentDeposit_Txn</span>
+                <br/>
+                <span class="ignored-method-name">QC_Installmentpayment_Void_Txn</span>
+                <br/>
+                <span class="ignored-method-name">RQC_DefaultPayment_Void_Txn_Testdata</span>
+                <br/>
+                <span class="ignored-method-name">QC_InstallPayment_Ref_Rescind_Txn</span>
+                <br/>
+                <span class="ignored-method-name">JQC_ILP_GraceDays_Deposit_MidDay_Txn</span>
+                <br/>
+                <span class="ignored-method-name">QC_NewLoan_TLPConversion_Txn</span>
+                <br/>
+                <span class="ignored-method-name">ILP_RefinanceStepSame_Void</span>
+                <br/>
+                <span class="ignored-method-name">ILP_Redeposit</span>
+                <br/>
+                <span class="ignored-method-name">ILP_RefinanceStepDown</span>
+                <br/>
+                <span class="ignored-method-name">QC_AgeStore_Void_Txn</span>
+                <br/>
+                <span class="ignored-method-name">ILP_ProcessClear</span>
+                <br/>
+                <span class="ignored-method-name">QC_ILP_Deposit_Return_Txn</span>
+                <br/>
+                <span class="ignored-method-name">ILP_voidRefinance</span>
+                <br/>
+                <span class="ignored-method-name">QC_PayAnyotherAmount_Txn</span>
+                <br/>
+                <span class="ignored-method-name">QC_NewLoan_Void_Txn</span>
+                <br/>
+                <span class="ignored-method-name">RQC_WriteOffRecovery_Void_Txn_Testdata</span>
+                <br/>
+                <span class="ignored-method-name">ILP_RefinanceStepDown_void</span>
+                <br/>
+                <span class="ignored-method-name">JQC_ILP_SignaturLoan_Default_Txn</span>
+                <br/>
+                <span class="ignored-method-name">JQC_ILP_Deposit_MidDay_Txn</span>
+                <br/>
+                <span class="ignored-method-name">QC_Installmentpayment_Txn</span>
+                <br/>
+                <span class="ignored-method-name">ILP_RefinanceStepup</span>
+                <br/>
+                <span class="ignored-method-name">QC_ILP_Buyback_Void_Txn</span>
+                <br/>
+                <span class="ignored-method-name">QC_ILP_Buyback_Txn</span>
+                <br/>
+                <span class="ignored-method-name">ILP_maxloanCount</span>
+                <br/>
+                <span class="ignored-method-name">QC_ILP_clear_Menu_Txn</span>
+                <br/>
+                <span class="ignored-method-name">RQC_DefaultPayment_Txn_Testdata</span>
+                <br/>
+                <span class="ignored-method-name">QC_ILP_Return_Menu_Txn</span>
+                <br/>
+                <span class="ignored-method-name">ILP_RefinanceStepUpVoid</span>
+                <br/>
+                <span class="ignored-method-name">JQC_ILP_Deposit_Menu_Txn</span>
+                <br/>
+                <span class="ignored-method-name">JQC_ILP_Deposit_dropdown_Txn</span>
+                <br/>
+                <span class="ignored-method-name">JQC_ILP_GraceDays_Deposit_EOD_Txn</span>
+                <br/>
+                <span class="ignored-method-name">ILP_agerescindtest</span>
+                <br/>
+                <span class="ignored-method-name">ILP_rescindloan</span>
+                <br/>
+                <span class="ignored-method-name">ILP_CheckAutoClear</span>
+                <br/>
+                <span class="ignored-method-name">JQC_ILP_Deceased_Txn</span>
+                <br/>
+                <span class="ignored-method-name">JQC_ILP_Deposit_EOD_Txn</span>
+                <br/>
+                <span class="ignored-method-name">RQC_Default_Refinance_Txn_Testdata</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.QCStore</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setup</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">killProcess</span>
+                <span class="method-start">82 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">RQC_Bankruptcy_WORecovery_Txn_Testdata</span>
+                <span class="method-start">2090 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">endReport</span>
+                <span class="method-start">32010 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=RQC_Bankruptcy_WORecovery_Txn_Testdata status=FAILURE method=QCStore.RQC_Bankruptcy...)</span>
+                <span class="method-start">32010 ms</span>
+              </div> <!-- configuration-method after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>

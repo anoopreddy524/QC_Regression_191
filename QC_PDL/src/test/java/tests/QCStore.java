@@ -198,7 +198,7 @@ public class QCStore {
 
 	}
 
-	@Test(priority=4, groups = "Brahmith" )
+	@Test(priority=4, groups = "Brahmith1" )
 	public static void QC_OpenLoan_NewLoan_Txn() throws Exception {
 
 		test = reports.startTest("QC_OpenLoan_NewLoan_Txn", "Login->Borrower Registratino->Open Loan->New Loan");
@@ -237,7 +237,7 @@ public class QCStore {
 		}
 	}
 
-	@Test(priority=5, groups = "Brahmith" )
+	@Test(priority=5, groups = "Brahmith1" )
 	public static void QC_NewLoan_Void_Txn() throws Exception {
 
 
@@ -2853,16 +2853,6 @@ public class QCStore {
 		}
 	}
 
-
-
-
-
-
-
-
-
-
-
 	@Test(priority = 415, enabled = true)
 	public static void JQC_NewLoan_Veritec_Txn() throws Exception {
 
@@ -4029,7 +4019,7 @@ public class QCStore {
 		BufferedReader reader;
 
 		//Areader = new BufferedReader(new FileReader("C:/QC_Batch/QC_PDL/src/test/java/tests/AObjects.properties"));
-		reader = new BufferedReader(new FileReader(System.getProperty("user.dir")+"/src/test/java/tests/AObjects.properties"));
+		reader = new BufferedReader(new FileReader(System.getProperty("user.dir")+"/src/test/java/tests/Objects.properties"));
 		prop = new Properties();
 		prop.load(reader);
 		reader.close();
