@@ -226,3 +226,14 @@
 .metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
 .metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
 .metadata/.plugins/org.eclipse.m2e.logback.configuration/0.log
+.metadata/.log
+.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index
+.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources
+.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
+.metadata/.plugins/org.eclipse.jdt.core/3040154504.index
+.metadata/.plugins/org.eclipse.jdt.core/3225309870.index
+.metadata/.plugins/org.eclipse.jdt.core/variablesAndContainers.dat
+.metadata/.plugins/org.eclipse.ui.ide/dialog_settings.xml
+.metadata/.plugins/org.jboss.tools.usage/events/central-showOnStartup-N%2FA
+.metadata/.plugins/org.jboss.tools.usage/events/jbt-installed-AS-RUNTIME
+.metadata/version.ini
