@@ -169,8 +169,7 @@
 .metadata/.plugins/org.eclipse.m2e.logback.configuration/0.log
 .recommenders/caches/identified-project-coordinates.json
 .recommenders/caches/manual-mappings.json
-QC_ILP/ExecutionReports/QCStore/ILP/QC_ILP_Execution_report01.22.2020.10.48.42.html
-QC_ILP/ExecutionReports/QCStore/ILP/QC_ILP_Execution_report01.22.2020.10.49.32.html
+
 .metadata/.log
 .metadata/.plugins/org.eclipse.core.resources/.projects/QC_PDL/.markers
 .metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources
@@ -197,7 +196,7 @@ QC_ILP/ExecutionReports/QCStore/ILP/QC_ILP_Execution_report01.22.2020.10.49.32.h
 .metadata/.plugins/org.eclipse.m2e.core/nexus/a57bbee0a39809ccf2f45b1db94c608b/segments_6
 .metadata/.plugins/org.eclipse.m2e.core/workspacestate.properties
 .metadata/.plugins/org.eclipse.m2e.core/workspaceState.ser
-.metadata/.plugins/org.eclipse.m2e.jdt/QC_ILP.container
+
 .metadata/.plugins/org.eclipse.m2e.logback.configuration/0.log
 .metadata/.plugins/org.eclipse.wst.sse.core/task-tags.properties
 .metadata/.plugins/org.eclipse.wst.xml.core/system_catalog.xml
