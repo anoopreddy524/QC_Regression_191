@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods, 2 failed,   </span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -102,12 +102,7 @@
                     <div class="method-list-content failed suite-Suite">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="tests.QCStore" hash-for-method="QC_NewLoan_Void_Txn">QC_NewLoan_Void_Txn</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="tests.QCStore" hash-for-method="QC_OpenLoan_NewLoan_Txn">QC_OpenLoan_NewLoan_Txn</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="tests.QCStore" hash-for-method="AQC_EPP_Redeposit">AQC_EPP_Redeposit</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Suite -->
@@ -130,18 +125,17 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="QC_NewLoan_Void_Txn">
-                  </a> <!-- QC_NewLoan_Void_Txn -->
-                  <span class="method-name">QC_NewLoan_Void_Txn</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Unable to find element with name == Print CIS (WARNING: The server did not provide any stacktrace information)
+                  <a name="AQC_EPP_Redeposit">
+                  </a> <!-- AQC_EPP_Redeposit -->
+                  <span class="method-name">AQC_EPP_Redeposit</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchWindowException: Unable to find element on closed window (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
-System info: host: &apos;QTLSYS0-223&apos;, ip: &apos;192.168.0.223&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_171&apos;
+System info: host: &apos;QTLSYS0-224&apos;, ip: &apos;192.168.0.224&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_181&apos;
 Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {browserAttachTimeout: 0, browserName: internet explorer, cssSelectorsEnabled: true, elementScrollBehavior: 0, enableElementCacheCleanup: true, enablePersistentHover: true, handlesAlerts: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.forceCreateProcessApi: false, ie.usePerProcessProxy: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:37899/, javascriptEnabled: true, nativeEvents: true, platform: WINDOWS, platformName: WINDOWS, requireWindowFocus: false, takesScreenshot: true, unexpectedAlertBehaviour: dismiss, unhandledPromptBehavior: dismiss, version: 11}
-Session ID: e082a9ec-2447-4457-b6b9-565f78c04574
-*** Element info: {Using=name, value=Print CIS}
+Capabilities {browserAttachTimeout: 0, browserName: internet explorer, cssSelectorsEnabled: true, elementScrollBehavior: 0, enableElementCacheCleanup: true, enablePersistentHover: true, handlesAlerts: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.forceCreateProcessApi: false, ie.usePerProcessProxy: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:33903/, javascriptEnabled: true, nativeEvents: true, platform: WINDOWS, platformName: WINDOWS, requireWindowFocus: false, takesScreenshot: true, unexpectedAlertBehaviour: dismiss, unhandledPromptBehavior: dismiss, version: 11}
+Session ID: 07c46471-eb87-4a83-ad2d-5d2683b9f168
+*** Element info: {Using=name, value=loginRequestBean.userId}
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
 	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
@@ -154,40 +148,8 @@ Session ID: e082a9ec-2447-4457-b6b9-565f78c04574
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:400)
 	at org.openqa.selenium.By$ByName.findElement(By.java:284)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
-	at tests.ACSRBorrowerRegistration.borrowerReg(ACSRBorrowerRegistration.java:430)
-	at tests.QCStore.QC_NewLoan_Void_Txn(QCStore.java:263)
-... Removed 29 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="QC_OpenLoan_NewLoan_Txn">
-                  </a> <!-- QC_OpenLoan_NewLoan_Txn -->
-                  <span class="method-name">QC_OpenLoan_NewLoan_Txn</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Unable to find element with name == Print CIS (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
-System info: host: &apos;QTLSYS0-223&apos;, ip: &apos;192.168.0.223&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_171&apos;
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {browserAttachTimeout: 0, browserName: internet explorer, cssSelectorsEnabled: true, elementScrollBehavior: 0, enableElementCacheCleanup: true, enablePersistentHover: true, handlesAlerts: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.forceCreateProcessApi: false, ie.usePerProcessProxy: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:42721/, javascriptEnabled: true, nativeEvents: true, platform: WINDOWS, platformName: WINDOWS, requireWindowFocus: false, takesScreenshot: true, unexpectedAlertBehaviour: dismiss, unhandledPromptBehavior: dismiss, version: 11}
-Session ID: 4769b2ba-8592-4788-a9fb-b64ea5305233
-*** Element info: {Using=name, value=Print CIS}
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:400)
-	at org.openqa.selenium.By$ByName.findElement(By.java:284)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
-	at tests.ACSRBorrowerRegistration.borrowerReg(ACSRBorrowerRegistration.java:430)
-	at tests.QCStore.QC_OpenLoan_NewLoan_Txn(QCStore.java:224)
+	at tests.ACSRLoginLogout.login(ACSRLoginLogout.java:63)
+	at tests.QCStore.AQC_EPP_Redeposit(QCStore.java:2984)
 ... Removed 29 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
@@ -207,7 +169,7 @@ Session ID: 4769b2ba-8592-4788-a9fb-b64ea5305233
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;groups&gt;
       &lt;run&gt;
-        &lt;include name=&quot;Brahmith1&quot;/&gt;
+        &lt;include name=&quot;Anoop1&quot;/&gt;
       &lt;/run&gt;
     &lt;/groups&gt;
     &lt;classes&gt;
@@ -236,14 +198,10 @@ Session ID: 4769b2ba-8592-4788-a9fb-b64ea5305233
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="test-group">
-              <span class="test-group-name">Brahmith1</span>
+              <span class="test-group-name">Anoop1</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">QC_NewLoan_Void_Txn</span>
-                <br/>
-              </div> <!-- method-in-group -->
-              <div class="method-in-group">
-                <span class="method-in-group-name">QC_OpenLoan_NewLoan_Txn</span>
+                <span class="method-in-group-name">AQC_EPP_Redeposit</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -263,20 +221,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'QC_OpenLoan_NewLoan_Txn')
+data.setCell(0, 1, 'AQC_EPP_Redeposit')
 data.setCell(0, 2, 'tests.QCStore')
-data.setCell(0, 3, 105419);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'QC_NewLoan_Void_Txn')
-data.setCell(1, 2, 'tests.QCStore')
-data.setCell(1, 3, 103613);
+data.setCell(0, 3, 2705);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 minutes</span>
+              <span class="suite-total-time">Total running time: 2 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -291,7 +245,7 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">75 ignored methods</span>
+            <span class="header-content">76 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
@@ -341,9 +295,9 @@ return data;
                 <br/>
                 <span class="ignored-method-name">QC_Epp_Return_NSFPayment_Txn</span>
                 <br/>
-                <span class="ignored-method-name">QC_Deposit_GraceDays_Txn</span>
-                <br/>
                 <span class="ignored-method-name">QC_GraceDays_EODDeposit_Txn</span>
+                <br/>
+                <span class="ignored-method-name">QC_Deposit_GraceDays_Txn</span>
                 <br/>
                 <span class="ignored-method-name">QC_Epp_PrePayment_Txn</span>
                 <br/>
@@ -351,9 +305,9 @@ return data;
                 <br/>
                 <span class="ignored-method-name">JQC_BuyBack_Txn_Testdata</span>
                 <br/>
-                <span class="ignored-method-name">AQC_EPP_Redeposit</span>
-                <br/>
                 <span class="ignored-method-name">JQC_AgeStore_Deposit_ClearMenu_Txn</span>
+                <br/>
+                <span class="ignored-method-name">QC_OpenLoan_NewLoan_Txn</span>
                 <br/>
                 <span class="ignored-method-name">QC_EOD_Deposit_Txn</span>
                 <br/>
@@ -381,13 +335,15 @@ return data;
                 <br/>
                 <span class="ignored-method-name">AQC_EPPDeposit</span>
                 <br/>
-                <span class="ignored-method-name">JQC_AgeStore_Deposit_AutoClear_Txn</span>
-                <br/>
                 <span class="ignored-method-name">JQC_AgeStore_PrePayment_Clear_Txn</span>
+                <br/>
+                <span class="ignored-method-name">JQC_AgeStore_Deposit_AutoClear_Txn</span>
                 <br/>
                 <span class="ignored-method-name">JQC_ChkDeposit_RtnChk_ReDeposit_Payment_Void_Clear_Txn_Testdata</span>
                 <br/>
                 <span class="ignored-method-name">GracedaysMiddayDeposit</span>
+                <br/>
+                <span class="ignored-method-name">QC_NewLoan_Void_Txn</span>
                 <br/>
                 <span class="ignored-method-name">AQC_EPP_Prepayment</span>
                 <br/>
@@ -401,9 +357,9 @@ return data;
                 <br/>
                 <span class="ignored-method-name">RefinanceStepup</span>
                 <br/>
-                <span class="ignored-method-name">QC_FutureDeposit_DropDown</span>
-                <br/>
                 <span class="ignored-method-name">rebateStepup</span>
+                <br/>
+                <span class="ignored-method-name">QC_FutureDeposit_DropDown</span>
                 <br/>
                 <span class="ignored-method-name">QC_Refinance_StepSameVoidURP_Txn</span>
                 <br/>
@@ -431,9 +387,9 @@ return data;
                 <br/>
                 <span class="ignored-method-name">QC_FutureDeposit_EOD_Txn</span>
                 <br/>
-                <span class="ignored-method-name">QC_Refinance_StepDownVoidURP_Txn</span>
-                <br/>
                 <span class="ignored-method-name">agerescindtest</span>
+                <br/>
+                <span class="ignored-method-name">QC_Refinance_StepDownVoidURP_Txn</span>
                 <br/>
                 <span class="ignored-method-name">JQC_Return_ReDeposit_Clear_Txn</span>
                 <br/>
@@ -464,33 +420,19 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">killProcess</span>
-                <span class="method-start">79 ms</span>
+                <span class="method-start">78 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">QC_OpenLoan_NewLoan_Txn</span>
-                <span class="method-start">1089 ms</span>
+                <span class="method-name">AQC_EPP_Redeposit</span>
+                <span class="method-start">1088 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">getResult([TestResult name=QC_OpenLoan_NewLoan_Txn status=FAILURE method=QCStore.QC_OpenLoan_NewLoan_Txn()[pri...)</span>
-                <span class="method-start">106510 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">killProcess</span>
-                <span class="method-start">106521 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">QC_NewLoan_Void_Txn</span>
-                <span class="method-start">107532 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">getResult([TestResult name=QC_NewLoan_Void_Txn status=FAILURE method=QCStore.QC_NewLoan_Void_Txn()[pri:5, inst...)</span>
-                <span class="method-start">211148 ms</span>
+                <span class="method-name">getResult([TestResult name=AQC_EPP_Redeposit status=FAILURE method=QCStore.AQC_EPP_Redeposit()[pri:22, instanc...)</span>
+                <span class="method-start">3796 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

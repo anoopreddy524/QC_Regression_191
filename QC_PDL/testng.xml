@@ -6,10 +6,10 @@
   <run>
 
  <!-- Anoop group--> 
- <!-- <include name="Anoop1"/> -->
+ <include name="Anoop1"/>
 <!--  <include name="Anoop_NV"/> --> 
 <!--  <include name="Janaki1"/> -->
- <include name="Brahmith1"/>
+<!--  <include name="Brahmith1"/> -->
 
   </run>
 

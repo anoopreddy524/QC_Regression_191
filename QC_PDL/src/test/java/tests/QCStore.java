@@ -2965,7 +2965,7 @@ public class QCStore {
 	//***************************************************************************************
 	// Anoop scenarios
 
-	@Test(priority = 22, enabled=true, groups ="Anoop")
+	@Test(priority = 22, enabled=true, groups ="Anoop1")
 
 	public void AQC_EPP_Redeposit() throws Exception {
 

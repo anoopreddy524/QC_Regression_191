@@ -2,30 +2,30 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="//Rat" key="selection"/>
+		<item value="prop." key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="//rat"/>
-			<item value="Rprop"/>
+			<item value="prop."/>
+			<item value="//anoop"/>
+			<item value="Aprop."/>
 			<item value="Aprop"/>
-			<item value="Jprop"/>
-			<item value="Ratikanta_ILP1"/>
-			<item value="AdminURL"/>
-			<item value="prop"/>
-			<item value="&#x09;System.out.println(AppURL);"/>
+			<item value="// anoo"/>
+			<item value="//anoo"/>
+			<item value="//ano"/>
+			<item value="//anop"/>
 		</list>
 		<list key="replacehistory">
-			<item value="prop"/>
+			<item value="Aprop"/>
 			<item value=""/>
+			<item value="prop"/>
 			<item value="QCBorrowerRegistration.borrowerRegistration(SSN, AppURL);"/>
 			<item value="QCCSRLoginLogout.logout(SSN, AppURL);"/>
 			<item value="QCCSRLoginLogout.login(SSN, AppURL);"/>
 			<item value="ACSRBorrowerRegistration.borrowerReg(SSN, AppURL);"/>
 			<item value="ACSRLoginLogout.logout();"/>
-			<item value="ACSRLoginLogout.login(SSN, AppURL);"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

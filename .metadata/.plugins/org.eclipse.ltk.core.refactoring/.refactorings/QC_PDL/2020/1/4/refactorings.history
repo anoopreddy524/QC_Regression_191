@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;TestListeners.java&apos; to &apos;QC_TLP/src/main/java/tests&apos;&#x0D;&#x0A;- Original project: &apos;QC_PDL&apos;&#x0D;&#x0A;- Destination element: &apos;QC_TLP/src/main/java/tests&apos;&#x0D;&#x0A;- Original element: &apos;tests.TestListeners.java&apos;" description="Copy compilation unit" destination="=QC_TLP/src\/main\/java&lt;tests" element1="/src\/main\/java&lt;tests{TestListeners.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1579778485241" units="1" version="1.0"/>
+</session>

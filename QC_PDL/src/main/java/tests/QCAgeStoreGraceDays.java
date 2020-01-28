@@ -218,9 +218,7 @@ public class QCAgeStoreGraceDays extends QCStore{
 						        String ProductID = TestData.getCellData(sheetName,"ProductID",row);
 						
 						       String AgeStore_2nd_time = TestData.getCellData(sheetName,"AgeStore_2nd_time",row);
-						      
-						
-									  
+						      															  
 								        String SSN1 = SSN.substring(0, 3);
 								        String SSN2 = SSN.substring(3,5);
 								        String SSN3 = SSN.substring(5,9);
