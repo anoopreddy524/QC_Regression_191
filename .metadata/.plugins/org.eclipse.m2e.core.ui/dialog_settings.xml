@@ -2,8 +2,8 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
-			<item value="C:\QC_Regression\QC_LOC"/>
 			<item value="C:\QC_Regression"/>
+			<item value="C:\QC_Regression\QC_LOC"/>
 			<item value="C:\QC_Regression\QC_ILP"/>
 			<item value="C:\QC_Regression\QC_PDL"/>
 		</list>

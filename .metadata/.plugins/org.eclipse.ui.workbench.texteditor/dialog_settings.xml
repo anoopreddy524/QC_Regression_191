@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Aprop." key="selection"/>
+		<item value="QC_Store_extent_report_file_name" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="Sprop."/>
-			<item value="Sprop"/>
-			<item value="System.out.println(lastrow);"/>
-			<item value="shashi"/>
-			<item value="@after"/>
-			<item value="@Befor"/>
-			<item value="Ratikan"/>
-			<item value="//jyo"/>
+			<item value="QC_Store_extent_report_file_name"/>
+			<item value="QC_Store_NewLoan_Test_data_sheet_path"/>
+			<item value="QC_Store_extent_report_path"/>
+			<item value="ILP_Refinancevoid"/>
+			<item value="Clicked on Save &amp; Exit"/>
+			<item value="QC_Bankruptcy_WORecovery"/>
+			<item value="Janaki1"/>
+			<item value="QC_Deposit_Menu"/>
 		</list>
 		<list key="replacehistory">
 			<item value="Aprop."/>
