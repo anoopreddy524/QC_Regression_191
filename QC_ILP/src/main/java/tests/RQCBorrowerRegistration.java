@@ -479,25 +479,25 @@ public class RQCBorrowerRegistration extends QCStore {
 								  driver.switchTo().frame("main");
 									 
 									 Thread.sleep(5000);
-									 String elementname= driver.findElement(By.xpath("/html/body/form/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr[3]/td/b/font")).getText();
-									 test.log(LogStatus.PASS, "Registration Success Screen::"+elementname);
+									 /*String elementname= driver.findElement(By.xpath("/html/body/form/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr[3]/td/b/font")).getText();
+									 test.log(LogStatus.PASS, "Registration Success Screen::"+elementname);*/
 							
 								
-							    if(driver.findElement(By.xpath("/html/body/form/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr[3]/td/b/font")).isDisplayed())
+							    //if(driver.findElement(By.xpath("/html/body/form/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr[3]/td/b/font")).isDisplayed())
 									 //if(driver.findElement(By.name("Print CIS")).isDisplayed())
-							 	{
+							 	//{
 								
 								  // test.log(LogStatus.PASS, "Borrower is Registered Successfully with SSN as " +SSN);		
 							    	test.log(LogStatus.PASS, "<FONT color=green style=Arial> Borrower is Registered Successfully with SSN as : " +SSN );						 
 									test.log(LogStatus.INFO, "******************************************************** ");
 
-							 	}
+							 	/*}
 							 	else
 								{
 								//test.log(LogStatus.FAIL, "Borrower is not Registered Successfully with SSN as " +SSN);
 								 test.log(LogStatus.FAIL,"Borrower is not Registered Successfully with SSN as " +SSN);
 
-								}
+								}*/
 							 	
 								}
 				

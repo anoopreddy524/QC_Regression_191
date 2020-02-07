@@ -7,9 +7,9 @@
 
  <!-- Anoop group--> 
  <!-- <include name="Anoop_EOD1"/> -->
- <include name="Anoop_EOD2"/> 
+ <!-- <include name="Anoop_EOD2"/>  -->
  <include name="Anoop_EOD3"/> 
- <include name="EOD2"/> 
+<!--  <include name="EOD2"/> 
  <include name="EOD"/>
 <include name="Ratikanta_LOC2"/>
 <include name="Ratikanta_LOC"/>
@@ -17,7 +17,7 @@
 <include name="EOD"/>
 <include name="EOD2"/>
 <include name="1stBatch"/>
-<include name="Jyothi"/>
+<include name="Jyothi"/> -->
   </run>
 
   </groups>

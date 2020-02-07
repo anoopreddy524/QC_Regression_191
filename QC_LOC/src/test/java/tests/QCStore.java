@@ -6216,7 +6216,7 @@ public class QCStore {
 			try {
 				Areader = new BufferedReader(
 
-						new FileReader(System.getProperty("user.dir")+"/src/test/java/tests/AObjects.properties"));
+						new FileReader(System.getProperty("user.dir")+"/src/test/java/tests/Objects.properties"));
 
 				Aprop = new Properties();
 				Aprop.load(Areader);

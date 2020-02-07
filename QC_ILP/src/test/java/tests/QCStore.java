@@ -45,7 +45,6 @@ public class QCStore {
 	public static String encryption_transaction_nbr = null;
 	public static String FileName;
 	public static ExcelNew TestData;
-
 	public static String loan_nbr;
 	public static String NextDueDate;
 	public static String AppURL = "http://192.168.2.203/cc/demoIndex.do";
@@ -1617,7 +1616,7 @@ public class QCStore {
 //-------------------------------------------------------------------------------------------------------------------------------
 //Indhu
 	
-	@Test(priority=1, enabled = true, groups = "Janaki1")
+	@Test(priority=1, enabled = true, groups = "Janaki")
 
 	public static void JQC_ILP_Deposit_Menu_Txn() throws Exception {
 	

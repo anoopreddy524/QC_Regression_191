@@ -6,7 +6,7 @@
   <run>
 
   <!-- Janaki's group--> 
-  <!--   <include name="Janaki1"/>  -->
+    <include name="Janaki1"/> 
     <!-- <include name="Janaki_EOD_set1"/>  -->
   <!--  <include name="Janaki_EOD_set2"/>  -->
    <!-- <include name="janaki_Refinance_StUp"/> -->
@@ -23,7 +23,7 @@
 
   <!-- Ratikanta group-->  
 
-  <include name="Ratikanta_ILP1"/>
+<!--   <include name="Ratikanta_ILP1"/> -->
 
 
 
